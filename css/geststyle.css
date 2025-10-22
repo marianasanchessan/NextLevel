@@ -6,32 +6,23 @@
 /* ==================================== */
 /* Cards de Status */
 /* ==================================== */
-/* AJUSTES NAS VARIÁVEIS (Certifique-se que estas estão no seu :root) */
 :root {
-    .card .icon-total { color: #3b82f6; }   /* Total */
-    .card .icon-aprovado { color: #16a34a; }   /* Aprovado */
-    .card .icon-correcao { color: #f59e0b; } /* Correção */
+    .card .icon-total { color: #3b82f6; }   
+    .card .icon-aprovado { color: #16a34a; }   
+    .card .icon-correcao { color: #f59e0b; } 
 }
 
-/* NOVO ESTILO PARA O CONTEÚDO DENTRO DO CARD */
 .card > div { 
-    /* Remove o display: flex para não forçar o número e o ícone na mesma linha */
     display: block; 
     margin-top: 10px;
 }
 
-/* --- Posicionamento e Cor do Ícone --- */
 .card i {
     position: absolute;
-    top: 25px; /* Posição vertical */
-    right: 25px; /* Posição horizontal */
-    font-size: 30px; /* Tamanho do ícone */
+    top: 25px; 
+    right: 25px; 
+    font-size: 30px; 
 }
-
-/* Cores específicas dos Ícones (Aplicadas via classe HTML) */
-
-
-
 
 /* ==================================== */
 /* --- Painel de Documentos e Tabela --- */

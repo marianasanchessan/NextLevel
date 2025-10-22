@@ -21,13 +21,10 @@
 }
 
 body.home {
-    /* Remove a imagem de fundo para a dashboard */
     background: var(--background);
-    
-    /* Usa Grid para o layout da Dashboard */
     display: grid;
-    grid-template-columns: 240px 1fr; /* Sidebar e Conteúdo */
-    grid-template-rows: 60px 1fr; /* Topbar e Conteúdo */
+    grid-template-columns: 240px 1fr;
+    grid-template-rows: 60px 1fr; 
 }
 
 /* ==================================== */
@@ -123,11 +120,6 @@ body.home {
 }
 
 /* ==================================== */
-/* PRINCIPALMENTE DASHBOARD */
-/* ==================================== */
-
-
-/* ==================================== */
 /* Barrinha do lado */
 /* ==================================== */
 .sidebar {
@@ -150,7 +142,7 @@ body.home {
 .logo img {
     width:70px;
     height: 60px;
-    border: var(--border-thin); /* Borda fina como nos outros elementos */
+    border: var(--border-thin); 
     border-radius: var(--border-radius-elements); 
     padding: 5px; 
 }
@@ -217,6 +209,7 @@ body.home {
     gap: 10px; 
 }
 
+
 /* ==================================== */
 /*Fazer botões - ao menos bonitinho*/
 /* ==================================== */
@@ -232,6 +225,7 @@ body.home {
 .foot a:active i {
     color: #fff; 
 }
+
 
 /* ==================================== */
 /* Barra do Topo */
