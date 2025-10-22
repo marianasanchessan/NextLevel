@@ -1,12 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+/* ============================= */
+/* ESTILOS DA DASHBOARD */
+/* ============================= */
+
 /* Variáveis para consistência de cores */
 :root {
-    --primary: #217d36d0; /* Cor principal (azul) */
-    --background: #f8f9fc; /* Cor de fundo suave para a dashboard */
-    --panel: #fff; /* Cor do painel/card (branco) */
-    --line: #e3e6f0; /* Cor de linha/borda clara */
-    --shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15); /* Sombra */
+    --primary: #217d36d0; 
+    --background: #f8f9fc; 
+    --panel: #fff; 
+    --line: #e3e6f0; 
+    --shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15); 
 }
 
 * {
@@ -15,25 +19,6 @@
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
 }
-
-/* ------------------------------------ */
-/* ESTILOS DO BODY GERAL (usado no LOGIN) */
-/* ------------------------------------ */
-
-body {
-    /* Estilo de fundo do LOGIN (com imagem) */
-    background: url('./background2.png') no-repeat center center/cover;
-    min-height: 100vh;
-    
-    /* Display flex é para centralizar o formulário de LOGIN */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* ------------------------------------ */
-/* ESTILOS DA DASHBOARD (body com classe .home) */
-/* ------------------------------------ */
 
 body.home {
     /* Remove a imagem de fundo para a dashboard */
@@ -138,10 +123,13 @@ body.home {
 }
 
 /* ==================================== */
-/* ESTILOS DA DASHBOARD (home.html) */
+/* PRINCIPALMENTE DASHBOARD */
 /* ==================================== */
 
-/* Sidebar */
+
+/* ==================================== */
+/* Barrinha do lado */
+/* ==================================== */
 .sidebar {
     grid-row: 1 / span 2; 
     background: var(--panel);
@@ -217,7 +205,9 @@ body.home {
     flex-direction: column;
 }
 
-/* Estilos para os itens do rodapé */
+/* ==================================== */
+/* Rodapé */
+/* ==================================== */
 .foot a {
     text-decoration: none;
     color: var(--primary-line-color); 
@@ -227,6 +217,9 @@ body.home {
     gap: 10px; 
 }
 
+/* ==================================== */
+/*Fazer botões - ao menos bonitinho*/
+/* ==================================== */
 /* Garante que o fundo e a cor do TEXTO (span) mudem */
 .foot a:hover,
 .foot a:active {
@@ -239,7 +232,10 @@ body.home {
 .foot a:active i {
     color: #fff; 
 }
-/* Topbar */
+
+/* ==================================== */
+/* Barra do Topo */
+/* ==================================== */
 .barra {
     grid-column: 2 / 3;
     grid-row: 1 / 2;
@@ -252,8 +248,9 @@ body.home {
     box-shadow: var(--shadow);
     z-index: 10;
 }
-
+/* ==================================== */
 /* Conteúdo Principal */
+/* ==================================== */
 .content {
     grid-column: 2 / 3;
     grid-row: 2 / 3;
@@ -264,7 +261,9 @@ body.home {
     color: var(--primary-line-color);
 }
 
+/* ==================================== */
 /* Cards de Metas */
+/* ==================================== */
 .cards {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -306,7 +305,9 @@ body.home {
     color: #25933f; 
 }
 
+/* ==================================== */
 /* Progresso e Atividades */
+/* ==================================== */
 .progressosemestre {
     display: grid;
     grid-template-columns: 3fr 2fr;
@@ -349,7 +350,9 @@ body.home {
     border-radius: 5px;
 }
 
+/* ==================================== */
 /* Atividades Recentes */
+/* ==================================== */
 .lista .linha {
     display: flex;
     justify-content: space-between;
@@ -366,7 +369,9 @@ body.home {
     font-size: 14px;
 }
 
+/* ==================================== */
 /* Próximos Prazos */
+/* ==================================== */
 .proximosprazos {
     background: var(--panel);
     border-radius: 22px;
@@ -401,7 +406,7 @@ body.home {
 }
 
 /* ==================================== */
-/* MEDIA QUERIES */
+/* MEDIA*/
 /* ==================================== */
 
 @media (max-width: 1100px) {
@@ -449,20 +454,3 @@ body.home {
     }
 }
 
-/*
-Adicional para Gestão de Documentos
-
-.content h1 {
-    font-size: 28px; 
-    font-weight: 700;
-    color: #333; 
-    margin-bottom: 5px; 
-}
-
-
-.content .muted {
-    font-size: 14px;
-    color: #6c757d; 
-    margin-top: 0; 
-    margin-bottom: 25px; 
-} */

@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function() {
       // Redireciona para dashboard após 0,5 segundos
       setTimeout(function() {
         // Redirecionamento correto para o novo arquivo home.html
-        window.location.href = "home.html"; 
+        window.location.href = "dashboard.html"; 
       }, 500);
 
     } else {
