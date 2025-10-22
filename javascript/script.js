@@ -67,3 +67,12 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   });
 });
+
+/**
+ * Redireciona o usuário para a tela de login (index.html).
+ * Esta função é chamada pelo atributo onclick do botão "Sair" em home.html.
+ */
+function logout() {
+    // Redireciona o navegador para a página de login
+    window.location.href = 'index.html'; 
+}
