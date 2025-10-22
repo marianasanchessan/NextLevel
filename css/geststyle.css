@@ -1,0 +1,104 @@
+/* --- Cards de Status (Ajustes para as cores dos ícones) --- */
+
+/* Cores específicas dos Ícones nos Cards */
+.card .icon-total { color: var(--card-total-color); }
+.card .icon-aprovado { color: var(--card-aprovado-color); }
+.card .icon-correcao { color: var(--card-correcao-color); }
+
+/* --- Painel de Documentos e Tabela --- */
+
+.paineldoc {
+    background: var(--panel);
+    border-radius: 12px; /* Cantos arredondados */
+    padding: 22px; /* Espaçamento interno */
+    box-shadow: var(--shadow); /* Sombra conforme suas variáveis */
+    margin-top: 30px; /* Margem superior para separar dos cards */
+}
+
+.painel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.paineldoc h4 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+/* Caixa de Pesquisa */
+.search-box {
+    display: flex;
+    align-items: right;
+    background-color: var(--line); 
+    border-radius: 8px; 
+    padding: 8px 15px;
+    width: 250px; 
+}
+
+.search-box input {
+    border: none;
+    background: transparent;
+    padding: 0;
+    outline: none; 
+    font-size: 14px;
+    color: #5A5A5A;
+    width: 100%;
+
+}
+
+.search-box input::placeholder {
+    color: var(--text-secondary); 
+}
+
+
+/*
+/* Estrutura da Tabela 
+*/
+.tabela {
+    border: 1px solid var(--line); 
+    border-radius: 8px; 
+    overflow: hidden; 
+    margin-top: 18px;
+    margin-bottom: 18px; 
+}
+
+.topoTabela, .tabLinha {
+    display: grid;
+    grid-template-columns: 2.5fr 1.5fr 1.5fr 1fr; 
+    padding: 15px 20px;
+    align-items: center;
+}
+
+.topoTabela {
+    background:#25933f; ;
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--text-primary);
+    border-bottom: 1px solid var(--line); 
+    border-radius: 8px;
+}
+
+.tabLinha {
+    font-size: 14px;
+    color: var(--text-secondary);
+    border-top: 1px solid var(--line);
+}
+
+.tabLinha:first-of-type {
+    border-top: none; 
+}
+
+.tabLinha > div {
+    padding-right: 10px; 
+}
+
+.topoTabela > div:last-child, 
+.tabLinha > div:last-child {
+    text-align: right;
+}
+
+
+
