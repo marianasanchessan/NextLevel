@@ -1,41 +1,102 @@
-/* ====================================== */
-/* ESTILOS DO GESTÃO DE DOCUMENTOS ---- EXTRA */
-/* ====================================== */
+/* ====================================== /
+/ ESTILOS DO GESTÃO DE DOCUMENTOS ---- EXTRA /
+/ ====================================== */
 
-
-/* ==================================== */
-/* Cards de Status */
-/* ==================================== */
-:root {
-    .card .icon-total { color: #3b82f6; }   
-    .card .icon-aprovado { color: #16a34a; }   
-    .card .icon-correcao { color: #f59e0b; } 
+.foot{
+    padding-top: 230px;
+    border-top: 1px solid var(--line);
+    font-size: 14px;
+    color: hsl(206, 8%, 39%);
+    display: flex;
+    gap: 10px; 
+    flex-direction: column;
 }
 
-.card > div { 
-    display: block; 
+.foot a {
+    text-decoration: none;
+    color: var(--primary-line-color); 
+    font-weight: 500;
+    display: flex; 
+    align-items: center; 
+    gap: 10px; 
+}
+
+.foot a:hover,
+.foot a:active {
+    background-color: var(--primary);
+    color: #fff; 
+}
+
+.foot a:hover i,
+.foot a:active i {
+    color: #fff; 
+}
+
+:root {
+    /* 1. VARIÁVEIS DE TEMA  */
+    --panel-bg: #ffffff;
+    /* Fundo principal claro */
+    --line-color: #e5e7eb;
+    /* Linhas e bordas */
+    --text-primary: #1f2937;
+    /* Texto principal escuro */
+    --text-secondary: #6b7280;
+    /* Texto secundário*/
+    --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+
+
+    /* Cores existentes dos ícones de status */
+    .card .icon-total {
+        color: #3b82f6;
+    }
+
+    .card .icon-aprovado {
+        color: #16a34a;
+    }
+
+    .card .icon-correcao {
+        color: #f59e0b;
+    }
+
+}
+
+/* ==================================== /
+             Cards de Status 
+/ ==================================== */
+.card {
+    background-color: var(--card-bg);
+    color: var(--card-text);
+    box-shadow: var(--shadow);
+    border-radius: 12px;
+    padding: 20px;
+    position: relative;
+}
+
+.card>div {
+    display: block;
     margin-top: 10px;
 }
 
 .card i {
     position: absolute;
-    top: 25px; 
-    right: 25px; 
-    font-size: 30px; 
+    top: 25px;
+    right: 25px;
+    font-size: 30px;
 }
 
-/* ==================================== */
-/* --- Painel de Documentos e Tabela --- */
-/* ==================================== */
+/* ==================================== /
+/ --- Painel de Documentos e Tabela --- /
+/ ==================================== */
 .paineldoc {
-    background: var(--panel);
-    border-radius: 12px; 
-    padding: 22px; 
-    box-shadow: var(--shadow); 
-    margin-top: 30px; 
+    background: var(--panel-bg);
+    border-radius: 12px;
+    padding: 22px;
+    box-shadow: var(--shadow);
+    margin-top: 30px;
 }
 
 .painel-header {
+    /* O display: flex e justify-content: space-between garantem que a pesquisa fique no canto superior direito em relação ao título. */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -48,79 +109,85 @@
     color: var(--text-primary);
 }
 
-/* ==================================== */
-/* Caixa de Pesquisa */
-/* ==================================== */
+/* ==================================== /
+          Caixa de Pesquisa 
+/ ==================================== */
 .search-box {
     display: flex;
-    align-items: right;
-    background-color: var(--line); 
-    border-radius: 8px; 
+    align-items: center;
+    background-color: var(--line-color);
+    border-radius: 8px;
     padding: 8px 15px;
-    width: 250px; 
+    width: 250px;
+    gap: 10px;
 }
 
 .search-box input {
     border: none;
     background: transparent;
     padding: 0;
-    outline: none; 
+    outline: none;
     font-size: 14px;
-    color: #5A5A5A;
+    color: var(--text-primary);
     width: 100%;
-
 }
 
 .search-box input::placeholder {
-    color: var(--text-secondary); 
+    color: var(--text-secondary);
 }
 
-
-/* ==================================== */
-/* Estrutura da Tabela*/
+/* ==================================== /
+         Estrutura da Tabela
 /* ==================================== */
 .tabela {
-    border: 1px solid var(--line); 
-    border-radius: 8px; 
-    overflow: hidden; 
+    border: 1px solid var(--line-color);
+    border-radius: 8px;
+    overflow: hidden;
     margin-top: 18px;
-    margin-bottom: 18px; 
+    margin-bottom: 18px;
 }
 
-.topoTabela, .tabLinha {
+.topoTabela,
+.tabLinha {
     display: grid;
-    grid-template-columns: 2.5fr 1.5fr 1.5fr 1fr; 
+    grid-template-columns: 2.5fr 1.5fr 1.5fr 1fr;
     padding: 15px 20px;
     align-items: center;
 }
 
 .topoTabela {
-    background:#25933f; ;
+    background: #25933f;
     font-weight: 600;
     font-size: 14px;
-    color: var(--text-primary);
-    border-bottom: 1px solid var(--line); 
+    color: #ffffff;
+    border-bottom: 1px solid var(--line-color);
     border-radius: 8px;
 }
 
 .tabLinha {
     font-size: 14px;
     color: var(--text-secondary);
-    border-top: 1px solid var(--line);
+    border-top: 1px solid var(--line-color);
+    /* Adiciona transição para a cor de fundo ficar suave */
+    transition: background-color 0.1s ease;
+}
+
+.tabLinha:hover {
+    background-color: #f3f4f6;
+    /* Cinza claro para o efeito hover */
+    cursor: pointer;
+    /* Indica que a linha é clicável/interativa */
 }
 
 .tabLinha:first-of-type {
-    border-top: none; 
+    border-top: none;
 }
 
-.tabLinha > div {
-    padding-right: 10px; 
+.tabLinha>div {
+    padding-right: 10px;
 }
 
-.topoTabela > div:last-child, 
-.tabLinha > div:last-child {
-    text-align: right;
+.topoTabela>div:last-child,
+.tabLinha>div:last-child {
+    text-align: left;
 }
-
-
-
