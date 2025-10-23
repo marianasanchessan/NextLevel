@@ -1,22 +1,23 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Gestão Documentos - NextLevel</title>
 
-    <link rel="stylesheet" href="/css/style.css"> 
-    <link rel="stylesheet" href="/css/geststyle.css"> 
-    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet"> 
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="documentos.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
 
 </head>
 
 <body class="home">
-    
+
     <aside class="sidebar">
         <div class="brand">
             <div class="logo">
-                <img src="/imagens/logo.jpeg" alt="Logomarca NextLevel"> 
+                <img src="logo.jpeg" alt="Logomarca NextLevel">
             </div>
             <div class="name">
                 <b>NextLevel</b>
@@ -25,19 +26,20 @@
         </div>
 
         <nav class="menu">
-            <a href="#"><i class='bx bxs-dashboard'></i><span>Dashboard</span></a>
-            <a class="active" href="#"><i class='bx bxs-file'></i><span>Documentos</span></a>
+            <a href="home.html"><i class='bx bxs-dashboard'></i><span>Dashboard</span></a>
+            <a class="active" href="docum.html"><i class='bx bxs-file'></i><span>Documentos</span></a>
             <a href="#"><i class='bx bxs-edit-alt'></i> <span> Notas e Faltas </span></a>
             <a href="#"><i class='bx bxs-grid-alt'></i><span>Grade Curricular</span></a>
             <a href="#"><i class='bx bxs-chalkboard'></i><span>Conteúdos e Atividades</span></a>
             <a href="#"><i class='bx bxs-receipt'></i><span>Comprovantes</span></a>
         </nav>
 
-        <div class="foot">
-            <div>Arthur Alves</div>
-            <div>Configurações</div>
-            <div>Sair</div>
-        </div>
+        <nav class="foot">
+            <a href="#"><i class='bx bxs-user'></i><span>Luis Alves</span></a>
+            <a href="#"><i class='bx bxs-cog'></i><span>Configurações</span></a>
+            <a href="#" onclick="logout()"><i class='bx bxs-log-out'></i><span>Sair</span></a>
+        </nav>
+
     </aside>
 
     <header class="barra">
@@ -45,20 +47,20 @@
     </header>
 
     <main class="content">
-        
+
         <h1>Gestão de Documentos</h1>
         <p class="muted">Organize e acompanhe todos os seus documentos acadêmicos</p>
 
         <section class="cards">
-            <article class="card total"> 
+            <article class="card total">
                 <h4>Total</h4>
                 <div>
                     <div class="porcentagem">24</div>
-                    <i class='bx bxs-file icon-total'></i> 
+                    <i class='bx bxs-file icon-total'></i>
                 </div>
             </article>
 
-            <article class="card aprovados"> 
+            <article class="card aprovados">
                 <h4>Aprovados</h4>
                 <div>
                     <div class="porcentagem">13</div>
@@ -66,7 +68,7 @@
                 </div>
             </article>
 
-            <article class="card correcao"> 
+            <article class="card correcao">
                 <h4>Em correção</h4>
                 <div>
                     <div class="porcentagem">11</div>
@@ -76,12 +78,13 @@
         </section>
 
         <section class="paineldoc">
+            <div class="painel-header">
                 <h4>Documentos</h4>
-                <div class="search-box">
+                <div class="search-box"> <i class='bx bx-file-find'></i>
                     <input type="text" placeholder="Pesquisar documento">
+
                 </div>
             </div>
-
 
             <div class="tabela">
                 <div class="topoTabela">
@@ -121,5 +124,8 @@
         </section>
 
     </main>
+    <script src="script.js"></script>
+
 </body>
+
 </html>
