@@ -6,7 +6,7 @@
     <title>Notas e Faltas - NextLevel</title>
     
     <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/notasstyle.css">
+    <link rel="stylesheet" href="/css/notasstyle.css">  
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
 </head>
 
@@ -73,88 +73,80 @@
         </section>
 
         <section class="painel-notas">
-            
-            <div class="abas">
-                <button class="aba">Notas por matéria</button>
-                <button class="aba aba-active">Registro de frequência</button>
-            </div>
+
+        <div class="abas">
+            <button class="aba ">Notas por matéria</button>
+            <button class="aba aba-active">Registro de frequência</button>
+        </div>        
         
+        <section class="progressosemestre">
             
-        <section class="notas-detalhes-grid">
-
-            <article class="painel-frequencia">
-                <h4>Frequência Recente</h4>
-                
-                <div class="lista-frequencia">
-                    <div class="frequencia-item presente">
-                        <i class="bx bx-check-circle icon-presente"></i>
-                        <p>Matemática</p>
-                    </div>
-
-                    <div class="frequencia-item falta">
-                        <i class="bx bx-x-circle icon-falta"></i>
-                        <p>Literatura</p>
-                    </div>
-
-                    <div class="frequencia-item presente">
-                        <i class="bx bx-check-circle icon-presente"></i>
-                        <p>Química</p>
-                    </div>
-
-                    <div class="frequencia-item presente">
-                        <i class="bx bx-check-circle icon-presente"></i>
-                        <p>Física</p>
-                    </div>
-
-                    <div class="frequencia-item aviso">
-                        <i class="bx bx-time-five icon-aviso"></i>
-                        <p>História</p>
-                    </div>
-                </div>
-            </article>
-
-            <article class="painel-faltas">
+            <article class="abadeprocesso">
                 <h4>Resumo de Faltas</h4>
 
-                <div class="lista-faltas">
-                    <div class="falta-item">
-                        <p>Matemática</p>
-                        <div class="barra-faltas"><span class="progresso-bar" data-progress="90%"></span></div>
-                        <span class="porcentagem-falta">90%</span>
-                    </div>
-
-                    <div class="falta-item">
-                        <p>História</p>
-                        <div class="barra-faltas"><span class="progresso-bar" data-progress="88%"></span></div>
-                        <span class="porcentagem-falta">88%</span>
-                    </div>
-
-                    <div class="falta-item">
-                        <p>Literatura</p>
-                        <div class="barra-faltas"><span class="progresso-bar" data-progress="79%"></span></div>
-                        <span class="porcentagem-falta">79%</span>
-                    </div>
-
-                    <div class="falta-item">
-                        <p>Física</p>
-                        <div class="barra-faltas"><span class="progresso-bar" data-progress="87%"></span></div>
-                        <span class="porcentagem-falta">87%</span>
-                    </div>
-                    
-                    <div class="falta-item">
-                        <p>Química</p>
-                        <div class="barra-faltas"><span class="progresso-bar" data-progress="87%"></span></div>
-                        <span class="porcentagem-falta">87%</span>
-                    </div>
-                    
-                    <div class="falta-item">
-                        <p>Inglês</p>
-                        <div class="barra-faltas"><span class="progresso-bar" data-progress="90%"></span></div>
-                        <span class="porcentagem-falta">90%</span>
-                    </div>
+                <div class="linhaprogresso">
+                    <div class="matpg">Matemática</div>
+                    <div>90%</div>
+                    <div class="barra-prog"><span style="width:90%"></span></div>
+                </div>
+                <div class="linhaprogresso">
+                    <div class="matpg">História</div>
+                    <div>88%</div>
+                    <div class="barra-prog"><span style="width:88%"></span></div>
+                </div>
+                <div class="linhaprogresso">
+                    <div class="matpg">Literatura</div>
+                    <div>79%</div>
+                    <div class="barra-prog"><span style="width:79%"></span></div>
+                </div>
+                <div class="linhaprogresso">
+                    <div class="matpg">Física</div>
+                    <div>87%</div>
+                    <div class="barra-prog"><span style="width:87%"></span></div>
+                </div>
+                <div class="linhaprogresso">
+                    <div class="matpg">Química</div>
+                    <div>87%</div>
+                    <div class="barra-prog"><span style="width:87%"></span></div>
+                </div>
+                 <div class="linhaprogresso">
+                    <div class="matpg">Inglês</div>
+                    <div>90%</div>
+                    <div class="barra-prog"><span style="width:90%"></span></div>
                 </div>
             </article>
 
+            <article class="ativrecente">
+                <h4>Frequência Recente</h4>
+                <div class="lista">
+                    
+                    <div class="linha">
+                        <i class="bx bx-check-circle icon-presente"></i>
+                        <div><span class="materia-status">Presente</span> <span class="muted">— Matemática</span></div>
+                    </div>
+                    
+                    <div class="linha">
+                        <i class="bx bx-x-circle icon-falta"></i>
+                        <div><span class="materia-status">Falta</span> <span class="muted">— Literatura</span></div>
+                    </div>
+
+                    <div class="linha">
+                        <i class="bx bx-check-circle icon-presente"></i>
+                        <div><span class="materia-status">Presente</span> <span class="muted">— Química</span></div>
+                    </div>
+                    
+                    <div class="linha">
+                        <i class="bx bx-check-circle icon-presente"></i>
+                        <div><span class="materia-status">Presente</span> <span class="muted">— Física</span></div>
+                    </div>
+
+                    <div class="linha">
+                        <i class="bx bx-time-five icon-aviso"></i>
+                        <div><span class="materia-status">Atraso</span> <span class="muted">— História</span></div>
+                    </div>
+                    
+                </div>
+            </article>
         </section>
 
     </main>
