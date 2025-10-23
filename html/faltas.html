@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Notas e Faltas - NextLevel</title>
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/notasstyle.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+</head>
+
+<body class="home">
+    
+    <aside class="sidebar">
+        <div class="brand">
+            <div class="logo">
+                <img src="/imagens/logo.jpeg" alt="Logomarca NextLevel"> 
+            </div>
+            <div class="name">
+                <b>NextLevel</b>
+                <small>Portal Acadêmico</small>
+            </div>
+        </div>
+
+        <nav class="menu">
+            <a href="#"><i class='bx bxs-dashboard'></i><span>Dashboard</span></a>
+            <a href="#"><i class='bx bxs-file'></i><span>Documentos</span></a>
+            <a class="active" href="#"><i class='bx bxs-edit-alt'></i> <span>Notas e Faltas</span></a>
+            <a href="#"><i class='bx bxs-grid-alt'></i><span>Grade Curricular</span></a>
+            <a href="#"><i class='bx bxs-chalkboard'></i><span>Conteúdos e Atividades</span></a>
+            <a href="#"><i class='bx bxs-receipt'></i><span>Comprovantes</span></a>
+        </nav>
+
+        <div class="foot">
+            <div>Arthur Alves</div>
+            <div>Configurações</div>
+            <div>Sair</div>
+        </div>
+    </aside>
+
+    <header class="barra">
+        <h2>DashBoard</h2>
+    </header>
+
+    <main class="content">
+        
+        <h1>Notas e Faltas</h1>
+        <p class="muted">Acompanhe seu desempenho acadêmico e frequência nas aulas</p>
+
+        <section class="cards notas-cards">
+            
+            <article class="card media-geral"> 
+                <h4>Média Geral</h4>
+                <div class="card-content">
+                    <div class="porcentagem">8.5</div>
+                </div>
+            </article>
+
+            <article class="card frequencia"> 
+                <h4>Frequência</h4>
+                <div class="card-content">
+                    <div class="porcentagem">90%</div>
+                </div>
+            </article>
+
+            <article class="card materias"> 
+                <h4>Matérias</h4>
+                <div class="card-content">
+                    <div class="porcentagem">6</div>
+                </div>
+            </article>
+        </section>
+
+        <section class="painel-notas">
+            
+            <div class="abas">
+                <button class="aba">Notas por matéria</button>
+                <button class="aba aba-active">Registro de frequência</button>
+            </div>
+        
+            
+        <section class="notas-detalhes-grid">
+
+            <article class="painel-frequencia">
+                <h4>Frequência Recente</h4>
+                
+                <div class="lista-frequencia">
+                    <div class="frequencia-item presente">
+                        <i class="bx bx-check-circle icon-presente"></i>
+                        <p>Matemática</p>
+                    </div>
+
+                    <div class="frequencia-item falta">
+                        <i class="bx bx-x-circle icon-falta"></i>
+                        <p>Literatura</p>
+                    </div>
+
+                    <div class="frequencia-item presente">
+                        <i class="bx bx-check-circle icon-presente"></i>
+                        <p>Química</p>
+                    </div>
+
+                    <div class="frequencia-item presente">
+                        <i class="bx bx-check-circle icon-presente"></i>
+                        <p>Física</p>
+                    </div>
+
+                    <div class="frequencia-item aviso">
+                        <i class="bx bx-time-five icon-aviso"></i>
+                        <p>História</p>
+                    </div>
+                </div>
+            </article>
+
+            <article class="painel-faltas">
+                <h4>Resumo de Faltas</h4>
+
+                <div class="lista-faltas">
+                    <div class="falta-item">
+                        <p>Matemática</p>
+                        <div class="barra-faltas"><span class="progresso-bar" data-progress="90%"></span></div>
+                        <span class="porcentagem-falta">90%</span>
+                    </div>
+
+                    <div class="falta-item">
+                        <p>História</p>
+                        <div class="barra-faltas"><span class="progresso-bar" data-progress="88%"></span></div>
+                        <span class="porcentagem-falta">88%</span>
+                    </div>
+
+                    <div class="falta-item">
+                        <p>Literatura</p>
+                        <div class="barra-faltas"><span class="progresso-bar" data-progress="79%"></span></div>
+                        <span class="porcentagem-falta">79%</span>
+                    </div>
+
+                    <div class="falta-item">
+                        <p>Física</p>
+                        <div class="barra-faltas"><span class="progresso-bar" data-progress="87%"></span></div>
+                        <span class="porcentagem-falta">87%</span>
+                    </div>
+                    
+                    <div class="falta-item">
+                        <p>Química</p>
+                        <div class="barra-faltas"><span class="progresso-bar" data-progress="87%"></span></div>
+                        <span class="porcentagem-falta">87%</span>
+                    </div>
+                    
+                    <div class="falta-item">
+                        <p>Inglês</p>
+                        <div class="barra-faltas"><span class="progresso-bar" data-progress="90%"></span></div>
+                        <span class="porcentagem-falta">90%</span>
+                    </div>
+                </div>
+            </article>
+
+        </section>
+
+    </main>
+</body>
+</html>

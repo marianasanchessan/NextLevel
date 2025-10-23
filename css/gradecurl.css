@@ -1,0 +1,146 @@
+/* ======================================================= */
+/* GRADE CURRICULAR  */
+/* ======================================================= */
+
+/* 1. VARIÁVEIS DE CORES ESPECÍFICAS DOS CARDS (Adicionar ao :root se ainda não existir) */
+:root {
+    /* ... outras variáveis existentes ... */
+    --card-materias-grade-color: #3b82f6;   
+    --card-aulas-hoje-color: #a855f7;      
+    --card-semestre-color: #f59e0b;      
+    --grade-horario-bg: #fff;          
+    --slot-bg: #f8f9fc;                    
+    --slot-border: #e3e6f0;                
+    --dia-header-bg: #217d36d0;            
+    --dia-header-text: #333;            
+}
+
+
+/* 2. AJUSTES NOS CARDS DA SEÇÃO 'GRADE CURRICULAR' */
+
+.grade-cards {
+    gap: 20px;
+    margin-bottom: 30px; 
+}
+
+/* Reajusta o card base para o estilo de borda superior colorida */
+.grade-cards .card {
+    border: 1px solid var(--line); 
+    border-top: 4px solid; 
+    border-radius: 12px; 
+    box-shadow: none; 
+    padding: 20px; 
+    position: relative; 
+}
+
+/* Cores específicas da borda superior dos cards da Grade Curricular */
+.grade-cards .card.materias { border-top-color: var(--card-materias-grade-color); }
+.grade-cards .card.aulas-hoje { border-top-color: var(--card-aulas-hoje-color); }
+.grade-cards .card.semestre { border-top-color: var(--card-semestre-color); }
+
+
+.grade-cards .card-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px; 
+}
+
+/* Ajusta os ícones dos cards da Grade Curricular */
+.grade-cards .card-icon {
+    position: absolute; 
+    top: 20px;          
+    right: 20px;       
+    font-size: 24px;    
+}
+
+/* Cores dos ícones nos cards da Grade Curricular */
+.grade-cards .card .icon-blue { color: var(--card-materias-grade-color); }
+.grade-cards .card .icon-purple { color: var(--card-aulas-hoje-color); }
+.grade-cards .card .icon-orange { color: var(--card-semestre-color); }
+
+
+/* 3. ESTILOS DO PAINEL DE HORÁRIO (HORÁRIO SEMANAL) */
+
+.painel-horario {
+    background: var(--grade-horario-bg);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 25px; 
+    box-shadow: var(--shadow); 
+}
+
+.painel-horario .painel-titulo {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 25px; 
+}
+
+.horario-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); 
+    gap: 15px; 
+}
+
+/* Cabeçalhos dos dias da semana (Segunda, Terça, etc.) */
+.dia-header {
+    background: var(--dia-header-bg);
+    color: #fff; 
+    font-weight: 600;
+    font-size: 15px;
+    padding: 12px 10px;
+    border-radius: 8px; 
+    text-align: center;
+    grid-column: span 1; 
+}
+
+/* Blocos de aula (slots) */
+.slot {
+    background: var(--slot-bg); 
+    border: 1px solid var(--slot-border); 
+    border-radius: 8px;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    text-align: left;
+    min-height: 80px; 
+}
+
+.slot .materia {
+    font-weight: 600;
+    color: var(--text-primary);
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+.slot .detalhe {
+    color: var(--text-secondary);
+    font-size: 12px;
+    margin-bottom: 2px;
+}
+
+.slot .horario {
+    color: var(--text-secondary);
+    font-size: 12px;
+    font-weight: 500;
+}
+
+/* Estilo para slots vazios (se precisar de um visual diferente) */
+.slot-vazio {
+    background: transparent; 
+    border: 1px dashed var(--slot-border);
+    opacity: 0.6; 
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    color: var(--text-secondary);
+    font-size: 12px;
+}
+
+/* Ajuste para garantir que o grid funcione bem com os slots */
+/* Para garantir que os slots se encaixem corretamente após os dias da semana */
+.horario-grid > div:nth-child(n+7) { 
+    grid-column: span 1; 
+}
