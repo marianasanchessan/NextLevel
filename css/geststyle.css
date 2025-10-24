@@ -61,7 +61,7 @@
              Cards de Icones 
 / ==================================== */
 .card {
-    background-color: var(--card-bg);
+
     color: var(--card-text);
     box-shadow: var(--shadow);
     border-radius: 12px;
