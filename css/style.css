@@ -182,7 +182,8 @@ body.doc {
     top: 22px;          
     right: 22px;       
     font-size: 18px;    
-    color: var(--primary-line-color); 
+    color: var(--primary-line-color);
+    font-size: 30px; 
 }
 
 .card h4 {
@@ -361,3 +362,26 @@ body.doc {
         grid-template-columns: 1fr;
     }
 } 
+
+/* ======================================================= */
+/* === PATCH CARDS COM BORDA LATERAL E SOMBRA (Imagem 1) === */
+/* ======================================================= */
+
+/* 1. VARIÁVEIS DE CORES (Ajustar ou Adicionar ao :root) */
+:root {
+    --card-border-color: #e0e0e0;   /* Borda sutil */
+    --card-bg: #fff;
+    --card-shadow-soft: 0 4px 10px rgba(0, 0, 0, 0.05); /* Sombra suave para efeito "saltado" */
+}
+
+/* 2. ESTILO GERAL DO CARD (.card) */
+.card {
+    background: #fff;
+    border-radius: 12px; 
+    padding: 22px;
+    box-shadow: var(--card-shadow-soft); 
+    border: 1px solid var(--card-border-color); 
+
+    
+}
+
