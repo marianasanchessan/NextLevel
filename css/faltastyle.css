@@ -1,0 +1,28 @@
+/* ======================================================= */
+/* === PATCH - FREQUÊNCIA RECENTE === */
+/* ======================================================= */
+
+/* CORES  */
+:root {
+    --color-success: #10b981;    
+    --color-danger: #ef4444;    
+    --color-warning: #f59e0b;    
+}
+
+/* Estilo do Ícone (i) */
+.ativrecente .linha i {
+    font-size: 20px; 
+    margin-right: 15px; 
+    font-weight: 750;
+}
+
+/* === Cores dos Ícones (FINAL FIX) === */
+.ativrecente .linha .icon-presente {
+    color: var(--color-success);
+}
+.ativrecente .linha .icon-falta {
+    color: var(--color-danger);
+}
+.ativrecente .linha .icon-aviso {
+    color: var(--color-warning);
+}

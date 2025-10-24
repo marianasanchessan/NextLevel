@@ -33,19 +33,16 @@
 }
 
 :root {
-    /* 1. VARIÁVEIS DE TEMA  */
     --panel-bg: #ffffff;
-    /* Fundo principal claro */
     --line-color: #e5e7eb;
-    /* Linhas e bordas */
     --text-primary: #1f2937;
-    /* Texto principal escuro */
     --text-secondary: #6b7280;
-    /* Texto secundário*/
+    --icon-total: #3b82f6;
+    --icon-aprovado: #16a34a;
+    --icon-correcao: #f59e0b;
+
     --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
 
-
-    /* Cores existentes dos ícones de status */
     .card .icon-total {
         color: #3b82f6;
     }
@@ -61,7 +58,7 @@
 }
 
 /* ==================================== /
-             Cards de Status 
+             Cards de Icones 
 / ==================================== */
 .card {
     background-color: var(--card-bg);
@@ -82,6 +79,18 @@
     top: 25px;
     right: 25px;
     font-size: 30px;
+}
+
+.card.total {
+    border-left: 5px solid var(--icon-total);
+}
+
+.card.aprovados {
+    border-left: 5px solid var(--icon-aprovado);
+}
+
+.card.correcao {
+    border-left: 5px solid var(--icon-correcao);
 }
 
 /* ==================================== /
@@ -168,15 +177,12 @@
     font-size: 14px;
     color: var(--text-secondary);
     border-top: 1px solid var(--line-color);
-    /* Adiciona transição para a cor de fundo ficar suave */
     transition: background-color 0.1s ease;
 }
 
 .tabLinha:hover {
     background-color: #f3f4f6;
-    /* Cinza claro para o efeito hover */
     cursor: pointer;
-    /* Indica que a linha é clicável/interativa */
 }
 
 .tabLinha:first-of-type {

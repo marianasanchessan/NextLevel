@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title> Comprovantes - NextLevel</title>
+    
+    <link rel="stylesheet" href="/css/style.css"> 
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+</head>
+
+<body class="home">
+    
+    <aside class="sidebar">
+        <div class="brand">
+            <div class="logo">
+                <img src="/imagens/logo.jpeg" alt="Logomarca NextLevel"> 
+            </div>
+            <div class="name">
+                <b>NextLevel</b>
+                <small>Portal Acadêmico</small>
+            </div>
+        </div>
+
+        <nav class="menu">
+            <a href="#"><i class='bx bxs-dashboard'></i><span>Dashboard</span></a>
+            <a href="#"><i class='bx bxs-file'></i><span>Documentos</span></a>
+            <a href="#"><i class='bx bxs-edit-alt'></i> <span>Notas e Faltas</span></a>
+            <a href="#"><i class='bx bxs-grid-alt'></i><span>Grade Curricular</span></a>
+            <a href="#"><i class='bx bxs-chalkboard'></i><span>Conteúdos e Atividades</span></a>
+            <a class="active" href="#"><i class='bx bxs-receipt'></i><span>Comprovantes</span></a>
+        </nav>
+
+        <div class="foot">
+            <div>Arthur Alves</div>
+            <div>Configurações</div>
+            <div>Sair</div>
+        </div>
+    </aside>
+
+    <header class="barra">
+        <h2>DashBoard</h2>
+    </header>
+
+    <main class="content">
+        
+        <h1>Gestão de Comprovantes</h1>
+        <p class="muted">Organize e acompanhe todos os seus boletos acadêmicos</p>
+
+        <section class="cards financeiro-cards">
+            
+            <article class="card total"> 
+                <h4>Total</h4>
+                <div class="card-content">
+                    <div class="porcentagem">12</div>
+                    <i class="bx bxs-file card-icon icon-total"></i> 
+                </div>
+            </article>
+
+            <article class="card aprovados"> 
+                <h4>Aprovados</h4>
+                <div class="card-content">
+                    <div class="porcentagem">9</div>
+                    <i class="bx bxs-check-shield card-icon icon-aprovados"></i>
+                </div>
+            </article>
+
+            <article class="card pendentes"> 
+                <h4>Pendentes</h4>
+                <div class="card-content">
+                    <div class="porcentagem">3</div>
+                    <i class="bx bxs-error card-icon icon-pendentes"></i>
+                </div>
+            </article>
+            
+            <article class="card vencidos"> 
+                <h4>Vencidos</h4>
+                <div class="card-content">
+                    <div class="porcentagem">0</div>
+                    <i class="bx bxs-x-circle card-icon icon-vencidos"></i>
+                </div>
+            </article>
+        </section>
+
+        <section class="painel-boletos">
+            <h4 class="painel-titulo">Histórico de Boletos</h4>
+            
+            <div class="tabela-boletos">
+                
+                <div class="topoTabela boletos-header">
+                    <div>Mês</div>
+                    <div>Status</div>
+                    <div>Valor</div>
+                    <div>Data de vencimento</div>
+                </div>
+
+                <div class="corpoTabela">
+                    
+                    <div class="tabLinha status-pago">
+                        <div>Agosto</div>
+                        <div><span class="status status-pago-tag">Pago</span></div>
+                        <div>R$1200,00</div>
+                        <div>05/09/25</div>
+                    </div>
+
+                    <div class="tabLinha status-pago">
+                        <div>Setembro</div>
+                        <div><span class="status status-pago-tag">Pago</span></div>
+                        <div>R$1200,00</div>
+                        <div>05/10/25</div>
+                    </div>
+                    
+                    <div class="tabLinha status-pendente">
+                        <div>Outubro</div>
+                        <div><span class="status status-pendente-tag">Pendente</span></div>
+                        <div>R$1200,00</div>
+                        <div>05/11/25</div>
+                    </div>
+                    
+                    <div class="tabLinha status-pendente">
+                        <div>Novembro</div>
+                        <div><span class="status status-pendente-tag">Pendente</span></div>
+                        <div>R$1200,00</div>
+                        <div>05/12/25</div>
+                    </div>
+
+                    <div class="tabLinha status-pendente">
+                        <div>Dezembro</div>
+                        <div><span class="status status-pendente-tag">Pendente</span></div>
+                        <div>R$1200,00</div>
+                        <div>05/01/26</div>
+                    </div>
+                    
+                </div>
+            </div>
+            
+        </section>
+
+    </main>
+</body>
+</html>

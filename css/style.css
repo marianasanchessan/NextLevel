@@ -1,16 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-/* ============================= */
-/* ESTILOS DA DASHBOARD */
-/* ============================= */
-
-/* Variáveis para consistência de cores */
 :root {
-    --primary: #217d36d0; 
-    --background: #f8f9fc; 
-    --panel: #fff; 
-    --line: #e3e6f0; 
-    --shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15); 
+    --primary: #217d36d0;
+    --background: #f8f9fc;
+    --panel: #fff;
+    --line: #e3e6f0;
+    --shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
+
 }
 
 * {
@@ -20,108 +16,27 @@
     font-family: "Poppins", sans-serif;
 }
 
-body.home {
+/* ------------------------------------ */
+/* ESTRUTURA E LAYOUT GRID */
+/* ------------------------------------ */
+
+body.home,
+body.doc {
     background: var(--background);
     display: grid;
     grid-template-columns: 240px 1fr;
-    grid-template-rows: 60px 1fr; 
+    /* Sidebar e Conteúdo */
+    grid-template-rows: 60px 1fr;
+    /* Topbar e Conteúdo */
+    min-height: 100vh;
+    overflow-x: hidden;
 }
 
 /* ==================================== */
-/* ESTILOS DA PÁGINA DE LOGIN (index.html) */
+/* SIDEBAR E RODAPÉ */
 /* ==================================== */
 
-.container {
-    width: 420px;
-    background-color: transparent;
-    border: 2px solid rgba(255, 255, 255, 0.2);
-    border-radius: 10px;
-    color: rgb(255, 255, 255);
-    padding: 30px 40px;
-    box-shadow: rgba(7, 7, 8, 0.699) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
-    backdrop-filter: blur(15px);
-}
-
-.container h1 {
-    font-size: 36px;
-    text-align: center;
-}
-
-.input-box {
-    position: relative;
-    width: 100%;
-    height: 50px;
-    margin: 30px 0;
-}
- 
-.input-box input {
-    width: 100%;
-    height: 100%;
-    background-color: transparent;
-    border: 2px solid rgba(255, 255, 255, 0.2);
-    border-radius: 40px;
-    outline: none;
-    font-size: 16px;
-    color: rgb(255, 255, 255);
-    padding: 20px 45px 20px 20px;
-}
-
-.input-box input::placeholder {
-    color: rgb(255, 255, 255);
-}
-
-.input-box i {
-    position: absolute;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 20px;
-}
-
-.remember {
-    display: flex;
-    justify-content: space-between; 
-    margin: -15px 0 15px;
-}
-
-.remember label input {
-    accent-color: rgb(255, 255, 255);
-    margin-right: 5px;
-}
-
-.remember a {
-    text-decoration: none;
-    color: rgb(255, 255, 255);
-}
-
-.remember a:hover {
-    text-decoration: underline;
-}
-
-.login {
-    width: 100%;
-    height: 50px;
-    background-color: #fff;
-    border: none;
-    border-radius: 40px;
-    cursor: pointer;
-    font-size: 16px;
-    color: #333;
-    font-weight: 600;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-top: 20px;
-}
-
-.login:hover {
-    background-color: transparent;
-    border: 2px solid rgba(255, 255, 255, 0.2);
-    color: #fff;
-    transition: 0.3s;
-}
-
-/* ==================================== */
-/* Barrinha do lado */
-/* ==================================== */
+/* Sidebar */
 .sidebar {
     grid-row: 1 / span 2; 
     background: var(--panel);
@@ -197,9 +112,7 @@ body.home {
     flex-direction: column;
 }
 
-/* ==================================== */
-/* Rodapé */
-/* ==================================== */
+/* Estilos para os itens do rodapé */
 .foot a {
     text-decoration: none;
     color: var(--primary-line-color); 
@@ -209,15 +122,11 @@ body.home {
     gap: 10px; 
 }
 
-
-/* ==================================== */
-/*Fazer botões - ao menos bonitinho*/
-/* ==================================== */
 /* Garante que o fundo e a cor do TEXTO (span) mudem */
 .foot a:hover,
 .foot a:active {
     background-color: var(--primary);
-    color: #fff; /* Muda o texto (<span>) para branco */
+    color: #fff; 
 }
 
 /* REGRA ESSENCIAL: Muda a cor do ÍCONE (i) para branco */
@@ -225,12 +134,8 @@ body.home {
 .foot a:active i {
     color: #fff; 
 }
-
-
-/* ==================================== */
-/* Barra do Topo */
-/* ==================================== */
-.barra {
+/* Barrra de cima */
+.barra { 
     grid-column: 2 / 3;
     grid-row: 1 / 2;
     background: var(--panel);
@@ -242,22 +147,19 @@ body.home {
     box-shadow: var(--shadow);
     z-index: 10;
 }
-/* ==================================== */
+
 /* Conteúdo Principal */
-/* ==================================== */
 .content {
     grid-column: 2 / 3;
     grid-row: 2 / 3;
-    
+
     padding: 10px 40px 40px 40px; 
     
     overflow-y: auto;
     color: var(--primary-line-color);
 }
 
-/* ==================================== */
 /* Cards de Metas */
-/* ==================================== */
 .cards {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -274,10 +176,11 @@ body.home {
     position: relative;
 }
 
+
 .card .card-icon {
     position: absolute; 
-    top: 22px;         
-    right: 22px;        
+    top: 22px;          
+    right: 22px;       
     font-size: 18px;    
     color: var(--primary-line-color); 
 }
@@ -296,12 +199,10 @@ body.home {
 
 .meta {
     font-size: 14px;
-    color: #25933f; 
+    color: #2b6439; 
 }
 
-/* ==================================== */
 /* Progresso e Atividades */
-/* ==================================== */
 .progressosemestre {
     display: grid;
     grid-template-columns: 3fr 2fr;
@@ -344,9 +245,7 @@ body.home {
     border-radius: 5px;
 }
 
-/* ==================================== */
 /* Atividades Recentes */
-/* ==================================== */
 .lista .linha {
     display: flex;
     justify-content: space-between;
@@ -363,9 +262,7 @@ body.home {
     font-size: 14px;
 }
 
-/* ==================================== */
 /* Próximos Prazos */
-/* ==================================== */
 .proximosprazos {
     background: var(--panel);
     border-radius: 22px;
@@ -398,18 +295,19 @@ body.home {
     padding: 6px 10px;
     font-weight: 600;
 }
-
-/* ==================================== */
-/* MEDIA*/
-/* ==================================== */
+/* ------------------------------------ */
+/* MEDIA QUERIES GERAIS (Sidebar e Layout) */
+/* ------------------------------------ */
 
 @media (max-width: 1100px) {
-    body.home {
+
+    body.home,
+    body.doc {
         grid-template-columns: 76px 1fr;
     }
 
     .sidebar {
-        padding: 18px 0; 
+        padding: 18px 0;
         align-items: center;
     }
 
@@ -419,18 +317,34 @@ body.home {
     }
 
     /* Esconde elementos de texto na sidebar compacta */
-    .name, .menu span, .foot > div:not(:first-child) {
-        display: none; 
+    .name,
+    .menu span,
+    .foot a span {
+        display: none;
     }
-    
+
     .menu a {
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: 10px; 
-        width: 40px; 
+        padding: 10px;
+        width: 40px;
         height: 40px;
         margin: 0 auto;
+        border: none;
+        background: none;
+    }
+
+    .menu a:hover,
+    .menu a.active {
+        border: 1px solid var(--primary);
+        background: var(--primary);
+        border-radius: 50%;
+        /* Faz o ícone ficar em um círculo no modo compactado */
+    }
+
+    .foot {
+        padding-top: 20px;
     }
 }
 
@@ -440,38 +354,10 @@ body.home {
     }
 
     .progressosemestre {
-        grid-template-columns: 1fr; 
+        grid-template-columns: 1fr;
     }
 
     .proximos {
-        grid-template-columns: 1fr; 
+        grid-template-columns: 1fr;
     }
-}
-
-/* ======================================================= */
-/* ======================== PATCH FREQUÊNCIA RECENTE ========================= */
-/* ======================================================= */
-
-/* CORES DOS ICONES */
-:root {
-    --color-success: #10b981;    
-    --color-danger: #ef4444;     
-    --color-warning: #f59e0b;    
-}
-
-
-/* Estilo do Ícone (i) */
-.ativrecente .linha i {
-    font-size: 20px; 
-    margin-right: 15px; 
-}
-
-.ativrecente .linha .icon-presente {
-    color: var(--color-success);
-}
-.ativrecente .linha .icon-falta {
-    color: var(--color-danger);
-}
-.ativrecente .linha .icon-aviso {
-    color: var(--color-warning);
-}
+} 
