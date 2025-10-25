@@ -1,21 +1,31 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Grade Curricular - NextLevel</title>
-    
-    <link rel="stylesheet" href="/css/style.css"> 
-    <link rel="stylesheet" href="/css/gradecurl.css"> 
+
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="documentos.css">
+    <link rel="stylesheet" href="notas.css">
+    <link rel="stylesheet" href="faltas.css">
+    <link rel="stylesheet" href="comprov.css">
+    <link rel="stylesheet" href="contAtivs.css">
+    <link rel="stylesheet" href="contAulas.css">
+    
+    <link rel="stylesheet" href="gradecur.css">
+
 </head>
 
 <body class="home">
-    
+
     <aside class="sidebar">
         <div class="brand">
             <div class="logo">
-                <img src="/imagens/logo.jpeg" alt="Logomarca NextLevel"> 
+                <img src="logo.jpeg" alt="Logomarca NextLevel">
             </div>
             <div class="name">
                 <b>NextLevel</b>
@@ -24,19 +34,19 @@
         </div>
 
         <nav class="menu">
-            <a href="#"><i class='bx bxs-dashboard'></i><span>Dashboard</span></a>
-            <a href="#"><i class='bx bxs-file'></i><span>Documentos</span></a>
-            <a href="#"><i class='bx bxs-edit-alt'></i> <span>Notas e Faltas</span></a>
-            <a class="active" href="#"><i class='bx bxs-grid-alt'></i><span>Grade Curricular</span></a>
-            <a href="#"><i class='bx bxs-chalkboard'></i><span>Conteúdos e Atividades</span></a>
-            <a href="#"><i class='bx bxs-receipt'></i><span>Comprovantes</span></a>
+            <a href="home.html"><i class='bx bxs-dashboard'></i><span>Dashboard</span></a>
+            <a href="docum.html"><i class='bx bxs-file'></i><span>Documentos</span></a>
+            <a href="notaEfalta.html"><i class='bx bxs-edit-alt'></i> <span> Notas e Faltas </span></a>
+            <a class="active" href="gradecurri.html"><i class='bx bxs-grid-alt'></i><span>Grade Curricular</span></a>
+            <a href="contEatv.html"><i class='bx bxs-chalkboard'></i><span>Conteúdos e Atividades</span></a>
+            <a href="comprovante.html"><i class='bx bxs-receipt'></i><span>Comprovantes</span></a>
         </nav>
 
-        <div class="foot">
-            <div>Arthur Alves</div>
-            <div>Configurações</div>
-            <div>Sair</div>
-        </div>
+        <nav class="foot">
+            <a href="#"><i class='bx bxs-user'></i><span>Luis Alves</span></a>
+            <a href="#"><i class='bx bxs-cog'></i><span>Configurações</span></a>
+            <a href="#" onclick="logout()"><i class='bx bxs-log-out'></i><span>Sair</span></a>
+        </nav>
     </aside>
 
     <header class="barra">
@@ -44,126 +54,116 @@
     </header>
 
     <main class="content">
-        
+
         <h1>Grade Curricular</h1>
         <p class="muted">Visualize sua grade horária e informações das disciplinas</p>
 
         <section class="cards grade-cards">
-            
-            <article class="card materias"> 
+
+            <article class="card meta">
                 <h4>Matérias</h4>
                 <div class="card-content">
                     <div class="porcentagem">6</div>
-                    <i class="bx bxs-book-open card-icon icon-blue"></i> 
+                    <i class="bx bxs-book-open icon-blue"></i>
                 </div>
             </article>
 
-            <article class="card aulas-hoje"> 
+            <article class="card horaria">
                 <h4>Aulas Hoje</h4>
                 <div class="card-content">
                     <div class="porcentagem">3</div>
-                    <i class="bx bxs-time-five card-icon icon-purple"></i>
+                    <i class="bx bxs-time-five icon-purple"></i>
                 </div>
             </article>
 
-            <article class="card semestre"> 
+            <article class="card semestre">
                 <h4>Semestre</h4>
                 <div class="card-content">
                     <div class="porcentagem">2025.2</div>
-                    <i class="bx bxs-info-circle card-icon icon-orange"></i>
+                    <i class="bx bxs-info-circle icon-orange"></i>
                 </div>
             </article>
         </section>
 
         <section class="painel-horario">
             <h4 class="painel-titulo">Horário Semanal</h4>
-            
+
             <div class="horario-grid">
-                
+
+                <div class="dia-header header-tempo"></div>
                 <div class="dia-header">Segunda</div>
                 <div class="dia-header">Terça</div>
                 <div class="dia-header">Quarta</div>
                 <div class="dia-header">Quinta</div>
                 <div class="dia-header">Sexta</div>
                 <div class="dia-header">Sábado</div>
-                
+
+                <div class="horario-slot tempo-coluna">07:30 - 09:20</div>
                 <div class="slot">
                     <p class="materia">Matemática</p>
                     <p class="detalhe">Sala 201</p>
-                    <p class="horario">07:30 - 09:10</p>
                 </div>
                 <div class="slot">
                     <p class="materia">Química</p>
                     <p class="detalhe">Lab Quim.</p>
-                    <p class="horario">07:30 - 09:10</p>
                 </div>
                 <div class="slot">
                     <p class="materia">História</p>
                     <p class="detalhe">Sala 206</p>
-                    <p class="horario">07:30 - 09:10</p>
                 </div>
                 <div class="slot">
                     <p class="materia">Literatura</p>
                     <p class="detalhe">Sala 204</p>
-                    <p class="horario">07:30 - 09:10</p>
                 </div>
                 <div class="slot">
                     <p class="materia">Inglês</p>
                     <p class="detalhe">Sala 204</p>
-                    <p class="horario">07:30 - 09:10</p>
                 </div>
                 <div class="slot slot-vazio"></div>
-                
+                <div class="horario-slot tempo-coluna">09:30 - 11:10</div>
                 <div class="slot">
                     <p class="materia">Matemática</p>
                     <p class="detalhe">Sala 201</p>
-                    <p class="horario">09:30 - 11:10</p>
                 </div>
                 <div class="slot">
                     <p class="materia">Matemática</p>
                     <p class="detalhe">Sala 103</p>
-                    <p class="horario">09:30 - 11:10</p>
                 </div>
                 <div class="slot">
                     <p class="materia">Física</p>
                     <p class="detalhe">Lab. Fís.</p>
-                    <p class="horario">09:30 - 11:10</p>
                 </div>
                 <div class="slot">
                     <p class="materia">Literatura</p>
                     <p class="detalhe">Sala 204</p>
-                    <p class="horario">09:30 - 11:10</p>
                 </div>
                 <div class="slot">
                     <p class="materia">Matemática</p>
                     <p class="detalhe">Sala 201</p>
-                    <p class="horario">09:30 - 11:10</p>
                 </div>
                 <div class="slot slot-vazio"></div>
-                
+                <div class="horario-slot tempo-coluna">11:20 - 12:30</div>
                 <div class="slot">
                     <p class="materia">Física</p>
                     <p class="detalhe">Sala 201</p>
-                    <p class="horario">13:30 - 15:10</p>
                 </div>
                 <div class="slot">
                     <p class="materia">Literatura</p>
                     <p class="detalhe">Sala 204</p>
-                    <p class="horario">13:30 - 15:10</p>
                 </div>
                 <div class="slot slot-vazio"></div>
                 <div class="slot">
                     <p class="materia">Química</p>
                     <p class="detalhe">Sala 203</p>
-                    <p class="horario">13:30 - 15:10</p>
                 </div>
                 <div class="slot slot-vazio"></div>
                 <div class="slot slot-vazio"></div>
-
             </div>
-            
         </section>
 
     </main>
+    <script src="script.js"></script>
+
 </body>
-</html>
+
+</html> 
