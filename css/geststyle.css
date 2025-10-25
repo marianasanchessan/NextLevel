@@ -1,5 +1,5 @@
 /* ====================================== /
-/ ESTILOS DO GESTÃO DE DOCUMENTOS ---- EXTRA /
+/          GESTÃO DE DOCUMENTOS  
 / ====================================== */
 
 .foot{
@@ -54,14 +54,13 @@
     .card .icon-correcao {
         color: #f59e0b;
     }
-
 }
 
 /* ==================================== /
-             Cards de Icones 
+/            Cards de Icones 
 / ==================================== */
 .card {
-
+    background-color: var(--card-bg);
     color: var(--card-text);
     box-shadow: var(--shadow);
     border-radius: 12px;
@@ -82,19 +81,34 @@
 }
 
 .card.total {
+    background: var(--panel);
+    border-radius: 22px;
+    padding: 22spx;
+    box-shadow: var(--shadow);
+    position: relative;
     border-left: 5px solid var(--icon-total);
 }
 
 .card.aprovados {
+    background: var(--panel);
+    border-radius: 22px;
+    padding: 22px;
+    box-shadow: var(--shadow);
+    position: relative;
     border-left: 5px solid var(--icon-aprovado);
 }
 
 .card.correcao {
+    background: var(--panel);
+    border-radius: 22px;
+    padding: 22px;
+    box-shadow: var(--shadow);
+    position: relative;
     border-left: 5px solid var(--icon-correcao);
 }
 
 /* ==================================== /
-/ --- Painel de Documentos e Tabela --- /
+/     Painel de Documentos e Tabela 
 / ==================================== */
 .paineldoc {
     background: var(--panel-bg);
@@ -105,7 +119,7 @@
 }
 
 .painel-header {
-    /* O display: flex e justify-content: space-between garantem que a pesquisa fique no canto superior direito em relação ao título. */
+    /* Garantem que a pesquisa fique no canto superior direito em relação ao título. */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -119,7 +133,7 @@
 }
 
 /* ==================================== /
-          Caixa de Pesquisa 
+/           Caixa de Pesquisa 
 / ==================================== */
 .search-box {
     display: flex;
@@ -146,7 +160,7 @@
 }
 
 /* ==================================== /
-         Estrutura da Tabela
+/         Estrutura da Tabela
 /* ==================================== */
 .tabela {
     border: 1px solid var(--line-color);
@@ -196,4 +210,4 @@
 .topoTabela>div:last-child,
 .tabLinha>div:last-child {
     text-align: left;
-}
+} 
