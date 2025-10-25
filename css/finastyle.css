@@ -1,125 +1,293 @@
 /* ======================================================= */
-/* === PATCH FIX: GESTÃO DE COMPROVANTES (Financeiro) === */
+/*                     COMPROVANTES
 /* ======================================================= */
 
-/* 1. VARIÁVEIS DE CORES (Verificar/Adicionar ao :root) */
 :root {
-    /* Cores dos cards de status */
-    --card-total-color: #3b82f6;    
-    --card-aprovados-color: #16a34a;   
-    --card-pendentes-color: #f59e0b;  
-    --card-vencidos-color: #ef4444;    
-    
-    /* Cores para tags de Status na Tabela */
-    --status-pago-bg: #d1fae5;        
-    --status-pago-text: #065f46;       
-    --status-pendente-bg: #fff3c4;     
-    --status-pendente-text: #b45309;   
-    --status-vencido-bg: #fee2e2;      
-    --status-vencido-text: #991b1b;    
+    /* 1. VARIÁVEIS DE CORES PARA OS CARDS DA GRADE CURRICULAR */
+    --card-materias-grade-color: #3b82f6;
+    --card-aulas-hoje-color: #a855f7;
+    --card-semestre-color: #f59e0b;
+
+    /* 2. VARIÁVEIS DE CORES PARA O PAINEL DE HORÁRIO / STATUS PAGO */
+    --grade-horario-bg: #fff;
+    --slot-bg: #f8f9fc;
+    --slot-border: #e3e6f06d;
+    --dia-header-bg: #217d36d0;
+
+    /* VERDE ESCURO (USADO PARA STATUS PAGO) */
+    --dia-header-text: #333;
+
+    /* 3. VARIÁVEIS DE CORES PARA NOTAS/FALTAS */
+    --color-danger: #ef4444;
+    --color-warning: #f59e0b;
+
+    /* VARIÁVEIS GERAIS*/
+    --line: #e0e0e0;
+    --text-primary: #1f2937;
+    --text-secondary: #6b7280;
+    --panel: #fff;
+    --shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 
-/* 2. LAYOUT DOS CARDS (4 Cards em 2x2) */
-.financeiro-cards {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); 
-    gap: 20px;
-    margin-bottom: 30px;
+/* ======================================================= */
+/*            1. AJUSTES GERAIS (Sidebar Foot) 
+/* ======================================================= */
+
+.foot {
+    padding-top: 230px;
+    border-top: 1px solid var(--line);
+    font-size: 14px;
+    color: hsl(206, 8%, 39%);
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
 }
 
-/* Ajustes visuais para todos os cards */
-.cards .card {
-    border: 1px solid var(--line);
-    border-radius: 12px; 
-    box-shadow: none; 
+.foot a {
+    text-decoration: none;
+    color: var(--primary-line-color); 
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.foot a:hover,
+.foot a:active {
+    background-color: var(--primary); 
+    color: #fff;
+}
+
+.foot a:hover i,
+.foot a:active i {
+    color: #fff;
+}
+
+/* Garante que o item ativo no .menu (ex: Comprovantes) use o AZUL */
+.menu a.active {
+    background-color: var(--primary); /* USA AZUL */
+    color: #fff;
+}
+
+.menu a.active i {
+    color: #fff;
+}
+
+
+/* ======================================================= */
+/* 2. AJUSTES NOS CARDS DA SEÇÃO 'GRADE CURRICULAR' */
+/* ======================================================= */
+
+.grade-cards {
+    color: var(--card-text);
+    border: 1px solid var(--card-bg);
+    border-radius: 12px;
     padding: 20px;
-    border-left: none !important;
+    position: relative;
 }
 
-/* Cores dos Ícones e Borda Superior */
-.card.total { border-top: 4px solid var(--card-total-color); }
-.card.aprovados { border-top: 4px solid var(--card-aprovados-color); }
-.card.pendentes { border-top: 4px solid var(--card-pendentes-color); }
-.card.vencidos { border-top: 4px solid var(--card-vencidos-color); }
+.card.total {
+    background: var(--panel);
+    border-radius: 22px;
+    padding: 22px;
+    position: relative;
+    box-shadow: var(--shadow);
+    border-left: 5px solid var(--card-materias-grade-color); 
 
-.card .icon-total { color: var(--card-total-color); }
-.card .icon-aprovados { color: var(--card-aprovados-color); }
-.card .icon-pendentes { color: var(--card-pendentes-color); }
-.card .icon-vencidos { color: var(--card-vencidos-color); }
+}
 
-/* 3. PAINEL DE HISTÓRICO DE BOLETOS */
+.card.aprovados {
+    background: var(--panel);
+    border-radius: 22px;
+    padding: 22px;
+    box-shadow: var(--shadow);
+    position: relative;
+    border-left: 5px solid var(--dia-header-bg); /* (Cor Status Pago) */
+
+}
+
+.card.pendente {
+    background: var(--panel);
+    border-radius: 22px;
+    padding: 22px;
+    box-shadow: var(--shadow);
+    position: relative;
+    border-left: 5px solid var(--card-semestre-color); 
+}
+
+.card.vencidos{
+    background: var(--panel);
+    border-radius: 22px;
+    padding: 22px;
+    box-shadow: var(--shadow);
+    position: relative;
+    border-left: 5px solid var(--color-danger); 
+}
+
+/* Cores dos ícones nos cards da Grade Curricular */
+.grade-cards .card.total .icon-blue {
+    color: var(--card-materias-grade-color); 
+}
+
+.grade-cards .card.aprovados .icon-green {
+    color: var(--dia-header-bg); 
+}
+
+.grade-cards .card.pendente .icon-orange {
+    color: var(--card-semestre-color);
+}
+
+.grade-cards .card.vencidos .icon-red {
+    color: var(--color-danger); 
+}
 
 .painel-boletos {
-    background: var(--panel);
-    border: 1px solid var(--line);
+    background: var(--panel); 
     border-radius: 12px;
     padding: 25px;
     box-shadow: var(--shadow);
+    border: 1px solid var(--line);
+    margin-top: 30px;
 }
 
-.painel-boletos .painel-titulo {
+.painel-boletos h4 {
     font-size: 18px;
     font-weight: 600;
+    color: var(--text-primary);
     margin-bottom: 20px;
 }
 
-/* 4. TABELA DE BOLETOS */
-
+/* Definição do GRID para 5 Colunas */
 .tabela-boletos {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1.5fr 1fr;
     border: 1px solid var(--line);
     border-radius: 8px;
-    overflow: hidden;
+    overflow: hidden; 
 }
 
-.topoTabela.boletos-header,
-.tabLinha {
-    display: grid;
-    /* 4 Colunas: Mês(1.5fr), Status(1fr), Valor(1fr), Data(1fr) */
-    grid-template-columns: 1.5fr 1fr 1fr 1fr;
-    padding: 15px 20px;
-    align-items: center;
-}
-
-.topoTabela.boletos-header {
-    background: #25933f;
+/* Estilo do Cabeçalho (Mês, Status, Valor...) */
+.boleto-header {
+    background: var(--slot-bg); 
     font-weight: 600;
-    color: #ffffff;
-    font-size: 14px;
+    color: var(--text-primary);
+    padding: 20px 20px;
+    text-align: center;
+    border-right: 1px solid var(--line);
 }
 
-.tabLinha {
+.boleto-header:last-child {
+    border-right: none;
+}
+
+/* Estilo das Linhas de Dados */
+.boleto-linha {
+    padding: 12px 15px;
     font-size: 14px;
     color: var(--text-secondary);
     border-top: 1px solid var(--line);
-}
-.tabLinha:first-child {
-    border-top: none;
-}
-.tabLinha:hover {
-    background-color: #f7f7f7;
-}
-
-/* Estilo para a TAG de Status (Pago, Pendente, Vencido) */
-.status {
-    padding: 4px 8px;
-    border-radius: 4px;
-    font-size: 12px;
-    font-weight: 600;
-    display: inline-block;
     text-align: center;
+    border-right: 1px solid var(--line);
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
 }
 
-.status-pago-tag {
-    background: var(--status-pago-bg);
-    color: var(--status-pago-text);
+.boleto-linha:nth-child(5n) { 
+    border-right: none;
 }
 
-.status-pendente-tag {
-    background: var(--status-pendente-bg);
-    color: var(--status-pendente-text);
+/* Coluna Mês - Alinhamento à esquerda */
+.boleto-linha.mes-coluna {
+    font-weight: 500;
+    color: var(--text-primary);
+    justify-content: flex-start; 
 }
 
-.status-vencido-tag {
-    background: var(--status-vencido-bg);
-    color: var(--status-vencido-text);
+/* Estilos de Status (Cores) */
+.status-pago {
+    color: var(--dia-header-bg); 
+    font-weight: 600;
+}
+
+.status-pendente {
+    color: var(--card-semestre-color);
+    font-weight: 600;
+}
+
+/* Estilos de Botão (Ação) */
+.btn-detalhe, .btn-pagar {
+    padding: 5px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    cursor: pointer;
+    font-weight: 500;
+    border: 1px solid;
+    transition: background-color 0.2s, transform 0.1s; 
+}
+
+/* === BOTÃO VER/DETALHE === */
+
+.btn-detalhe { 
+    background: transparent;
+    color: var(--text-secondary);
+    border-color: var(--line);
+}
+
+.btn-detalhe:hover {
+    background: var(--line); 
+    color: var(--text-primary);
+    border-color: var(--line);
+}
+
+.btn-detalhe:active {
+    background-color: #d1d5db; 
+    transform: scale(0.98); 
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.1) inset; 
+}
+
+
+/* === BOTÃO PAGAR (VERDE/CINZA) === */
+
+.btn-pagar { 
+    background: #53a04f; 
+    color: #fff;
+    border-color:  #53a04f;
+}
+
+.btn-pagar:hover {
+    background-color: #b8bdc6; 
+    border-color: #b8bdc6;
+    color: var(--text-primary); 
+}
+
+.btn-pagar:active {
+    background-color: var(--slot-border); 
+    border-color: var(--slot-border);
+    color: var(--text-primary); 
+    transform: scale(0.98); 
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3) inset; 
+}
+
+
+/* ======================================================= */
+/*  Ajuste de Layout para os Cards de Comprovantes/Grade */
+/* ======================================================= */
+
+.cards.grade-cards {
+    display: flex;
+    justify-content: space-between; 
+    flex-wrap: nowrap;
+    gap: 20px; 
+    margin-bottom: 30px; 
+
+    border: none;
+    padding: 0;
+    box-shadow: none;
+}
+
+.cards.grade-cards .card {
+    flex-basis: calc(25% - 15px); 
+    flex-grow: 1; 
 }
