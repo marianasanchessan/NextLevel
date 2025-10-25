@@ -1,20 +1,29 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dashboard - NextLevel</title>
-
-  <link rel="stylesheet" href="/css/style.css"> 
+  <title>Dashboard Next Level</title>
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
-  <script src="/javascript/script.js"></script> 
+
+  <link rel="stylesheet" href="gradecur.css">
+  <link rel="stylesheet" href="documentos.css">
+  <link rel="stylesheet" href="notas.css">
+  <link rel="stylesheet" href="faltas.css">
+  <link rel="stylesheet" href="comprov.css">
+  <link rel="stylesheet" href="contAtivs.css">
+  <link rel="stylesheet" href="contAulas.css">
+
+  <link rel="stylesheet" href="dashboard.css">
 
 </head>
-<body class="home"> 
+
+<body class="home">
   <aside class="sidebar">
     <div class="brand">
       <div class="logo">
-        <img src="/imagens/logo.jpeg" alt="Logomarca NextLevel">
+        <img src="logo.jpeg" alt="Logomarca NextLevel">
       </div>
       <div class="name">
         <b>NextLevel</b>
@@ -23,19 +32,20 @@
     </div>
 
     <nav class="menu">
-      <a class="active" href="#"><i class='bx bxs-dashboard'></i><span>Dashboard</span></a>
-      <a href="#"><i class='bx bxs-file'></i><span>Documentos</span></a>
-      <a href="#"><i class='bx bxs-edit-alt'></i> <span> Notas e Faltas </span></a>
-      <a href="#"><i class='bx bxs-grid-alt'></i><span>Grade Curricular</span></a>
-      <a href="#"><i class='bx bxs-chalkboard'></i><span>Conteúdos e Atividades</span></a>
-      <a href="#"><i class='bx bxs-receipt'></i><span>Comprovantes</span></a>
+      <a class="active" href="home.html"><i class='bx bxs-dashboard'></i><span>Dashboard</span></a>
+      <a href="docum.html"><i class='bx bxs-file'></i><span>Documentos</span></a>
+      <a href="notaEfalta.html"><i class='bx bxs-edit-alt'></i> <span> Notas e Faltas </span></a>
+      <a href="gradecurri.html"><i class='bx bxs-grid-alt'></i><span>Grade Curricular</span></a>
+      <a href="contEatv.html"><i class='bx bxs-chalkboard'></i><span>Conteúdos e Atividades</span></a>
+      <a href="comprovante.html"><i class='bx bxs-receipt'></i><span>Comprovantes</span></a>
     </nav>
 
-    <nav class="foot"> 
-      <a href="#" ><i class='bx bxs-user'></i><span>Luis Alves</span></a>
-      <a href="#" ><i class='bx bxs-cog'></i><span>Configurações</span></a>
+    <nav class="foot">
+      <a href="#"><i class='bx bxs-user'></i><span>Luis Alves</span></a>
+      <a href="#"><i class='bx bxs-cog'></i><span>Configurações</span></a>
       <a href="#" onclick="logout()"><i class='bx bxs-log-out'></i><span>Sair</span></a>
     </nav>
+
   </aside>
 
   <header class="barra">
@@ -46,22 +56,32 @@
     <h1>DashBoard Acadêmico</h1>
 
     <section class="cards">
-      <article class="card">
+
+      <article class="card docum">
         <h4>Documentos</h4>
-        <div class="porcentagem">24</div>
-        <div class="meta">+3 este mês</div>
+        <div class="card-content">
+          <div class="porcentagem">24</div>
+          <div class="meta">+3 este mês</div>
+          <i class='bx bxs-folder-open icon-dot'></i>
+        </div>
       </article>
 
-      <article class="card">
+      <article class="card frequencia">
         <h4>Frequência</h4>
-        <div class="porcentagem">85%</div>
-        <div class="meta">Meta 75%</div>
+        <div class="card-content">
+          <div class="porcentagem">85%</div>
+          <div class="meta">Meta 75%</div>
+          <i class='bx bxs-user-check icon-calendar'></i>
+        </div>
       </article>
 
-      <article class="card">
+      <article class="card meta">
         <h4>Média Geral</h4>
-        <div class="porcentagem">8.2</div>
-        <div class="meta">+0.3 este semestre</div>
+        <div class="card-content">
+          <div class="porcentagem">8.2</div>
+          <div class="meta">+0.3 este semestre</div>
+          <i class='bx bxs-star icon-calendar'></i>
+        </div>
       </article>
     </section>
 
@@ -94,9 +114,18 @@
       <article class="ativrecente">
         <h4>Atividades Recentes</h4>
         <div class="lista">
-          <div class="linha"><div>Nova nota adicionada <span class="muted">— L. Portuguesa</span></div><div class="muted">Hoje</div></div>
-          <div class="linha"><div>Documento enviado <span class="muted">— Geografia</span></div><div class="muted">Ontem</div></div>
-          <div class="linha"><div>Falta registrada <span class="muted">— Biologia</span></div><div class="muted">3 dias atrás</div></div>
+          <div class="linha">
+            <div>Nova nota adicionada <span class="muted">— L. Portuguesa</span></div>
+            <div class="muted">Hoje</div>
+          </div>
+          <div class="linha">
+            <div>Documento enviado <span class="muted">— Geografia</span></div>
+            <div class="muted">Ontem</div>
+          </div>
+          <div class="linha">
+            <div>Falta registrada <span class="muted">— Biologia</span></div>
+            <div class="muted">3 dias atrás</div>
+          </div>
         </div>
       </article>
     </section>
@@ -110,5 +139,7 @@
       </div>
     </section>
   </main>
+  <script src="script.js"></script>
 </body>
-</html>
+
+</html> 
