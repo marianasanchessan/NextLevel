@@ -1,111 +1,222 @@
 /* ======================================================= */
-/* GRADE CURRICULAR  */
+/*                     GRADE CURRICULAR
 /* ======================================================= */
 
-/* 1. VARIÁVEIS DE CORES ESPECÍFICAS DOS CARDS (Adicionar ao :root se ainda não existir) */
 :root {
-    /* ... outras variáveis existentes ... */
-    --card-materias-grade-color: #3b82f6;   
-    --card-aulas-hoje-color: #a855f7;      
-    --card-semestre-color: #f59e0b;      
-    --grade-horario-bg: #fff;          
-    --slot-bg: #f8f9fc;                    
-    --slot-border: #e3e6f0;                
-    --dia-header-bg: #217d36d0;            
-    --dia-header-text: #333;            
+    /* 1. VARIÁVEIS DE CORES PARA OS CARDS DA GRADE CURRICULAR */
+    --card-materias-grade-color: #3b82f6;
+    --card-aulas-hoje-color: #a855f7;
+    --card-semestre-color: #f59e0b;
+
+    /* 2. VARIÁVEIS DE CORES PARA O PAINEL DE HORÁRIO */
+    --grade-horario-bg: #fff;
+    --slot-bg: #f8f9fc;
+    --slot-border: #e3e6f06d;
+    --dia-header-bg: #217d36d0;
+    --dia-header-text: #333;
+}
+
+/* ======================================================= */
+/*          0. AJUSTES GERAIS (Sidebar Foot) */
+/* ======================================================= */
+
+.foot {
+    padding-top: 230px;
+    border-top: 1px solid var(--line);
+    font-size: 14px;
+    color: hsl(206, 8%, 39%);
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+}
+
+.foot a {
+    text-decoration: none;
+    color: var(--primary-line-color);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.foot a:hover,
+.foot a:active {
+    background-color: var(--primary);
+    color: #fff;
+}
+
+.foot a:hover i,
+.foot a:active i {
+    color: #fff;
 }
 
 
-/* 2. AJUSTES NOS CARDS DA SEÇÃO 'GRADE CURRICULAR' */
+/* ======================================================= */
+/*               1. CORREÇÕES DE ÍCONES */
+/* ======================================================= */
+
+/* Ícones de Frequência Recente (Solução com alta especificidade) */
+.ativrecente .linha i.icon-presente {
+    color: var(--color-success) !important;
+}
+
+.ativrecente .linha i.icon-falta {
+    color: var(--color-danger) !important;
+}
+
+.ativrecente .linha i.icon-aviso {
+    color: var(--color-warning) !important;
+}
+
+
+/* ======================================================= */
+/*   2. AJUSTES NOS CARDS DA SEÇÃO 'GRADE CURRICULAR' */
+/* ======================================================= */
 
 .grade-cards {
-    gap: 20px;
-    margin-bottom: 30px; 
+    color: var(--card-text);
+    border: 1px solid var(--card-bg);
+    border-radius: 12px;
+    padding: 20px;
+    position: relative;
 }
 
-/* Reajusta o card base para o estilo de borda superior colorida */
-.grade-cards .card {
-    border: 1px solid var(--line); 
-    border-top: 4px solid; 
-    border-radius: 12px; 
-    box-shadow: none; 
-    padding: 20px; 
-    position: relative; 
+.card.meta {
+    background: var(--panel);
+    border-radius: 22px;
+    padding: 22px;
+    position: relative;
+    border-left: 5px solid var(--card-materias-grade-color);
 }
 
-/* Cores específicas da borda superior dos cards da Grade Curricular */
-.grade-cards .card.materias { border-top-color: var(--card-materias-grade-color); }
-.grade-cards .card.aulas-hoje { border-top-color: var(--card-aulas-hoje-color); }
-.grade-cards .card.semestre { border-top-color: var(--card-semestre-color); }
+.card.horaria {
+    background: var(--panel);
+    border-radius: 22px;
+    padding: 22px;
+    box-shadow: var(--shadow);
+    position: relative;
+    border-left: 5px solid var(--dia-header-bg);
+}
 
+.card.semestre {
+    background: var(--panel);
+    border-radius: 22px;
+    padding: 22px;
+    box-shadow: var(--shadow);
+    position: relative;
+    border-left: 5px solid var(--card-semestre-color);
+}
 
-.grade-cards .card-content {
+/* Ícones nos cards: ajuste de posição */
+.grade-cards .card-icon {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 24px;
+}
+
+.card-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 10px; 
 }
 
-/* Ajusta os ícones dos cards da Grade Curricular */
-.grade-cards .card-icon {
-    position: absolute; 
-    top: 20px;          
-    right: 20px;       
-    font-size: 24px;    
+.card .card-icon {
+    position: absolute;
+    top: 22px;
+    right: 22px;
+    font-size: 18px;
 }
 
 /* Cores dos ícones nos cards da Grade Curricular */
-.grade-cards .card .icon-blue { color: var(--card-materias-grade-color); }
-.grade-cards .card .icon-purple { color: var(--card-aulas-hoje-color); }
-.grade-cards .card .icon-orange { color: var(--card-semestre-color); }
+.grade-cards .card.meta .icon-blue {
+    color: var(--card-materias-grade-color);
+}
+
+.grade-cards .card .icon-purple {
+    color: var(--dia-header-bg);
+}
+
+.grade-cards .card .icon-orange {
+    color: var(--card-semestre-color);
+}
 
 
-/* 3. ESTILOS DO PAINEL DE HORÁRIO (HORÁRIO SEMANAL) */
+/* ======================================================= */
+/*  3. ESTILOS DO PAINEL DE HORÁRIO (HORÁRIO SEMANAL) */
+/* ======================================================= */
 
 .painel-horario {
     background: var(--grade-horario-bg);
     border: 1px solid var(--line);
     border-radius: 12px;
-    padding: 25px; 
-    box-shadow: var(--shadow); 
+    padding: 25px;
+    box-shadow: var(--shadow);
 }
 
 .painel-horario .painel-titulo {
     font-size: 18px;
     font-weight: 600;
     color: var(--text-primary);
-    margin-bottom: 25px; 
+    margin-bottom: 25px;
 }
 
+/* CORREÇÃO DO GRID: Força o layout de 7 colunas */
 .horario-grid {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr); 
-    gap: 15px; 
+    display: grid !important;
+    grid-template-columns: 100px repeat(6, 1fr) !important;
+    gap: 15px;
+    margin-top: 0;
 }
 
-/* Cabeçalhos dos dias da semana (Segunda, Terça, etc.) */
+/* Cabeçalhos dos dias da semana */
 .dia-header {
     background: var(--dia-header-bg);
-    color: #fff; 
+    color: #fff;
     font-weight: 600;
     font-size: 15px;
     padding: 12px 10px;
-    border-radius: 8px; 
+    border-radius: 8px;
     text-align: center;
-    grid-column: span 1; 
 }
+
+/* Estilo para o cabeçalho vazio da coluna de tempo */
+.dia-header.header-tempo {
+    background: var(--grade-horario-bg);
+    color: transparent;
+    border: none;
+    min-height: 48px;
+}
+
+/* Estilo da coluna de horários (coluna de tempo) */
+.horario-slot.tempo-coluna {
+    font-weight: 600;
+    font-size: 13px;
+    color: var(--text-primary);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: var(--slot-bg);
+    border: 1px solid var(--slot-border);
+    border-radius: 8px;
+    padding: 12px 5px;
+    text-align: center;
+}
+
 
 /* Blocos de aula (slots) */
 .slot {
-    background: var(--slot-bg); 
-    border: 1px solid var(--slot-border); 
+    background: var(--slot-bg);
+    border: 1px solid var(--slot-border);
     border-radius: 8px;
     padding: 12px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; 
+    justify-content: space-between;
     text-align: left;
-    min-height: 80px; 
+    min-height: 80px;
 }
 
 .slot .materia {
@@ -121,26 +232,14 @@
     margin-bottom: 2px;
 }
 
-.slot .horario {
-    color: var(--text-secondary);
-    font-size: 12px;
-    font-weight: 500;
-}
-
-/* Estilo para slots vazios (se precisar de um visual diferente) */
+/* Estilo para slots vazios */
 .slot-vazio {
-    background: transparent; 
+    background: white;
     border: 1px dashed var(--slot-border);
-    opacity: 0.6; 
-    display: flex; 
+    opacity: 0.6;
+    display: flex;
     justify-content: center;
     align-items: center;
     color: var(--text-secondary);
     font-size: 12px;
-}
-
-/* Ajuste para garantir que o grid funcione bem com os slots */
-/* Para garantir que os slots se encaixem corretamente após os dias da semana */
-.horario-grid > div:nth-child(n+7) { 
-    grid-column: span 1; 
-}
+} 
