@@ -5,10 +5,10 @@
 /* 1. VARIÁVEIS DE CORES (Ajustar ou Adicionar ao :root) */
 :root {
     /* Cores dos cards de status na parte superior */
-    --card-conteudos-color: #3b82f6;      /* Azul para Conteúdos */
-    --card-atividades-color: #16a34a;    /* Verde para Atividades */
-    --card-pendentes-color: #f59e0b;     /* Laranja para Pendentes */
-    --card-completas-color: #22c55e;     /* Verde mais vivo para Completas */
+    --card-conteudos-color: #3b82f6;   
+    --card-atividades-color: #16a34a; 
+    --card-pendentes-color: #f59e0b;    
+    --card-completas-color:  #a855f7;     
 
     /* Cores para as tags de status nas atividades (Pendente, Entregue) */
     --tag-pendente-bg: #fffbe6;
@@ -17,15 +17,15 @@
     --tag-entregue-text: #16a34a;
 
     /* Cores para botões de ação */
-    --btn-primary-bg: #217d36; /* Verde do seu --primary */
+    --btn-primary-bg: #217d36; 
     --btn-primary-text: #fff;
-    --btn-secondary-bg: #e5e7eb; /* Cinza claro */
-    --btn-secondary-text: #4b5563; /* Texto cinza escuro */
+    --btn-secondary-bg: #e5e7eb; 
+    --btn-secondary-text: #4b5563; 
     
     /* Variáveis gerais do card (se não estiverem no seu :root principal) */
     --card-bg: #fff;
-    --card-shadow-soft: 0 4px 10px rgba(0, 0, 0, 0.05); /* Sombra suave para efeito "saltado" */
-    --card-border-color: #e0e0e0; /* Borda fina ao redor */
+    --card-shadow-soft: 0 4px 10px rgba(0, 0, 0, 0.05); 
+    --card-border-color: #e0e0e0; 
     --text-primary: #1f2937;
     --text-secondary: #6b7280;
     --line: #e3e6f0;
@@ -34,7 +34,7 @@
 /* 2. LAYOUT DOS CARDS SUPERIORES (.atividades-cards) */
 .atividades-cards {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 colunas */
+    grid-template-columns: repeat(4, 1fr); 
     gap: 20px;
     margin-bottom: 30px;
 }
@@ -44,8 +44,8 @@
     background: var(--card-bg);
     border-radius: 12px;
     padding: 22px;
-    box-shadow: var(--card-shadow-soft); /* Efeito "saltado" */
-    border: 1px solid var(--card-border-color); /* Borda fina sutil */
+    box-shadow: var(--card-shadow-soft); 
+    border: 1px solid var(--card-border-color); 
     position: relative;
     overflow: hidden;
 
@@ -64,16 +64,15 @@
     align-items: center;
     margin-top: 10px;
 }
-.atividades-cards .card .porcentagem { /* Alterei para porcentagem, mas deve ser o valor */
+.atividades-cards .card .porcentagem { 
     font-size: 32px;
     font-weight: 700;
     color: var(--text-primary);
 }
 .atividades-cards .card .card-icon {
-    font-size: 30px; /* Tamanho maior para os ícones */
-
+    font-size: 30px; 
     position: static; 
-    margin-left: 15px; /* Espaço entre o número e o ícone */
+    margin-left: 15px; 
 }
 
 /* Cores específicas para os ícones */
@@ -104,19 +103,19 @@
 }
 
 .abas-container .aba:hover {
-    background: #dcdcdc; /* Um pouco mais escuro no hover */
+    background: #dcdcdc; 
 }
 
 .abas-container .aba.aba-active {
-    background: var(--primary); /* Seu verde principal */
-    color: var(--btn-primary-text); /* Texto branco */
+    background: var(--primary); 
+    color: var(--btn-primary-text); 
     box-shadow: var(--card-shadow-soft);
 }
 
 /* 5. LAYOUT E ESTILO DOS CARTÕES DE ATIVIDADE (.atividades-grid) */
 .atividades-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 colunas */
+    grid-template-columns: repeat(2, 1fr); 
     gap: 25px;
 }
 
@@ -127,7 +126,7 @@
     box-shadow: var(--card-shadow-soft);
     border: 1px solid var(--card-border-color);
     display: flex;
-    flex-direction: column; /* Para empilhar o conteúdo */
+    flex-direction: column; 
 }
 
 .atividade-card .card-header {
@@ -165,7 +164,7 @@
     margin-bottom: 15px;
 }
 .atividade-card .topico-status {
-    font-weight: 600; /* Deixa o "Última Tarefa" em negrito */
+    font-weight: 600; 
     margin-right: 5px;
 }
 
@@ -176,7 +175,7 @@
     color: var(--text-secondary);
     border-top: 1px solid var(--line);
     padding-top: 15px;
-    margin-top: auto; /* Empurra o footer para baixo no card flex */
+    margin-top: auto; 
     margin-bottom: 20px;
 }
 
