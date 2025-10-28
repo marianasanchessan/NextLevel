@@ -1,0 +1,146 @@
+/* ======================================================= */
+/*                   CONTEÚDOS DAS AULAS 
+/* ======================================================= */
+
+/* 1. VARIÁVEIS DE CORES ESPECÍFICAS */
+:root {
+    --card-bg: #fff;
+    --card-shadow-soft: 0 4px 10px rgba(0, 0, 0, 0.05);
+    --card-border-color: #e0e0e0;
+    --text-primary: #1f2937; /* Cor principal usada nas BORDAS */
+    --text-secondary: #6b7280;
+    
+    /* Cores do Botão Acessar */
+    --btn-primary-bg: #1c652d; 
+    --btn-acessar-hover-bg: #1c5241;
+
+    --card-conteudos-color: #3b82f6;
+    --card-pendentes-color: #f59e0b;
+    --card-completas-color: #a855f7;
+}
+
+/* 2. LAYOUT DA GRADE DE MATÉRIAS */
+.materias-tarefas-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 colunas para os cards */
+    gap: 25px;
+}
+
+/* 3. ESTILO BASE DO CARTÃO DE MATÉRIA */
+.materia-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border-color);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: var(--card-shadow-soft);
+    display: flex;
+    flex-direction: column;
+    min-height: 150px;
+    position: relative;
+    overflow: hidden;
+    border-top: 4px solid var(--card-border-color); /* Borda superior colorida */
+}
+
+/* 4. CORES ESPECÍFICAS POR MATÉRIA (BORDAS E ÍCONES) */
+
+/* 4.1 BORDAS SUPERIORES MATERIAS */
+.materia-card:nth-child(1) { border-top-color: var(--text-primary); }
+.materia-card:nth-child(2) { border-top-color: var(--text-primary); }
+.materia-card:nth-child(3) { border-top-color: var(--text-primary); }
+.materia-card:nth-child(4) { border-top-color: var(--text-primary); }
+.materia-card:nth-child(5) { border-top-color: var(--text-primary); }
+.materia-card:nth-child(6) { border-top-color: var(--text-primary); }
+
+/* 4.2 CORES DOS ÍCONES */
+.materia-card:nth-child(1) .status-icon i { color: #B85C3C; }
+.materia-card:nth-child(2) .status-icon i { color: #004AAD; }
+.materia-card:nth-child(3) .status-icon i { color: #5C2D5F; }
+.materia-card:nth-child(4) .status-icon i { color: #3CB371; }
+.materia-card:nth-child(5) .status-icon i { color: #00A3C9; }
+.materia-card:nth-child(6) .status-icon i { color: #4A4A4A; }
+
+
+/* 5. ESTILOS DO CONTEÚDO (Header, Tarefa e Botão) */
+.materia-card .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 5px;
+}
+
+.materia-card .titulo-materia {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.materia-card .tarefa-detalhe {
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin-bottom: 15px;
+}
+
+.materia-card .tarefa-nome {
+    font-style: italic;
+}
+
+/* Estilo da Tag de Status/Dificuldade (o círculo no canto) */
+.materia-card .status-icon {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #e5e7eb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 700;
+    border: 1px solid var(--card-border-color);
+}
+
+
+/* Botão "Acessar" */
+.materia-card .btn-acessar {
+    margin-top: auto;
+    width: 100%;
+    padding: 12px 0;
+    background: var(--btn-primary-bg);
+    color: var(--card-bg);
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.materia-card .btn-acessar:hover {
+    background: var(--btn-acessar-hover-bg);
+}
+
+/* ======================================================= */
+/* === ESTILOS DAS TAGS DE NÚMERO/DIFICULDADE MÚLTIPLAS === */
+/* ======================================================= */
+
+/* Contêiner das Tags (para alinhamento no canto) */
+.materia-card .status-tags {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: flex-end;
+}
+
+/* Estilo do Círculo com o Número */
+.materia-card .tag-numero {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 600;
+    color: white;
+    border: 1px solid white;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
