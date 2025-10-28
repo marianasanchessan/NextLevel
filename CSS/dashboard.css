@@ -9,7 +9,7 @@
     --text-primary: #333;
     --text-secondary: #6c757d;
 
-    --card-media-color: #5ea644;
+    --card-media-color: #16a34a;
     --card-freq-color: #4774e6;
     --card-materias-color: #603fba;
 
@@ -88,7 +88,7 @@ body.doc {
 .name small {
     display: block;
     font-size: 12px;
-    color: #6c757d;
+    color: var(--card-materias-color);
 }
 
 .menu {
@@ -116,14 +116,14 @@ body.doc {
 .menu a:hover,
 .menu a.active {
     background-color: var(--primary);
-    color: #fff;
+    color: var(--panel);
 }
 
 .foot{
     padding-top: 230px;
     border-top: 1px solid var(--line);
     font-size: 14px;
-    color: hsl(206, 8%, 39%);
+    color: var(--text-secondary);
     display: flex;
     gap: 10px; 
     flex-direction: column;
@@ -143,13 +143,13 @@ body.doc {
 .foot a:hover,
 .foot a:active {
     background-color: var(--primary);
-    color: #fff;
+    color: var(--panel);
 }
 
 /* Muda a cor do ÍCONE (i) para branco */
 .foot a:hover i,
 .foot a:active i {
-    color: #fff; 
+    color: var(--panel); 
 }
 
 /* Topbar */
@@ -157,7 +157,7 @@ body.doc {
     grid-column: 2 / 3;
     grid-row: 1 / 2;
     background: var(--panel);
-    background-color: whitesmoke;
+    background-color: var(--panel);
     border-bottom: 1px solid var(--line);
     display: flex;
     align-items: center;
@@ -242,19 +242,19 @@ body.doc {
 
 .card h4 {
     font-size: 16px;
-    color: #6c757d;
+    color: var(--text-primary);
     margin-bottom: 5px;
 }
 
 .porcentagem {
     font-size: 32px;
     font-weight: 700;
-    color: #333;
+    color: var(--text-primary);
 }
 
 .meta {
     font-size: 14px;
-    color: #25933f; 
+    color: var(--card-media-color); 
 }
 
 /* Progresso e Atividades */

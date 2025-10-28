@@ -16,6 +16,7 @@
     --icon-correcao: #f59e0b;
     --branco: #fff;
     --cinza-basico: hsl(206, 8%, 39%);
+    --verde-vivo: #16a34a;
 
 }
 
@@ -112,7 +113,7 @@
 }
 
 .card.frequencia .icon-calendar {
-    color: var(--card-media-color);
+    color: var(--verde-vivo);
 }
 
 .card.materias .icon-dot {
@@ -160,11 +161,12 @@
 
 /* Cabeçalho da Tabela */
 .topoTabela.notas-header {
-    background: var(--primary);
+    background: var(--verde-vivo);
     color: var(--branco);
     font-size: 14px;
     font-weight: 600;
     padding: 15px 20px;
+    border-radius: 10px;
 
     /* GRID (Matéria, 1Tri, 2Tri, 3Tri, Média, Status) */
     display: grid;
