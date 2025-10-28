@@ -1,6 +1,10 @@
 /* ======================================================= */
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 /*                         DASHBOARD 
+=======
+/*                         LOGIN 
+>>>>>>> Stashed changes
 =======
 /*                         LOGIN 
 >>>>>>> Stashed changes
@@ -9,6 +13,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 :root {
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
     --text-primary: #333;
     --text-secondary: #6c757d;
@@ -28,11 +33,16 @@
     --line: #e3e6f0;
     --shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);    
 =======
+=======
+>>>>>>> Stashed changes
     --primary: #217d36d0; 
     --background: #f8f9fc; 
     --panel: #fff; 
     --line: #e3e6f0; 
     --shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15); 
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 }
 
@@ -44,6 +54,7 @@
 }
 
 /* ------------------------------------ */
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 /*      ESTRUTURA E LAYOUT GRID */
 /* ------------------------------------ */
@@ -62,6 +73,14 @@ body {
     /* Estilo de fundo do LOGIN (com imagem) */
     background: url('/IMG/background2.png') no-repeat center center/cover;
 >>>>>>> Stashed changes
+=======
+/*        ESTILOS DO BODY GERAL 
+/* ------------------------------------ */
+
+body {
+    /* Estilo de fundo do LOGIN (com imagem) */
+    background: url('/IMG/background2.png') no-repeat center center/cover;
+>>>>>>> Stashed changes
     min-height: 100vh;
     display: flex; /* Display flex é para centralizar o formulário de LOGIN */
     justify-content: center;
@@ -69,6 +88,7 @@ body {
 }
 
 /* ==================================== */
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 /*          SIDEBAR E FOOTER */
 /* ==================================== */
@@ -88,6 +108,11 @@ body {
 /*      ESTILOS DA PÁGINA DE LOGIN 
 /* ==================================== */
 
+=======
+/*      ESTILOS DA PÁGINA DE LOGIN 
+/* ==================================== */
+
+>>>>>>> Stashed changes
 .container {
     width: 420px;
     background-color: transparent;
@@ -97,6 +122,9 @@ body {
     padding: 30px 40px;
     box-shadow: rgba(7, 7, 8, 0.699) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
     backdrop-filter: blur(15px);
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 }
 
@@ -105,6 +133,7 @@ body {
     text-align: center;
 }
 
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 .logo img {
     width:70px;
@@ -330,6 +359,17 @@ body {
 
 .barra-prog span {
     display: block;
+=======
+.input-box {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin: 30px 0;
+}
+ 
+.input-box input {
+    width: 100%;
+>>>>>>> Stashed changes
 =======
 .input-box {
     position: relative;
