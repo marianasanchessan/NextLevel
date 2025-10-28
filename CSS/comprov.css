@@ -168,9 +168,9 @@
 
 /* Estilo do Cabeçalho (Mês, Status, Valor...) */
 .boleto-header {
-    background: var(--dia-header-bg); 
+    background: var(--slot-bg); 
     font-weight: 600;
-    color: #fff;
+    color: var(--text-primary);
     padding: 20px 20px;
     text-align: center;
     border-right: 1px solid var(--line);

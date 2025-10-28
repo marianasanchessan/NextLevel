@@ -223,7 +223,7 @@ body.doc {
     position: absolute; /* Posiciona o ícone em relação ao .card */
     top: 22px;          /* Distância do topo (igual ao padding do card) */
     right: 22px;        /* Distância da direita (igual ao padding do card) */
-    font-size: 28px !important;   /* Tamanho do ícone */
+    font-size: 18px;    /* Tamanho do ícone */
 }
 
 /* Cores específicas dos ícones (Média Geral, Frequência, Matérias) */
