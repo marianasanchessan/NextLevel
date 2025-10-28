@@ -2,6 +2,18 @@
 /          GESTÃO DE DOCUMENTOS  
 / ====================================== */
 
+/* 1. VARIÁVEIS DE CORES ESPECÍFICAS */
+:root {
+    --panel-bg: #ffffff;
+    --line-color: #e5e7eb;
+    --text-primary: #1f2937;
+    --text-secondary: #6b7280;
+    --icon-total: #3b82f6;
+    --icon-aprovado: #16a34a;
+    --icon-correcao: #f59e0b;
+
+    --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+
 .foot{
     padding-top: 230px;
     border-top: 1px solid var(--line);
@@ -32,16 +44,6 @@
     color: #fff; 
 }
 
-:root {
-    --panel-bg: #ffffff;
-    --line-color: #e5e7eb;
-    --text-primary: #1f2937;
-    --text-secondary: #6b7280;
-    --icon-total: #3b82f6;
-    --icon-aprovado: #16a34a;
-    --icon-correcao: #f59e0b;
-
-    --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
 
     .card .icon-total {
         color: #3b82f6;

@@ -1,9 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 /* ======================================================= */
 /*                         DASHBOARD 
 /* ======================================================= */
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
+/* 1. VARIÁVEIS DE CORES ESPECÍFICAS */
 :root {
     --text-primary: #333;
     --text-secondary: #6c757d;
@@ -223,7 +224,7 @@ body.doc {
     position: absolute; /* Posiciona o ícone em relação ao .card */
     top: 22px;          /* Distância do topo (igual ao padding do card) */
     right: 22px;        /* Distância da direita (igual ao padding do card) */
-    font-size: 18px;    /* Tamanho do ícone */
+    font-size: 28px !important;   /* Tamanho do ícone */
 }
 
 /* Cores específicas dos ícones (Média Geral, Frequência, Matérias) */

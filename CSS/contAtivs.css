@@ -2,36 +2,6 @@
 /*                       ATIVIDADES
 /* ======================================================= */
 
-.foot {
-    padding-top: 230px;
-    border-top: 1px solid var(--line);
-    font-size: 14px;
-    color: hsl(206, 8%, 39%);
-    display: flex;
-    gap: 10px;
-    flex-direction: column;
-}
-
-.foot a {
-    text-decoration: none;
-    color: var(--primary-line-color);
-    font-weight: 500;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.foot a:hover,
-.foot a:active {
-    background-color: var(--primary);
-    color: #fff;
-}
-
-.foot a:hover i,
-.foot a:active i {
-    color: #fff;
-}
-
 /* 1. VARIÁVEIS DE CORES (Ajustar ou Adicionar ao :root) */
 :root {
     --card-conteudos-color: #3b82f6;
@@ -64,6 +34,37 @@
     --primary: #217d36; 
     --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
+
+.foot {
+    padding-top: 230px;
+    border-top: 1px solid var(--line);
+    font-size: 14px;
+    color: hsl(206, 8%, 39%);
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+}
+
+.foot a {
+    text-decoration: none;
+    color: var(--primary-line-color);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.foot a:hover,
+.foot a:active {
+    background-color: var(--primary);
+    color: #fff;
+}
+
+.foot a:hover i,
+.foot a:active i {
+    color: #fff;
+}
+
 
 /* 2. LAYOUT DOS CARDS SUPERIORES */
 .atividades-cards {

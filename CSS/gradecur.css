@@ -2,6 +2,7 @@
 /*                     GRADE CURRICULAR
 /* ======================================================= */
 
+/* 1. VARIÁVEIS DE CORES ESPECÍFICAS */
 :root {
     /* 1. VARIÁVEIS DE CORES PARA OS CARDS DA GRADE CURRICULAR */
     --card-materias-grade-color: #3b82f6;

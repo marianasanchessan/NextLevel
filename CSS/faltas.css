@@ -2,6 +2,13 @@
 /*                  FREQUÊNCIA RECENTE 
 /* ======================================================= */
 
+/* 1. VARIÁVEIS DE CORES ESPECÍFICAS */
+:root {
+    --color-success: #10b981;    
+    --color-danger: #ef4444;    
+    --color-warning: #f59e0b;    
+}
+
 .foot {
     padding-top: 230px;
     border-top: 1px solid var(--line);
@@ -30,12 +37,6 @@
 .foot a:hover i,
 .foot a:active i {
     color: #fff;
-}
-
-:root {
-    --color-success: #10b981;    
-    --color-danger: #ef4444;    
-    --color-warning: #f59e0b;    
 }
 
 /* Estilo do Ícone (i) */

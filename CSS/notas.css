@@ -2,12 +2,29 @@
 /*                         NOTAS 
 /* ======================================================= */
 
+/* 1. VARIÁVEIS DE CORES ESPECÍFICAS */
+:root {
+    --text-primary: #333;
+    --text-secondary: #6c757d;
+    --card-media-color: #5ea644;
+    --card-freq-color: #4774e6;
+    --card-materias-color: #603fba;
+    --card-border-color: #e0e0e0;
+    --tab-active-bg: #e5e7eb;
+    --status-aprovado-bg: #a7f3d0;
+    --status-aprovado-text: #065f46;
+    --icon-correcao: #f59e0b;
+    --branco: #fff;
+    --cinza-basico: hsl(206, 8%, 39%);
+
+}
+
 .foot {
     margin-top: auto;
     padding-top: 20px;
     border-top: 1px solid var(--line);
     font-size: 14px;
-    color: hsl(206, 8%, 39%);
+    color: var(--cinza-basico);
     display: flex;
     gap: 10px;
     flex-direction: column;
@@ -25,27 +42,15 @@
 .foot a:hover,
 .foot a:active {
     background-color: var(--primary);
-    color: #fff;
+    color: var(--branco);
 }
 
 .foot a:hover i,
 .foot a:active i {
-    color: #fff;
+    color: var(--branco);
 }
 
-:root {
-    --text-primary: #333;
-    --text-secondary: #6c757d;
-    --card-media-color: #5ea644;
-    --card-freq-color: #4774e6;
-    --card-materias-color: #603fba;
-    --card-border-color: #e0e0e0;
-    --tab-active-bg: #e5e7eb;
-    --status-aprovado-bg: #a7f3d0;
-    --status-aprovado-text: #065f46;
-    --icon-correcao: #f59e0b;
 
-}
 
 /* 2. ARRANJO DOS CARDS (Borda/Ícones) */
 .cards {
@@ -156,7 +161,7 @@
 /* Cabeçalho da Tabela */
 .topoTabela.notas-header {
     background: var(--primary);
-    color: white;
+    color: var(--branco);
     font-size: 14px;
     font-weight: 600;
     padding: 15px 20px;

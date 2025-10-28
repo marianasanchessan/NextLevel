@@ -7,16 +7,13 @@
     <title>Notas e Faltas - NextLevel</title>
 
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="/CSS/dashboard.css">
+    <link rel="stylesheet" href="/CSS/notas.css">
+    <link rel="stylesheet" href="/CSS/faltas.css">
+    
 
-    <link rel="stylesheet" href="/NextLevel/CSS/gradecur.css">
-    <link rel="stylesheet" href="/NextLevel/CSS/documentos.css">
-    <link rel="stylesheet" href="/NextLevel/CSS/comprov.css">
-    <link rel="stylesheet" href="/NextLevel/CSS/contAtivs.css">
-    <link rel="stylesheet" href="/NextLevel/CSS/contAulas.css">
-    <link rel="stylesheet" href="/NextLevel/CSS/dashboard.css">
-
-    <link rel="stylesheet" href="/NextLevel/CSS/notas.css">
-    <link rel="stylesheet" href="/NextLevel/CSS/faltas.css">
+    <script src="/JS/script.js" defer></script> 
 </head>
 
 <body class="home">
@@ -24,24 +21,23 @@
     <aside class="sidebar">
         <div class="brand">
             <div class="logo">
-                <img src="/NextLevel/IMG/logo.jpeg" alt="Logomarca NextLevel">
+                <img src="/IMG/logo.jpeg" alt="Logomarca NextLevel">
             </div>
             <div class="name">
                 <b>NextLevel</b>
-                <small>Portal Acadêmico</small>
-            </div>
+                </div>
         </div>
 
         <nav class="menu">
-            <a href="/NextLevel/HTML/home.html"><i class='bx bxs-dashboard'></i><span>Dashboard</span></a>
-            <a href="/NextLevel/HTML/docum.html"><i class='bx bxs-file'></i><span>Documentos</span></a>
-            <a class="active" href="/NextLevel/HTML/notaEfalta.html"><i class='bx bxs-edit-alt'></i> <span> Notas e
-                    Faltas </span></a>
-            <a href="/NextLevel/HTML/gradecurri.html"><i class='bx bxs-grid-alt'></i><span>Grade Curricular</span></a>
-            <a href="/NextLevel/HTML/contEatv.html"><i class='bx bxs-chalkboard'></i><span>Conteúdos e
-                    Atividades</span></a>
-            <a href="/NextLevel/HTML/comprovante.html"><i class='bx bxs-receipt'></i><span>Comprovantes</span></a>
-        </nav>
+            <nav class="menu">
+                <a href="/HTML/home.html"><i class='bx bxs-dashboard'></i><span>Dashboard</span></a>
+                <a href="/HTML/docum.html"><i class='bx bxs-file'></i><span>Documentos</span></a>
+                <a class="active" href="/HTML/notaEfalta.html"><i class='bx bxs-edit-alt'></i> <span> Notas e Faltas </span></a>
+                <a href="/HTML/gradecurri.html"><i class='bx bxs-grid-alt'></i><span>Grade Curricular</span></a>
+                <a href="/HTML/contEatv.html"><i class='bx bxs-chalkboard'></i><span>Conteúdos e Atividades</span></a>
+                <a href="/HTML/comprovante.html"><i class='bx bxs-receipt'></i><span>Comprovantes</span></a>
+            </nav>
+
 
         <nav class="foot">
             <a href="#"><i class='bx bxs-user'></i><span>Luis Alves</span></a>
@@ -60,12 +56,11 @@
         <p class="muted">Acompanhe seu desempenho acadêmico e frequência nas aulas</p>
 
         <section class="cards notas-cards">
-
             <article class="card media-geral">
                 <h4>Média Geral</h4>
                 <div class="card-content">
                     <div class="porcentagem">8.5</div>
-                    <i class="bx bx-trending-up icon-trend-up"></i>
+                    <i class="bx bx-trending-up card-icon icon-trend-up"></i>
                 </div>
             </article>
 
@@ -73,7 +68,7 @@
                 <h4>Frequência</h4>
                 <div class="card-content">
                     <div class="porcentagem">90%</div>
-                    <i class='bx  bx-calendar icon-calendar'></i>
+                    <i class='bx bx-calendar card-icon icon-calendar'></i>
                 </div>
             </article>
 
@@ -81,19 +76,18 @@
                 <h4>Matérias</h4>
                 <div class="card-content">
                     <div class="porcentagem">6</div>
-                    <i class='bx  bx-book-bookmark icon-dot'></i>
+                    <i class='bx bx-book-bookmark card-icon icon-dot'></i>
                 </div>
             </article>
         </section>
 
         <section class="painel-notas">
             <div class="abas">
-                <button class="aba aba-active" data-target="painel-notas">Notas por matéria</button>
-                <button class="aba" data-target="painel-frequencia">Registro de frequência</button>
+                <button class="aba aba-active" data-target="painel-notas-desempenho">Notas por matéria</button>
+                <button class="aba" data-target="painel-frequencia-resumo">Registro de frequência</button>
             </div>
 
-            <div class="aba-content" id="painel-notas">
-                <div class="tabela-desempenho">
+            <div class="aba-content" id="painel-notas-desempenho" style="display: block;"> <div class="tabela-desempenho">
                     <h4>Desempenho por matéria</h4>
 
                     <div class="tabela-container">
@@ -107,143 +101,43 @@
                         </div>
 
                         <div class="corpoTabela">
-                            <div class="tabLinha">
-                                <div>História</div>
-                                <div>9.0</div>
-                                <div>8.5</div>
-                                <div>9.2</div>
-                                <div>8.6</div>
-                                <div><span class="status status-aprovado">Aprovado</span></div>
-                            </div>
-                            <div class="tabLinha">
-                                <div>Física</div>
-                                <div>8.0</div>
-                                <div>9.0</div>
-                                <div>8.2</div>
-                                <div>8.4</div>
-                                <div><span class="status status-aprovado">Aprovado</span></div>
-                            </div>
-
-                            <div class="tabLinha">
-                                <div>Matemática</div>
-                                <div>7.5</div>
-                                <div>9.0</div>
-                                <div>8.7</div>
-                                <div>7.8</div>
-                                <div><span class="status status-aprovado">Aprovado</span></div>
-                            </div>
-
-                            <div class="tabLinha">
-                                <div>Química</div>
-                                <div>8.0</div>
-                                <div>8.5</div>
-                                <div>8.9</div>
-                                <div>8.9</div>
-                                <div><span class="status status-aprovado">Aprovado</span></div>
-                            </div>
-
-                            <div class="tabLinha">
-                                <div>Literatura</div>
-                                <div>8.0</div>
-                                <div>8.0</div>
-                                <div>8.0</div>
-                                <div>8.0</div>
-                                <div><span class="status status-aprovado">Aprovado</span></div>
-                            </div>
-
-                            <div class="tabLinha">
-                                <div>Inglês</div>
-                                <div>9.0</div>
-                                <div>9.5</div>
-                                <div>9.2</div>
-                                <div>9.1</div>
-                                <div><span class="status status-aprovado">Aprovado</span></div>
-                            </div>
+                            <div class="tabLinha"><div>História</div><div>9.0</div><div>8.5</div><div>9.2</div><div>8.6</div><div><span class="status status-aprovado">Aprovado</span></div></div>
+                            <div class="tabLinha"><div>Física</div><div>8.0</div><div>9.0</div><div>8.2</div><div>8.4</div><div><span class="status status-aprovado">Aprovado</span></div></div>
+                            <div class="tabLinha"><div>Matemática</div><div>7.5</div><div>9.0</div><div>8.7</div><div>7.8</div><div><span class="status status-aprovado">Aprovado</span></div></div>
+                            <div class="tabLinha"><div>Química</div><div>8.0</div><div>8.5</div><div>8.9</div><div>8.9</div><div><span class="status status-aprovado">Aprovado</span></div></div>
+                            <div class="tabLinha"><div>Literatura</div><div>8.0</div><div>8.0</div><div>8.0</div><div>8.0</div><div><span class="status status-aprovado">Aprovado</span></div></div>
+                            <div class="tabLinha"><div>Inglês</div><div>9.0</div><div>9.5</div><div>9.2</div><div>9.1</div><div><span class="status status-aprovado">Aprovado</span></div></div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="aba-content" id="painel-frequencia" style="display: none;">
+            <div class="aba-content" id="painel-frequencia-resumo" style="display: none;">
                 <section class="progressosemestre">
 
                     <article class="abadeprocesso">
                         <h4>Resumo de Faltas</h4>
-
-                        <div class="linhaprogresso">
-                            <div class="matpg">Matemática</div>
-                            <div>90%</div>
-                            <div class="barra-prog"><span style="width:90%"></span></div>
-                        </div>
-                        <div class="linhaprogresso">
-                            <div class="matpg">História</div>
-                            <div>88%</div>
-                            <div class="barra-prog"><span style="width:88%"></span></div>
-                        </div>
-                        <div class="linhaprogresso">
-                            <div class="matpg">Literatura</div>
-                            <div>79%</div>
-                            <div class="barra-prog"><span style="width:79%"></span></div>
-                        </div>
-                        <div class="linhaprogresso">
-                            <div class="matpg">Física</div>
-                            <div>87%</div>
-                            <div class="barra-prog"><span style="width:87%"></span></div>
-                        </div>
-                        <div class="linhaprogresso">
-                            <div class="matpg">Química</div>
-                            <div>87%</div>
-                            <div class="barra-prog"><span style="width:87%"></span></div>
-                        </div>
-                        <div class="linhaprogresso">
-                            <div class="matpg">Inglês</div>
-                            <div>90%</div>
-                            <div class="barra-prog"><span style="width:90%"></span></div>
-                        </div>
+                        <div class="linhaprogresso"><div class="matpg">Matemática</div><div>90%</div><div class="barra-prog"><span style="width:90%"></span></div></div>
+                        <div class="linhaprogresso"><div class="matpg">História</div><div>88%</div><div class="barra-prog"><span style="width:88%"></span></div></div>
+                        <div class="linhaprogresso"><div class="matpg">Literatura</div><div>79%</div><div class="barra-prog"><span style="width:79%"></span></div></div>
+                        <div class="linhaprogresso"><div class="matpg">Física</div><div>87%</div><div class="barra-prog"><span style="width:87%"></span></div></div>
+                        <div class="linhaprogresso"><div class="matpg">Química</div><div>87%</div><div class="barra-prog"><span style="width:87%"></span></div></div>
+                        <div class="linhaprogresso"><div class="matpg">Inglês</div><div>90%</div><div class="barra-prog"><span style="width:90%"></span></div></div>
                     </article>
 
                     <article class="ativrecente">
                         <h4>Frequência Recente</h4>
                         <div class="lista">
-
-                            <div class="linha">
-                                <i class="bx bx-check-circle icon-presente"></i>
-                                <div><span class="materia-status">Presente</span> <span class="muted">—
-                                        Matemática</span>
-                                </div>
-                            </div>
-
-                            <div class="linha">
-                                <i class="bx bx-x-circle icon-falta"></i>
-                                <div><span class="materia-status">Falta</span> <span class="muted">— Literatura</span>
-                                </div>
-                            </div>
-
-                            <div class="linha">
-                                <i class="bx bx-check-circle icon-presente"></i>
-                                <div><span class="materia-status">Presente</span> <span class="muted">— Química</span>
-                                </div>
-                            </div>
-
-                            <div class="linha">
-                                <i class="bx bx-check-circle icon-presente"></i>
-                                <div><span class="materia-status">Presente</span> <span class="muted">— Física</span>
-                                </div>
-                            </div>
-
-                            <div class="linha">
-                                <i class="bx bx-time-five icon-aviso"></i>
-                                <div><span class="materia-status">Atraso</span> <span class="muted">— História</span>
-                                </div>
-                            </div>
+                            <div class="linha"><i class="bx bx-check-circle icon-presente"></i><div><span class="materia-status">Presente</span> <span class="muted">— Matemática</span></div></div>
+                            <div class="linha"><i class="bx bx-x-circle icon-falta"></i><div><span class="materia-status">Falta</span> <span class="muted">— Literatura</span></div></div>
+                            <div class="linha"><i class="bx bx-check-circle icon-presente"></i><div><span class="materia-status">Presente</span> <span class="muted">— Química</span></div></div>
+                            <div class="linha"><i class="bx bx-check-circle icon-presente"></i><div><span class="materia-status">Presente</span> <span class="muted">— Física</span></div></div>
+                            <div class="linha"><i class="bx bx-time-five icon-aviso"></i><div><span class="materia-status">Atraso</span> <span class="muted">— História</span></div></div>
                         </div>
                     </article>
                 </section>
             </div>
         </section>
-
     </main>
-    <script src="/NextLevel/JS/script.js"></script>
 </body>
-
 </html>
