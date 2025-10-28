@@ -31,6 +31,7 @@
     
     /* Variável (suposta) para o fundo do sidebar/main content */
     --panel: #fff; 
+    --cor-hover: #1e7033;
     --primary: #217d36; 
     --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
@@ -39,7 +40,7 @@
     padding-top: 230px;
     border-top: 1px solid var(--line);
     font-size: 14px;
-    color: hsl(206, 8%, 39%);
+    color: var(--text-secondary);
     display: flex;
     gap: 10px;
     flex-direction: column;
@@ -57,12 +58,12 @@
 .foot a:hover,
 .foot a:active {
     background-color: var(--primary);
-    color: #fff;
+    color: var(--card-bg);
 }
 
 .foot a:hover i,
 .foot a:active i {
-    color: #fff;
+    color: var(--card-bg);
 }
 
 
@@ -274,7 +275,7 @@
 }
 
 .atividade-card .btn-realizar:hover {
-    background: #1e7033; 
+    background: var(--cor-hover); 
 }
 
 /* Estilo Base do Botão Secundário*/
