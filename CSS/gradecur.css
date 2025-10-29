@@ -15,6 +15,8 @@
     --slot-border: #e3e6f06d;
     --dia-header-bg: #217d36d0;
     --dia-header-text: #333;
+
+    --verde-vivo: #16a34a;
 }
 
 /* ======================================================= */
@@ -25,7 +27,7 @@
     padding-top: 230px;
     border-top: 1px solid var(--line);
     font-size: 14px;
-    color: hsl(206, 8%, 39%);
+    color: var(--slot-border);
     display: flex;
     gap: 10px;
     flex-direction: column;
@@ -43,12 +45,12 @@
 .foot a:hover,
 .foot a:active {
     background-color: var(--primary);
-    color: #fff;
+    color: var(--grade-horario-bg);
 }
 
 .foot a:hover i,
 .foot a:active i {
-    color: #fff;
+    color: var(--grade-horario-bg);
 }
 
 
@@ -96,7 +98,7 @@
     padding: 22px;
     box-shadow: var(--shadow);
     position: relative;
-    border-left: 5px solid var(--dia-header-bg);
+    border-left: 5px solid var(--verde-vivo);
 }
 
 .card.semestre {
@@ -135,7 +137,7 @@
 }
 
 .grade-cards .card .icon-purple {
-    color: var(--dia-header-bg);
+    color: var(--verde-vivo);
 }
 
 .grade-cards .card .icon-orange {
@@ -172,8 +174,8 @@
 
 /* Cabeçalhos dos dias da semana */
 .dia-header {
-    background: var(--dia-header-bg);
-    color: #fff;
+    background: var(--verde-vivo);
+    color: var(--grade-horario-bg);
     font-weight: 600;
     font-size: 15px;
     padding: 12px 10px;
@@ -235,7 +237,7 @@
 
 /* Estilo para slots vazios */
 .slot-vazio {
-    background: white;
+    background: var(--grade-horario-bg);
     border: 1px dashed var(--slot-border);
     opacity: 0.6;
     display: flex;

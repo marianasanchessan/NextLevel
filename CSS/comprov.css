@@ -32,6 +32,8 @@
     /*TABELA DE PAGAMENTO*/
     --hover-pagar: #53a04f;
     --hover-pagar-hover: #b8bdc6;
+
+    --verde-vivo: #16a34a;
 }
 
 /* ======================================================= */
@@ -173,7 +175,7 @@
 
 /* Estilo do Cabeçalho (Mês, Status, Valor...) */
 .boleto-header {
-    background: var(--dia-header-bg); 
+    background: var(--verde-vivo); 
     font-weight: 600;
     color: var(--panel);
     padding: 20px 20px;

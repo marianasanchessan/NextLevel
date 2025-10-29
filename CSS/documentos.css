@@ -12,13 +12,15 @@
     --icon-aprovado: #16a34a;
     --icon-correcao: #f59e0b;
 
+    --verde-escuro: #25933f;
+
     --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
 
 .foot{
     padding-top: 230px;
     border-top: 1px solid var(--line);
     font-size: 14px;
-    color: hsl(206, 8%, 39%);
+    color: var(--text-secondary);
     display: flex;
     gap: 10px; 
     flex-direction: column;
@@ -36,25 +38,25 @@
 .foot a:hover,
 .foot a:active {
     background-color: var(--primary);
-    color: #fff; 
+    color: var(--panel-bg); 
 }
 
 .foot a:hover i,
 .foot a:active i {
-    color: #fff; 
+    color: var(--panel-bg); 
 }
 
 
     .card .icon-total {
-        color: #3b82f6;
+        color: var(--icon-total);
     }
 
     .card .icon-aprovado {
-        color: #16a34a;
+        color: var(--icon-aprovado);
     }
 
     .card .icon-correcao {
-        color: #f59e0b;
+        color: var(--icon-correcao);
     }
 }
 
@@ -181,10 +183,10 @@
 }
 
 .topoTabela {
-    background: #25933f;
+    background: var(--verde-escuro);
     font-weight: 600;
     font-size: 14px;
-    color: #ffffff;
+    color: var(--panel-bg);
     border-bottom: 1px solid var(--line-color);
     border-radius: 8px;
 }
@@ -197,7 +199,7 @@
 }
 
 .tabLinha:hover {
-    background-color: #f3f4f6;
+    background-color: var(--panel-bg);
     cursor: pointer;
 }
 

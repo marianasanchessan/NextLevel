@@ -17,12 +17,15 @@
     --status-aprovado-text: #065f46;
     --icon-correcao: #f59e0b;
 
+    --meta-color: #25933f;
     --primary: #217d36d0;
     --background: #f8f9fc;
     --panel: #fff;
     --line: #e3e6f0;
-    --shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);    
-
+    --shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);   
+    
+    --preto-claro: rgba(0, 0, 0, 0.1);
+    --preto-complicado: rgba(7, 7, 8, 0.699) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 }
 
 * {
@@ -44,24 +47,11 @@ body.doc {
     grid-template-rows: 60px 1fr;
 }
 
+/*=======================================
 /*        ESTILOS DO BODY GERAL 
-/* ------------------------------------ */
+/*========================================*/
 
-body {
-    /* Estilo de fundo do LOGIN (com imagem) */
-    background: url('/IMG/background2.png') no-repeat center center/cover;
-}
 
-/*-------------------------------------------
-       ESTILOS DO BODY GERAL 
-/* ------------------------------------ */
-
-body {
-    /* Estilo de fundo do LOGIN (com imagem) */
-    background: url('/IMG/background2.png') no-repeat center center/cover;
-}
-/*        ESTILOS DO BODY GERAL 
-/* ------------------------------------ */
 
 body {
     /* Estilo de fundo do LOGIN (com imagem) */
@@ -90,14 +80,7 @@ body {
     padding: 18px 22px;
 }
 
-/*      ESTILOS DA PÁGINA DE LOGIN 
 /* ==================================== */
-
-
-/*      ESTILOS DA PÁGINA DE LOGIN 
-/* ==================================== */
-
-
 /*      ESTILOS DA PÁGINA DE LOGIN 
 /* ==================================== */
 
@@ -105,11 +88,11 @@ body {
 .container {
     width: 420px;
     background-color: transparent;
-    border: 2px solid rgba(255, 255, 255, 0.2);
+    border: 2px solid var(--text-secondary);
     border-radius: 10px;
-    color: rgb(255, 255, 255);
+    color: var(--panel);
     padding: 30px 40px;
-    box-shadow: rgba(7, 7, 8, 0.699) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    box-shadow: var(--preto-complicado);
     backdrop-filter: blur(15px);
 
 }
@@ -136,7 +119,7 @@ body {
 .name small {
     display: block;
     font-size: 12px;
-    color: #6c757d;
+    color: var(--text-secondary);
 }
 
 .menu {
@@ -164,14 +147,14 @@ body {
 .menu a:hover,
 .menu a.active {
     background-color: var(--primary);
-    color: #fff;
+    color: var(--panel);
 }
 
 .foot{
     padding-top: 230px;
     border-top: 1px solid var(--line);
     font-size: 14px;
-    color: hsl(206, 8%, 39%);
+    color: var(--text-secondary);
     display: flex;
     gap: 10px; 
     flex-direction: column;
@@ -191,13 +174,13 @@ body {
 .foot a:hover,
 .foot a:active {
     background-color: var(--primary);
-    color: #fff;
+    color: var(--panel);
 }
 
 /* Muda a cor do ÍCONE (i) para branco */
 .foot a:hover i,
 .foot a:active i {
-    color: #fff; 
+    color: var(--panel); 
 }
 
 /* Topbar */
@@ -205,13 +188,14 @@ body {
     grid-column: 2 / 3;
     grid-row: 1 / 2;
     background: var(--panel);
-    background-color: whitesmoke;
+    background-color: var(--panel);
     border-bottom: 1px solid var(--line);
     display: flex;
     align-items: center;
     padding: 0 35px;
     box-shadow: var(--shadow);
     z-index: 10;
+    
 }
 
 /* Conteúdo Principal */
@@ -290,19 +274,19 @@ body {
 
 .card h4 {
     font-size: 16px;
-    color: #6c757d;
+    color: var(--text-secondary);
     margin-bottom: 5px;
 }
 
 .porcentagem {
     font-size: 32px;
     font-weight: 700;
-    color: #333;
+    color: var(--text-primary);
 }
 
 .meta {
     font-size: 14px;
-    color: #25933f; 
+    color: var(--meta-color); 
 }
 
 /* Progresso e Atividades */
@@ -379,16 +363,16 @@ body {
 
     height: 100%;
     background-color: transparent;
-    border: 2px solid rgba(255, 255, 255, 0.2);
+    border: 2px solid var(--text-secondary);
     border-radius: 40px;
     outline: none;
     font-size: 16px;
-    color: rgb(255, 255, 255);
+    color: var(--panel);
     padding: 20px 45px 20px 20px;
 }
 
 .input-box input::placeholder {
-    color: rgb(255, 255, 255);
+    color: var(--panel);
 }
 
 .input-box i {
@@ -406,13 +390,13 @@ body {
 }
 
 .remember label input {
-    accent-color: rgb(255, 255, 255);
+    accent-color: var(--panel);
     margin-right: 5px;
 }
 
 .remember a {
     text-decoration: none;
-    color: rgb(255, 255, 255);
+    color: var(--panel);
 }
 
 .remember a:hover {
@@ -422,20 +406,20 @@ body {
 .login {
     width: 100%;
     height: 50px;
-    background-color: #fff;
+    background-color: var(--panel);
     border: none;
     border-radius: 40px;
     cursor: pointer;
     font-size: 16px;
-    color: #333;
+    color: var(--text-primary);
     font-weight: 600;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px var(--preto-claro) ;
     margin-top: 20px;
 }
 
 .login:hover {
     background-color: transparent;
-    border: 2px solid rgba(255, 255, 255, 0.2);
-    color: #fff;
+    border: 2px solid var(--text-secondary);
+    color: var(--panel);
     transition: 0.3s;
 }

@@ -17,6 +17,8 @@
     --card-conteudos-color: #3b82f6;
     --card-pendentes-color: #f59e0b;
     --card-completas-color: #a855f7;
+
+    --preto-clarinho: rgba(0, 0, 0, 0.1);
 }
 
 /* 2. LAYOUT DA GRADE DE MATÉRIAS */
@@ -89,7 +91,7 @@
     width: 25px;
     height: 25px;
     border-radius: 50%;
-    background: #e5e7eb;
+    background: var(--card-bg);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -140,7 +142,7 @@
     align-items: center;
     font-size: 12px;
     font-weight: 600;
-    color: white;
-    border: 1px solid white;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    color: var(--card-bg);
+    border: 1px solid var(--card-bg);
+    box-shadow: 0 1px 3px var(--preto-clarinho);
 }

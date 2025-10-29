@@ -6,14 +6,18 @@
 :root {
     --color-success: #10b981;    
     --color-danger: #ef4444;    
-    --color-warning: #f59e0b;    
+    --color-warning: #f59e0b;
+    --branco: #fff;
+    --cinza: hsl(206, 8%, 39%);
+    
+    --icon-aprovado: #16a34a;
 }
 
 .foot {
     padding-top: 230px;
     border-top: 1px solid var(--line);
     font-size: 14px;
-    color: hsl(206, 8%, 39%);
+    color: var(--cinza);
     display: flex;
     gap: 10px;
     flex-direction: column;
@@ -31,12 +35,12 @@
 .foot a:hover,
 .foot a:active {
     background-color: var(--primary);
-    color: #fff;
+    color: var(--branco);
 }
 
 .foot a:hover i,
 .foot a:active i {
-    color: #fff;
+    color: var(--branco);
 }
 
 /* Estilo do Ícone (i) */
