@@ -1,41 +1,122 @@
 /* ======================================================= */
-/*                       ATIVIDADES
+/*                  PORTAL ACADÊMICO - ATIVIDADES + MODAL  */
 /* ======================================================= */
 
-/* 1. VARIÁVEIS DE CORES (Ajustar ou Adicionar ao :root) */
+/* ====== VARIÁVEIS DE CORES ====== */
 :root {
     --card-conteudos-color: #3b82f6;
     --card-atividades-color: #16a34a;
     --card-pendentes-color: #f59e0b;
     --card-completas-color: #b814c1;
 
-    /* Cores para as tags de status nas atividades (Pendente, Entregue) */
+    /* Tags de status nas atividades */
     --tag-pendente-bg: #fffbe6;
     --tag-pendente-text: #a16207;
     --tag-entregue-bg: #dcfce7;
     --tag-entregue-text: #16a34a;
 
-    /* Cores para botões de ação */
+    /* Botões */
     --btn-primary-bg: #217d36;
     --btn-primary-text: #fff;
     --btn-secondary-bg: #e5e7eb;
     --btn-secondary-text: #4b5563;
 
-    /* Variáveis gerais do card (se não estiverem root principal) */
+    /* Layout base */
     --card-bg: #fff;
     --card-shadow-soft: 0 4px 10px rgba(0, 0, 0, 0.05);
     --card-border-color: #e0e0e0;
     --text-primary: #1f2937;
     --text-secondary: #6b7280;
     --line: #e3e6f0;
-    
-    /* Variável (suposta) para o fundo do sidebar/main content */
+
     --panel: #fff; 
     --cor-hover: #1e7033;
     --primary: #217d36; 
     --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
+/* ======================================================= */
+/*                       MODAL POP-UP                      */
+/* ======================================================= */
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0; 
+  top: 0;
+  width: 100%; 
+  height: 100%;
+  background-color: rgba(0,0,0,0.6);
+}
+
+.modal-content {
+  background: var(--card-bg);
+  margin: 5% auto;
+  padding: 20px;
+  border-radius: 12px;
+  width: 80%;
+  max-width: 800px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: var(--shadow);
+  color: var(--text-primary);
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+#listaArquivos {
+  list-style: none;
+  padding: 0;
+}
+
+#listaArquivos li {
+  background: var(--panel);
+  border: 1px solid var(--card-border-color);
+  border-radius: 8px;
+  padding: 10px;
+  margin: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#listaArquivos a {
+  text-decoration: none;
+  color: var(--primary);
+  font-weight: 600;
+  margin-left: 10px;
+}
+
+#listaArquivos a:hover {
+  text-decoration: underline;
+}
+
+/* Área de visualização */
+.viewer {
+  margin-top: 15px;
+  width: 100%;
+  height: 400px;
+  display: none;
+}
+
+.viewer iframe {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+}
+
+/* ======================================================= */
+/*                       RODAPÉ                            */
+/* ======================================================= */
 .foot {
     padding-top: 230px;
     border-top: 1px solid var(--line);
@@ -66,16 +147,16 @@
     color: var(--card-bg);
 }
 
-
-/* 2. LAYOUT DOS CARDS SUPERIORES */
+/* ======================================================= */
+/*                  CARDS DE CONTEÚDOS E ATIVIDADES        */
+/* ======================================================= */
 .atividades-cards {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 colunas */
+    grid-template-columns: repeat(4, 1fr);
     gap: 20px;
     margin-bottom: 30px;
 }
 
-/* ESTILO BASE DO CARD */
 .atividades-cards .card {
     background: var(--panel);
     border-radius: 22px;
@@ -83,28 +164,22 @@
     position: relative;
     box-shadow: var(--shadow);    
     border: 1px solid var(--card-border-color);
-    position: relative;
     overflow: hidden;
 }
 
-/* BORDAS SUPERIORES COLORIDAS */
 .atividades-cards .card.conteudos {
     border-left: 4px solid var(--card-conteudos-color);
 }
-
 .atividades-cards .card.atividades {
     border-left: 4px solid var(--card-atividades-color);
 }
-
 .atividades-cards .card.pendentes {
     border-left: 4px solid var(--card-pendentes-color);
 }
-
 .atividades-cards .card.completas {
     border-left: 4px solid var(--card-completas-color);
 }
 
-/* ESTILO DOS ÍCONES DENTRO DOS CARDS */
 .atividades-cards .card .card-content {
     display: flex;
     justify-content: space-between;
@@ -118,30 +193,27 @@
     color: var(--text-primary);
 }
 
-
-/* Cores específicas para os ícones, usando as classes do HTML */
+/* Ícones coloridos */
 .atividades-cards .card .icon-blue {
     color: var(--card-conteudos-color); 
-    font-size: 32px; /* Adiciona um tamanho para os ícones */
+    font-size: 32px;
 }
-
 .atividades-cards .card .icon-green {
     color: var(--card-atividades-color); 
     font-size: 32px;
 }
-
 .atividades-cards .card .icon-orange {
     color: var(--card-pendentes-color); 
     font-size: 32px;
 }
-
 .atividades-cards .card .icon-purple {
     color: var(--card-completas-color); 
     font-size: 32px;
 }
 
-
-/* 4. ESTILO DAS ABAS DE NAVEGAÇÃO (Conteúdos das aulas, Atividades) */
+/* ======================================================= */
+/*                     ABAS DE NAVEGAÇÃO                   */
+/* ======================================================= */
 .abas-container {
     display: flex;
     gap: 15px;
@@ -150,10 +222,9 @@
 }
 
 .abas-container .aba {
-    /* Fundo branco para abas inativas */
     background: var(--card-bg); 
     color: var(--text-secondary);
-    border: 1px solid var(--line); /* Borda sutil quando inativo */
+    border: 1px solid var(--line);
     padding: 10px 20px;
     border-radius: 8px;
     cursor: pointer;
@@ -163,23 +234,23 @@
 }
 
 .abas-container .aba:hover {
-    /* Fundo e borda mudam para um tom mais escuro no hover */
     background: var(--line);
     border-color: var(--text-secondary);
 }
 
 .abas-container .aba.aba-active {
-    /* Abas ativas voltam ao padrão de cor primária para destaque */
-    background: var(--card-border-color);;
-    color: var(--card-completas-colort);
-    border-color: var(--background); /* Borda na cor ativa */
+    background: var(--card-border-color);
+    color: var(--card-completas-color);
+    border-color: var(--background);
     box-shadow: var(--card-shadow-soft);
 }
 
-/* 5. LAYOUT E ESTILO DOS CARTÕES DE ATIVIDADE */
+/* ======================================================= */
+/*                    GRID DE ATIVIDADES                   */
+/* ======================================================= */
 .atividades-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 colunas */
+    grid-template-columns: repeat(2, 1fr);
     gap: 25px;
 }
 
@@ -190,7 +261,7 @@
     box-shadow: var(--card-shadow-soft);
     border: 1px solid var(--card-border-color);
     display: flex;
-    flex-direction: column; /* Para empilhar o conteúdo */
+    flex-direction: column;
 }
 
 .atividade-card .card-header {
@@ -206,19 +277,17 @@
     color: var(--text-primary);
 }
 
-/* Tags de status (Pendente, Entregue) */
+/* Tags de status */
 .atividade-card .tag {
     padding: 5px 10px;
     border-radius: 6px;
     font-size: 12px;
     font-weight: 600;
 }
-
 .atividade-card .tag-pendente {
     background: var(--tag-pendente-bg);
     color: var(--tag-pendente-text);
 }
-
 .atividade-card .tag-entregue {
     background: var(--tag-entregue-bg);
     color: var(--tag-entregue-text);
@@ -229,9 +298,8 @@
     color: var(--text-secondary);
     margin-bottom: 15px;
 }
-
 .atividade-card .topico-status {
-    font-weight: 600; /* Deixa o "Última Tarefa" em negrito */
+    font-weight: 600;
     margin-right: 5px;
 }
 
@@ -250,13 +318,12 @@
     font-weight: 500;
     margin-bottom: 5px;
 }
-
 .atividade-card .card-footer .info-data p {
     text-align: right;
     margin-bottom: 5px;
 }
 
-/* Estilo dos botões de ação */
+/* Botões */
 .atividade-card .botao-acao {
     width: 100%;
     padding: 12px 0;
@@ -267,40 +334,32 @@
     cursor: pointer;
     transition: background-color 0.2s ease;
 }
-
 .atividade-card .btn-realizar {
     background: var(--btn-primary-bg);
     color: var(--btn-primary-text);
     border: none;
 }
-
 .atividade-card .btn-realizar:hover {
     background: var(--cor-hover); 
 }
 
-/* Estilo Base do Botão Secundário*/
 .atividade-card .btn-detalhes {
     background: var(--panel); 
     color: var(--text-secondary);
     border: 1px solid var(--line);
 }
-
 .atividade-card .btn-detalhes:hover {
     background: var(--line);
 }
 
-/* ======================================================= */
-/* Aumenta a Especificidade para anular a borda verde no Foco/Clique */
-/* ======================================================= */
-
+/* Estado ativo/foco */
 .atividades-grid .atividade-card .btn-detalhes:focus,
 .atividades-grid .atividade-card .btn-detalhes:active {
     outline: none; 
-    border-color: var(--line); /* Força a borda a ser cinza, vencendo a regra verde */
-    background: var(--line); /* Garante o fundo e texto consistentes (no tom de cinza do hover) */
+    border-color: var(--line);
+    background: var(--line);
     color: var(--text-secondary);
 }
-
 .atividades-grid .atividade-card a.btn-detalhes:visited,
 .atividades-grid .atividade-card a.btn-detalhes:visited:focus {
     border-color: var(--line);
@@ -309,22 +368,20 @@
 }
 
 /* ======================================================= */
-/* Ajuste de Layout para os Cards de Comprovantes/Grade */
+/*      Ajuste para Cards de Comprovantes / Grade Curricular */
 /* ======================================================= */
-
 .cards.grade-cards {
     display: flex;
-    justify-content: space-between; /* Distribui o espaço igualmente entre os cards */
-    flex-wrap: nowrap; /* Garante que os cards sejam do mesmo tamanho */
-    gap: 20px; /* Define o espaço entre os cards (gap) */
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    gap: 20px;
     margin-bottom: 30px; 
     border: none;
     padding: 0;
     box-shadow: none;
 }
 
-/* Garante que cada card ocupe 1/4 do espaço disponível */
 .cards.grade-cards .card {
     flex-basis: calc(25% - 15px); 
-    flex-grow: 1; /* Garante que o card não exceda seu tamanho de base */
+    flex-grow: 1;
 }

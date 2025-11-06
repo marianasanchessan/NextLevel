@@ -154,9 +154,96 @@
                 </div>
                 <p class="tarefa-detalhe">Última tarefa: <span class="tarefa-nome">Lista de Derivadas</span></p>
                 <button class="btn-acessar">Acessar</button>
+
             </article>
+            <div id="modalArquivos" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2 id="tituloMateria">Arquivos</h2>
+      <ul id="listaArquivos"></ul>
+      <div id="visualizador" class="viewer">
+        <iframe id="iframeVisualizador" src="" frameborder="0"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const arquivosPorMateria = {
+      "História": [
+        { nome: "Resumo da Guerra Fria.pdf", caminho: "/NextLevel-main/ARQUIVOS/historia/guerra_fria.pdf" },
+        { nome: "Linha do Tempo.docx", caminho: "/NextLevel-main/ARQUIVOS/historia/linha_tempo.docx" }
+      ],
+      "Física": [
+        { nome: "Relatório Pilhas.pdf", caminho: "/NextLevel-main/ARQUIVOS/fisica/pilhas.pdf" },
+        { nome: "Força e Movimento.pdf", caminho: "/NextLevel-main/ARQUIVOS/fisica/forca_mov.pdf" }
+      ],
+      "Literatura": [
+        { nome: "Vidas Secas - Análise.pdf", caminho: "/NextLevel-main/ARQUIVOS/literatura/vidas_secas.pdf" },
+        { nome: "Resumo Romantismo.docx", caminho: "/NextLevel-main/ARQUIVOS/literatura/romantismo.docx" }
+      ],
+      "Matemática": [
+        { nome: "Lista Derivadas.pdf", caminho: "/NextLevel-main/ARQUIVOS/matematica/derivadas.pdf" },
+        { nome: "Funções e Gráficos.pdf", caminho: "/NextLevel-main/ARQUIVOS/matematica/funcoes.pdf" }
+      ],
+      "Química": [
+        { nome: "Ligações Químicas.pdf", caminho: "/NextLevel-main/ARQUIVOS/quimica/ligacoes.pdf" },
+        { nome: "Tabela Periódica.pdf", caminho: "/NextLevel-main/ARQUIVOS/quimica/tabela.pdf" }
+      ],
+      "Inglês": [
+        { nome: "Verbo To be.pdf", caminho: "/NextLevel-main/ARQUIVOS/ingles/to_be.pdf" },
+        { nome: "Vocabulário Básico.docx", caminho: "/NextLevel-main/ARQUIVOS/ingles/vocabulario.docx" }
+      ]
+    };
+
+    const modal = document.getElementById("modalArquivos");
+    const spanFechar = document.querySelector(".close");
+    const tituloMateria = document.getElementById("tituloMateria");
+    const listaArquivos = document.getElementById("listaArquivos");
+    const visualizador = document.getElementById("visualizador");
+    const iframeVisualizador = document.getElementById("iframeVisualizador");
+
+    document.querySelectorAll(".btn-acessar").forEach(botao => {
+      botao.addEventListener("click", () => {
+        const nomeMateria = botao.closest(".materia-card").querySelector(".titulo-materia").textContent.trim();
+        abrirModal(nomeMateria);
+      });
+    });
+
+    function abrirModal(materia) {
+      const arquivos = arquivosPorMateria[materia] || [];
+      tituloMateria.textContent = materia;
+      listaArquivos.innerHTML = "";
+      visualizador.style.display = "none";
+      iframeVisualizador.src = "";
+
+      arquivos.forEach(arq => {
+        const li = document.createElement("li");
+        li.innerHTML = `
+          <span>${arq.nome}</span>
+          <div>
+            <a href="#" class="ver" data-caminho="${arq.caminho}">Visualizar</a>
+            <a href="${arq.caminho}" download>Baixar</a>
+          </div>`;
+        li.querySelector(".ver").addEventListener("click", e => {
+          e.preventDefault();
+          visualizarArquivo(arq.caminho);
+        });
+        listaArquivos.appendChild(li);
+      });
+      modal.style.display = "block";
+    }
+
+    function visualizarArquivo(caminho) {
+      visualizador.style.display = "block";
+      iframeVisualizador.src = caminho;
+    }
+
+    spanFechar.onclick = () => modal.style.display = "none";
+    window.onclick = e => { if (e.target === modal) modal.style.display = "none"; };
+  </script>
 
         </section>
+        
 
         <section class="atividades-grid aba-content" id="atividades-tarefas" style="display: none;">
 
@@ -255,6 +342,7 @@
         </section>
 
     </main>
+    
 </body>
 
 </html>
