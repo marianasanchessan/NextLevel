@@ -1,0 +1,248 @@
+/* ======================================================= */
+/*                     GRADE CURRICULAR
+/* ======================================================= */
+
+/* 1. VARIÁVEIS DE CORES ESPECÍFICAS */
+:root {
+    /* 1. VARIÁVEIS DE CORES PARA OS CARDS DA GRADE CURRICULAR */
+    --card-materias-grade-color: #3b82f6;
+    --card-aulas-hoje-color: #a855f7;
+    --card-semestre-color: #f59e0b;
+
+    /* 2. VARIÁVEIS DE CORES PARA O PAINEL DE HORÁRIO */
+    --grade-horario-bg: #fff;
+    --slot-bg: #f8f9fc;
+    --slot-border: #e3e6f06d;
+    --dia-header-bg: #217d36d0;
+    --dia-header-text: #333;
+
+    --verde-vivo: #16a34a;
+}
+
+/* ======================================================= */
+/*          0. AJUSTES GERAIS (Sidebar Foot) */
+/* ======================================================= */
+
+.foot {
+    padding-top: 230px;
+    border-top: 1px solid var(--line);
+    font-size: 14px;
+    color: var(--slot-border);
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+}
+
+.foot a {
+    text-decoration: none;
+    color: var(--primary-line-color);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.foot a:hover,
+.foot a:active {
+    background-color: var(--primary);
+    color: var(--grade-horario-bg);
+}
+
+.foot a:hover i,
+.foot a:active i {
+    color: var(--grade-horario-bg);
+}
+
+
+/* ======================================================= */
+/*               1. CORREÇÕES DE ÍCONES */
+/* ======================================================= */
+
+/* Ícones de Frequência Recente (Solução com alta especificidade) */
+.ativrecente .linha i.icon-presente {
+    color: var(--color-success) !important;
+}
+
+.ativrecente .linha i.icon-falta {
+    color: var(--color-danger) !important;
+}
+
+.ativrecente .linha i.icon-aviso {
+    color: var(--color-warning) !important;
+}
+
+
+/* ======================================================= */
+/*   2. AJUSTES NOS CARDS DA SEÇÃO 'GRADE CURRICULAR' */
+/* ======================================================= */
+
+.grade-cards {
+    color: var(--card-text);
+    border: 1px solid var(--card-bg);
+    border-radius: 12px;
+    padding: 20px;
+    position: relative;
+}
+
+.card.meta {
+    background: var(--panel);
+    border-radius: 22px;
+    padding: 22px;
+    position: relative;
+    border-left: 5px solid var(--card-materias-grade-color);
+}
+
+.card.horaria {
+    background: var(--panel);
+    border-radius: 22px;
+    padding: 22px;
+    box-shadow: var(--shadow);
+    position: relative;
+    border-left: 5px solid var(--verde-vivo);
+}
+
+.card.semestre {
+    background: var(--panel);
+    border-radius: 22px;
+    padding: 22px;
+    box-shadow: var(--shadow);
+    position: relative;
+    border-left: 5px solid var(--card-semestre-color);
+}
+
+/* Ícones nos cards: ajuste de posição */
+.grade-cards .card-icon {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 24px;
+}
+
+.card-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card .card-icon {
+    position: absolute;
+    top: 22px;
+    right: 22px;
+    font-size: 18px;
+}
+
+/* Cores dos ícones nos cards da Grade Curricular */
+.grade-cards .card.meta .icon-blue {
+    color: var(--card-materias-grade-color);
+}
+
+.grade-cards .card .icon-purple {
+    color: var(--verde-vivo);
+}
+
+.grade-cards .card .icon-orange {
+    color: var(--card-semestre-color);
+}
+
+
+/* ======================================================= */
+/*  3. ESTILOS DO PAINEL DE HORÁRIO (HORÁRIO SEMANAL) */
+/* ======================================================= */
+
+.painel-horario {
+    background: var(--grade-horario-bg);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: var(--shadow);
+}
+
+.painel-horario .painel-titulo {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 25px;
+}
+
+/* CORREÇÃO DO GRID: Força o layout de 7 colunas */
+.horario-grid {
+    display: grid !important;
+    grid-template-columns: 100px repeat(6, 1fr) !important;
+    gap: 15px;
+    margin-top: 0;
+}
+
+/* Cabeçalhos dos dias da semana */
+.dia-header {
+    background: var(--verde-vivo);
+    color: var(--grade-horario-bg);
+    font-weight: 600;
+    font-size: 15px;
+    padding: 12px 10px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+/* Estilo para o cabeçalho vazio da coluna de tempo */
+.dia-header.header-tempo {
+    background: var(--grade-horario-bg);
+    color: transparent;
+    border: none;
+    min-height: 48px;
+}
+
+/* Estilo da coluna de horários (coluna de tempo) */
+.horario-slot.tempo-coluna {
+    font-weight: 600;
+    font-size: 13px;
+    color: var(--text-primary);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: var(--slot-bg);
+    border: 1px solid var(--slot-border);
+    border-radius: 8px;
+    padding: 12px 5px;
+    text-align: center;
+}
+
+
+/* Blocos de aula (slots) */
+.slot {
+    background: var(--slot-bg);
+    border: 1px solid var(--slot-border);
+    border-radius: 8px;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: left;
+    min-height: 80px;
+}
+
+.slot .materia {
+    font-weight: 600;
+    color: var(--text-primary);
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+.slot .detalhe {
+    color: var(--text-secondary);
+    font-size: 12px;
+    margin-bottom: 2px;
+}
+
+/* Estilo para slots vazios */
+.slot-vazio {
+    background: var(--grade-horario-bg);
+    border: 1px dashed var(--slot-border);
+    opacity: 0.6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-secondary);
+    font-size: 12px;
+} 

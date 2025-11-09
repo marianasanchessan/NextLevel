@@ -1,0 +1,306 @@
+/* ====================================== /
+/          GESTÃO DE DOCUMENTOS  
+/ ====================================== */
+
+/* 1. VARIÁVEIS DE CORES ESPECÍFICAS */
+:root {
+    --panel-bg: #ffffff;
+    --line-color: #e5e7eb;
+    --text-primary: #1f2937;
+    --text-secondary: #6b7280;
+    --icon-total: #3b82f6;
+    --icon-aprovado: #16a34a;
+    --icon-correcao: #f59e0b;
+
+    --verde-escuro: #25933f;
+
+    --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+
+.foot{
+    padding-top: 230px;
+    border-top: 1px solid var(--line);
+    font-size: 14px;
+    color: var(--text-secondary);
+    display: flex;
+    gap: 10px; 
+    flex-direction: column;
+}
+
+.foot a {
+    text-decoration: none;
+    color: var(--primary-line-color); 
+    font-weight: 500;
+    display: flex; 
+    align-items: center; 
+    gap: 10px; 
+}
+
+.foot a:hover,
+.foot a:active {
+    background-color: var(--primary);
+    color: var(--panel-bg); 
+}
+
+.foot a:hover i,
+.foot a:active i {
+    color: var(--panel-bg); 
+}
+
+
+    .card .icon-total {
+        color: var(--icon-total);
+    }
+
+    .card .icon-aprovado {
+        color: var(--icon-aprovado);
+    }
+
+    .card .icon-correcao {
+        color: var(--icon-correcao);
+    }
+}
+
+/* ==================================== /
+/            Cards de Icones 
+/ ==================================== */
+.card {
+    background-color: var(--card-bg);
+    color: var(--card-text);
+    box-shadow: var(--shadow);
+    border-radius: 12px;
+    padding: 20px;
+    position: relative;
+}
+
+.card>div {
+    display: block;
+    margin-top: 10px;
+}
+
+.card i {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    font-size: 30px;
+}
+
+.card.total {
+    background: var(--panel);
+    border-radius: 22px;
+    padding: 22spx;
+    box-shadow: var(--shadow);
+    position: relative;
+    border-left: 5px solid var(--icon-total);
+}
+
+.card.aprovados {
+    background: var(--panel);
+    border-radius: 22px;
+    padding: 22px;
+    box-shadow: var(--shadow);
+    position: relative;
+    border-left: 5px solid var(--icon-aprovado);
+}
+
+.card.correcao {
+    background: var(--panel);
+    border-radius: 22px;
+    padding: 22px;
+    box-shadow: var(--shadow);
+    position: relative;
+    border-left: 5px solid var(--icon-correcao);
+}
+
+/* ==================================== /
+/     Painel de Documentos e Tabela 
+/ ==================================== */
+.paineldoc {
+    background: var(--panel-bg);
+    border-radius: 12px;
+    padding: 22px;
+    box-shadow: var(--shadow);
+    margin-top: 30px;
+}
+
+.painel-header {
+    /* Garantem que a pesquisa fique no canto superior direito em relação ao título. */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.paineldoc h4 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+/* ==================================== /
+/           Caixa de Pesquisa 
+/ ==================================== */
+.search-box {
+    display: flex;
+    align-items: center;
+    background-color: var(--line-color);
+    border-radius: 8px;
+    padding: 8px 15px;
+    width: 250px;
+    gap: 10px;
+}
+
+.search-box input {
+    border: none;
+    background: transparent;
+    padding: 0;
+    outline: none;
+    font-size: 14px;
+    color: var(--text-primary);
+    width: 100%;
+}
+
+.search-box input::placeholder {
+    color: var(--text-secondary);
+}
+
+/* ==================================== /
+/         Estrutura da Tabela
+/* ==================================== */
+.tabela {
+    border: 1px solid var(--line-color);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 18px;
+    margin-bottom: 18px;
+}
+
+.topoTabela,
+.tabLinha {
+    display: grid;
+    grid-template-columns: 2.5fr 1.5fr 1.5fr 1fr;
+    padding: 15px 20px;
+    align-items: center;
+}
+
+.topoTabela {
+    background: var(--verde-escuro);
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--panel-bg);
+    border-bottom: 1px solid var(--line-color);
+    border-radius: 8px;
+}
+
+.tabLinha {
+    font-size: 14px;
+    color: var(--text-secondary);
+    border-top: 1px solid var(--line-color);
+    transition: background-color 0.1s ease;
+}
+
+.tabLinha:hover {
+    background-color: var(--panel-bg);
+    cursor: pointer;
+}
+
+.tabLinha:first-of-type {
+    border-top: none;
+}
+
+.tabLinha>div {
+    padding-right: 10px;
+}
+
+.topoTabela>div:last-child,
+.tabLinha>div:last-child {
+    text-align: left;
+} 
+/* ============================= */
+/*        MODAL DE PESQUISA      */
+/* ============================= */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.modal {
+  background: #fff;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 400px;
+  padding: 20px;
+  position: relative;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.fechar {
+  position: absolute;
+  top: 10px;
+  right: 16px;
+  font-size: 24px;
+  color: #666;
+  cursor: pointer;
+}
+
+#campoBusca {
+  width: 100%;
+  padding: 8px;
+  margin: 10px 0 16px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+#listaDocumentos {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+#listaDocumentos li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  padding: 8px 0;
+}
+
+#listaDocumentos a {
+  color: #2563eb;
+  text-decoration: none;
+}
+
+#listaDocumentos a:hover {
+  text-decoration: underline;
+}
+/* Destaque ao clicar em documento via pop-up */
+.highlight {
+  background-color: #dbeafe !important; /* azul claro */
+  transition: background-color 0.5s ease;
+}
+/* ============== MODAL DETALHE ARQUIVO ============== */
+.botoes-arquivo {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.btn-abrir {
+  background-color: #2563eb;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+
+.btn-abrir:hover {
+  background-color: #1d4ed8;
+}

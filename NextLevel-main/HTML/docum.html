@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gestão Documentos - NextLevel</title>
+
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="/NextLevel-main/CSS/gradecur.css">
+  <link rel="stylesheet" href="/NextLevel-main/CSS/notas.css">
+  <link rel="stylesheet" href="/NextLevel-main/CSS/faltas.css">
+  <link rel="stylesheet" href="/NextLevel-main/CSS/comprov.css">
+  <link rel="stylesheet" href="/NextLevel-main/CSS/contAtivs.css">
+  <link rel="stylesheet" href="/NextLevel-main/CSS/contAulas.css">
+  <link rel="stylesheet" href="/NextLevel-main/CSS/dashboard.css">
+  <link rel="stylesheet" href="/NextLevel-main/CSS/documentos.css">
+
+  <script src="/NextLevel-main/JS/script.js" defer></script>
+</head>
+
+<body class="home">
+
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="logo">
+        <img src="/NextLevel-main/IMG/logo.jpeg" alt="Logomarca NextLevel">
+      </div>
+      <div class="name">
+        <b>NextLevel</b>
+        <small>Portal Acadêmico</small>
+      </div>
+    </div>
+
+    <nav class="menu">
+      <a href="/NextLevel-main/HTML/home.html"><i class='bx bxs-dashboard'></i><span>Dashboard</span></a>
+      <a class="active" href="/NextLevel-main/HTML/docum.html"><i class='bx bxs-file'></i><span>Documentos</span></a>
+      <a href="/NextLevel-main/HTML/notaEfalta.html"><i class='bx bxs-edit-alt'></i> <span> Notas e Faltas </span></a>
+      <a href="/NextLevel-main/HTML/gradecurri.html"><i class='bx bxs-grid-alt'></i><span>Grade Curricular</span></a>
+      <a href="/NextLevel-main/HTML/contEatv.html"><i class='bx bxs-chalkboard'></i><span>Conteúdos e Atividades</span></a>
+      <a href="/NextLevel-main/HTML/comprovante.html"><i class='bx bxs-receipt'></i><span>Comprovantes</span></a>
+    </nav>
+
+    <nav class="foot">
+      <a href="#"><i class='bx bxs-user'></i><span>Luis Alves</span></a>
+      <a href="#"><i class='bx bxs-cog'></i><span>Configurações</span></a>
+      <a href="#" onclick="logout()"><i class='bx bxs-log-out'></i><span>Sair</span></a>
+    </nav>
+  </aside>
+
+  <header class="barra">
+    <h2>DashBoard</h2>
+  </header>
+
+  <main class="content">
+    <h1>Gestão de Documentos</h1>
+    <p class="muted">Organize e acompanhe todos os seus documentos acadêmicos</p>
+
+    <section class="cards">
+      <article class="card total">
+        <h4>Total</h4>
+        <div>
+          <div class="porcentagem">24</div>
+          <i class='bx bxs-file icon-total'></i>
+        </div>
+      </article>
+
+      <article class="card aprovados">
+        <h4>Aprovados</h4>
+        <div>
+          <div class="porcentagem">13</div>
+          <i class='bx bxs-file icon-aprovado'></i>
+        </div>
+      </article>
+
+      <article class="card correcao">
+        <h4>Em correção</h4>
+        <div>
+          <div class="porcentagem">11</div>
+          <i class='bx bxs-file icon-correcao'></i>
+        </div>
+      </article>
+    </section>
+
+    <section class="paineldoc">
+      <div class="painel-header">
+        <h4>Documentos</h4>
+        <div class="search-box" id="abrirModal">
+          <i class='bx bx-file-find'></i>
+          <input type="text" placeholder="Pesquisar documento" readonly>
+        </div>
+      </div>
+
+      <div class="tabela">
+        <div class="topoTabela">
+          <div>Nome</div>
+          <div>Tipo</div>
+          <div>Matéria</div>
+          <div>Data</div>
+        </div>
+
+        <div class="corpoTabela" id="corpoTabela">
+          <div class="tabLinha">
+            <div>Trabalho de História</div>
+            <div>Trabalho</div>
+            <div>História</div>
+            <div>02/09/25</div>
+          </div>
+          <div class="tabLinha">
+            <div>Relatório de Física</div>
+            <div>Relatório</div>
+            <div>Física</div>
+            <div>27/08/25</div>
+          </div>
+          <div class="tabLinha">
+            <div>Prova de Matemática</div>
+            <div>Prova</div>
+            <div>Matemática</div>
+            <div>19/08/25</div>
+          </div>
+          <div class="tabLinha">
+            <div>Apresentação</div>
+            <div>Apresentação</div>
+            <div>Química</div>
+            <div>09/08/25</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== MODAL DE PESQUISA DE DOCUMENTOS ===== -->
+  <div id="modalOverlay" class="modal-overlay">
+    <div class="modal">
+      <span id="fecharModal" class="fechar">&times;</span>
+      <h2>Buscar Documento</h2>
+      <input type="text" id="campoBusca" placeholder="Digite o nome do documento..." />
+      <ul id="listaDocumentos"></ul>
+    </div>
+  </div>
+  <!-- ===== MODAL DETALHE DO DOCUMENTO ===== -->
+<div id="modalArquivo" class="modal-overlay">
+  <div class="modal">
+    <span id="fecharArquivo" class="fechar">&times;</span>
+    <h2 id="tituloArquivo">Detalhes do Documento</h2>
+    <div id="infoArquivo">
+      <p><strong>Tipo:</strong> <span id="tipoArquivo"></span></p>
+      <p><strong>Matéria:</strong> <span id="materiaArquivo"></span></p>
+      <p><strong>Data:</strong> <span id="dataArquivo"></span></p>
+    </div>
+    <div class="botoes-arquivo">
+      <a id="abrirArquivoLink" href="#" target="_blank" class="btn-abrir">Abrir Documento</a>
+    </div>
+  </div>
+</div>
+</body>
+</html>
