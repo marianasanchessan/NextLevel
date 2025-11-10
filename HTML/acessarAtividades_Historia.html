@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>História - NextLevel</title>
+
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/CSS/dashboard.css">
+    <link rel="stylesheet" href="/CSS/acessarAtividades.css">
+
+    <script src="/JS/script.js"></script>
+
+</head>
+
+<body class="home">
+
+    <aside class="sidebar">
+        <div class="brand">
+            <div class="logo">
+                <img src="/IMG/logo.jpeg" alt="Logomarca NextLevel">
+            </div>
+            <div class="name">
+                <b>NextLevel</b>
+                <small>Portal Acadêmico</small>
+            </div>
+        </div>
+
+        <nav class="menu">
+            <a href="/HTML/home.html"><i class='bx bxs-dashboard'></i><span>Dashboard</span></a>
+            <a href="/HTML/docum.html"><i class='bx bxs-file'></i><span>Documentos</span></a>
+            <a href="/HTML/notaEfalta.html"><i class='bx bxs-edit-alt'></i><span>Notas e Faltas</span></a>
+            <a href="/HTML/gradecurri.html"><i class='bx bxs-grid-alt'></i><span>Grade Curricular</span></a>
+            <a href="/HTML/contEatv.html" class="active"><i class='bx bxs-chalkboard'></i><span>Conteúdos e
+                    Atividades</span></a>
+            <a href="/HTML/comprovante.html"><i class='bx bxs-receipt'></i><span>Comprovantes</span></a>
+        </nav>
+
+
+        <nav class="foot">
+            <a href="#"><i class='bx bxs-user'></i><span>Luis Alves</span></a>
+            <a href="#"><i class='bx bxs-cog'></i><span>Configurações</span></a>
+            <a href="#" onclick="logout()"><i class='bx bxs-log-out'></i><span>Sair</span></a>
+        </nav>
+    </aside>
+
+    <header class="barra">
+        <h2><i class='bx bxs-book-reader'></i> História</h2>
+    </header>
+
+    <main class="content atividade-view" data-atividade-id="Historia">
+        <div class="atividade-header">
+            <div class="info-principal">
+                <h1>Guerra Fria: Medo e Silêncios</h1>
+                <p class="muted">Andreia da Silva Santos - 10/06/2025</p>
+                <p class="muted">HIS-KFK-LSO-3S-T4 - 46125</p>
+            </div>
+            <div class="info-status">
+                <span class="tag tag-pendente">Pendente</span>
+            </div>
+        </div>
+
+        <section class="atividade-grid">
+            <div class="coluna-conteudo">
+                <article class="bloco-anexo card">
+                    <h4>Material de Aula</h4>
+                    <a href="/NextLevel/PDF/GuerraFria_MedoeSilencio.pdf" download class="anexo-item link-anexo">
+                        <i class='bx bxs-file-pdf icon-pdf'></i>
+                        <p>Guerra Fria: Medo e Silêncio.PDF</p>
+                    </a>
+                    <div class="prazo-info">
+                        <p class="prazo-label">Prazo: 20/06/2025</p>
+                    </div>
+                </article>
+
+                <article class="bloco-comentarios card">
+                    <div class="header-comentario">
+                        <h4><i class='bx bxs-user-circle'></i> Comentários Particulares</h4>
+                    </div>
+                    <button class="btn-adicionar-comentario">Adicionar Comentário</button>
+                </article>
+
+                <article class="bloco-comentarios card">
+                    <div class="header-comentario">
+                        <h4><i class='bx bxs-group'></i> Comentários da Turma</h4>
+                    </div>
+                    <button class="btn-adicionar-comentario">Adicionar Comentário</button>
+                </article>
+            </div>
+
+            <div class="coluna-tarefas">
+                <article class="bloco-tarefas card">
+                    <h4>Tarefas</h4>
+                    <p class="tarefa-nota-info">3 Pontos</p>
+                    <p class="tarefa-aviso">Não é possível entregar após o prazo final</p>
+                    <div class="botoes-acao-tarefa">
+                        <button class="botao-acao btn-adicionar-arquivo">Adicionar</button>
+                    </div>
+                </article>
+
+                <article class="bloco-tarefas-inferior card">
+                    <button class="botao-acao btn-todas-atividades">Acessar Todos os Conteúdos</button>
+                </article>
+
+                <article class="bloco-aulas-lateral card">
+                    <div class="header-comentario">
+                        <h4><i class='bx bxs-book-open'></i>Útimas Atividades</h4>
+                    </div>
+                    <div class="lista-aulas">
+                        <p class="topico-aula">Aula 1: A Nova Ordem Mundial</p>
+                        <p class="topico-aula">Aula 2: Globalização e Blocos Econômicos</p>
+                        <p class="topico-aula">Aula 3: Brasil Colônia</p>
+                        <button class="btn-ver-mais">Ver todos os 7 tópicos</button>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+</body>
+
+</html>

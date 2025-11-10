@@ -2,6 +2,36 @@
 /*                       ATIVIDADES
 /* ======================================================= */
 
+.foot {
+    padding-top: 230px;
+    border-top: 1px solid var(--line);
+    font-size: 14px;
+    color: hsl(206, 8%, 39%);
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+}
+
+.foot a {
+    text-decoration: none;
+    color: var(--primary-line-color);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.foot a:hover,
+.foot a:active {
+    background-color: var(--primary);
+    color: #fff;
+}
+
+.foot a:hover i,
+.foot a:active i {
+    color: #fff;
+}
+
 /* 1. VARIÁVEIS DE CORES (Ajustar ou Adicionar ao :root) */
 :root {
     --card-conteudos-color: #3b82f6;
@@ -31,41 +61,9 @@
     
     /* Variável (suposta) para o fundo do sidebar/main content */
     --panel: #fff; 
-    --cor-hover: #1e7033;
     --primary: #217d36; 
     --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
-
-.foot {
-    padding-top: 230px;
-    border-top: 1px solid var(--line);
-    font-size: 14px;
-    color: var(--text-secondary);
-    display: flex;
-    gap: 10px;
-    flex-direction: column;
-}
-
-.foot a {
-    text-decoration: none;
-    color: var(--primary-line-color);
-    font-weight: 500;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.foot a:hover,
-.foot a:active {
-    background-color: var(--primary);
-    color: var(--card-bg);
-}
-
-.foot a:hover i,
-.foot a:active i {
-    color: var(--card-bg);
-}
-
 
 /* 2. LAYOUT DOS CARDS SUPERIORES */
 .atividades-cards {
@@ -256,7 +254,7 @@
     margin-bottom: 5px;
 }
 
-/* Estilo dos botões de ação */
+/* Estilo dos botões de ação --- HISTÓRIA*/
 .atividade-card .botao-acao {
     width: 100%;
     padding: 12px 0;
@@ -275,10 +273,54 @@
 }
 
 .atividade-card .btn-realizar:hover {
-    background: var(--cor-hover); 
+    background: #1e7033; 
 }
 
+/*Botão de Literatura*/
+.atividade-card .botao-acao-lit {
+    width: 100%;
+    padding: 12px 0;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.atividade-card .btn-realizar-lit {
+    background: var(--btn-primary-bg);
+    color: var(--btn-primary-text);
+    border: none;
+}
+
+.atividade-card .btn-realizar-lit:hover {
+    background: #1e7033; 
+}
+.atividade-card .botao-acao-lit {
+    width: 100%;
+    padding: 12px 0;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+
 /* Estilo Base do Botão Secundário*/
+.atividade-card .btn-detalhes-lit {
+    background: var(--panel); 
+    color: var(--text-secondary);
+    border: 1px solid var(--line);
+}
+
+.atividade-card .btn-detalhes-lit:hover {
+    background: var(--line);
+}
+
+/* Estilo Base do Botão Secundário --- MATEMÁTICA*/
 .atividade-card .btn-detalhes {
     background: var(--panel); 
     color: var(--text-secondary);
@@ -286,6 +328,31 @@
 }
 
 .atividade-card .btn-detalhes:hover {
+    background: var(--line);
+}
+
+
+/* Estilo dos botões de ação FISICA*/
+.atividade-card .botao-acao-fis {
+    width: 100%;
+    padding: 12px 0;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+
+/* Estilo Base do Botão Secundário*/
+.atividade-card .btn-detalhes-fis {
+    background: var(--panel); 
+    color: var(--text-secondary);
+    border: 1px solid var(--line);
+}
+
+.atividade-card .btn-detalhes-fis:hover {
     background: var(--line);
 }
 
