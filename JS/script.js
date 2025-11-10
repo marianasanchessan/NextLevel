@@ -452,55 +452,53 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             });
         }
-
         // PARTE DE LITERATURA 
-
         const btnVerMaisLit = document.querySelector(".btn-ver-mais-lit");
         const listaAulasLit = document.querySelector(".lista-aulas-lit");
 
-        if (btnVerMaisLit && listaAulas) {
-            btnVerMaisLit.addEventListener("click", () => {
-                // Verifica se já foi expandido
-                if (btnVerMaisLit.classList.contains("expandido")) {
-                    // Recolhe novamente
-                    const aulas = listaAulasLit.querySelectorAll(".topico-aula-lit");
-                    aulas.forEach((aula, i) => {
-                        if (i >= 3) aula.style.display = "none";
-                    });
-                    btnVerMaisLit.textContent = "Ver todos os 8 tópicos";
-                    btnVerMaisLit.classList.remove("expandido");
-                } else {
-                    // Adiciona mais 4 tópicos (simulação)
-                    const aulasExtrasLit = [
-                        "Aula 4: A Psicologia de Sinhá Vitória e Baleia",
-                        "Aula 5: O Ciclo da Seca e a Crítica Social",
-                        "Aula 6: A Fragmentação e a Circularidade da Narrativa",
-                        "Aula 7: A Linguagem Seca de Graciliano Ramos",
-                        "Aula 8: Projeto Final: Adaptação e Interpretação",
+        if (btnVerMaisLit && listaAulasLit) {
+          btnVerMaisLit.addEventListener("click", () => {
+            if (btnVerMaisLit.classList.contains("expandido")) {
+              // Recolhe novamente (mantém só os 3 primeiros à mostra)
+              const aulas = listaAulasLit.querySelectorAll(".topico-aula-lit");
+              aulas.forEach((aula, i) => {
+                if (i >= 3) aula.style.display = "none";
+              });
+              btnVerMaisLit.textContent = "Ver todos os 8 tópicos";
+              btnVerMaisLit.classList.remove("expandido");
+            } else {
+              // Tópicos extras (você já tinha definido 5, totalizando 8)
+              const aulasExtrasLit = [
+                "Aula 4: A Psicologia de Sinhá Vitória e Baleia",
+                "Aula 5: O Ciclo da Seca e a Crítica Social",
+                "Aula 6: A Fragmentação e a Circularidade da Narrativa",
+                "Aula 7: A Linguagem Seca de Graciliano Ramos",
+                "Aula 8: Projeto Final: Adaptação e Interpretação",
+              ];
 
-                    ];
+              // Verifica quantos já existem dentro de .lista-aulas-lit
+              const aulasExistentes = listaAulasLit.querySelectorAll(".topico-aula-lit").length;
 
-                    // Verifica se já existem
-                    const aulasExistentes = listaAulasLit.querySelectorAll(".topico-aula-lit").length;
-                    if (aulasExistentes < 8) {
-                        aulasExtrasLit.forEach(texto => {
-                            const p = document.createElement("p");
-                            p.classList.add("topico-aula-lit");
-                            p.innerHTML = `${texto}`;
-                            listaAulas.insertBefore(p, btnVerMaisLit);
-                        });
-                    } else {
-                        // Apenas mostra as escondidas (se já tiver sido expandido uma vez)
-                        const aulas = listaAulasLit.querySelectorAll(".topico-aula-lit");
-                        aulas.forEach(aula => aula.style.display = "flex");
-                    }
+              if (aulasExistentes < 8) {
+                aulasExtrasLit.forEach(texto => {
+                  const p = document.createElement("p");
+                  p.classList.add("topico-aula-lit");
+                  p.textContent = texto;
+                  // INSERE NO CONTÊINER CERTO:
+                  listaAulasLit.insertBefore(p, btnVerMaisLit);
+                });
+              } else {
+                // Já criados antes? Só reexibe
+                const aulas = listaAulasLit.querySelectorAll(".topico-aula-lit");
+                aulas.forEach(aula => aula.style.display = "flex");
+              }
 
-                    btnVerMaisLit.textContent = "Mostrar menos";
-                    btnVerMaisLit.classList.add("expandido");
-
-                }
-            });
+              btnVerMaisLit.textContent = "Mostrar menos";
+              btnVerMaisLit.classList.add("expandido");
+            }
+          });
         }
+
 
         // PARTE DE MATEMÄTICA 
         const btnVerMaisMat = document.querySelector(".btn-ver-mais-mat");
