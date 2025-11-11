@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Detalhe da Atividade - NextLevel</title>
+
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/CSS/dashboard.css">
+    <link rel="stylesheet" href="/CSS/acessarAtividades.css">
+
+    <script src="/JS/script.js" defer></script>
+    <script src="/JS/atividadeDetalhe.js" defer></script>
+
+</head>
+
+<body class="home">
+
+    <aside class="sidebar">
+        <div class="brand">
+            <div class="logo">
+                <img src="/IMG/logo.jpeg" alt="Logomarca NextLevel">
+            </div>
+            <div class="name">
+                <b>NextLevel</b>
+                <small>Portal Acadêmico</small>
+            </div>
+        </div>
+
+        <nav class="menu">
+            <a href="/HTML/home.html"><i class='bx bxs-dashboard'></i><span>Dashboard</span></a>
+            <a href="/HTML/docum.html"><i class='bx bxs-file'></i><span>Documentos</span></a>
+            <a href="/HTML/notaEfalta.html"><i class='bx bxs-edit-alt'></i><span>Notas e Faltas</span></a>
+            <a href="/HTML/gradecurri.html"><i class='bx bxs-grid-alt'></i><span>Grade Curricular</span></a>
+            <a href="/HTML/contEatv.html" class="active"><i class='bx bxs-chalkboard'></i><span>Conteúdos e
+                    Atividades</span></a>
+            <a href="/HTML/comprovante.html"><i class='bx bxs-receipt'></i><span>Comprovantes</span></a>
+        </nav>
+
+        <nav class="foot">
+            <a href="#"><i class='bx bxs-user'></i><span>Luis Alves</span></a>
+            <a href="#"><i class='bx bxs-cog'></i><span>Configurações</span></a>
+            <a href="#" onclick="logout()">
+                <i class='bx bxs-log-out'></i><span>Sair</span>
+            </a>
+        </nav>
+    </aside>
+
+    <header class="barra">
+        <h2 id="header-materia">
+            <i class='bx'></i> <span id="header-materia-nome">Carregando...</span>
+        </h2>
+    </header>
+
+    <main class="content atividade-view">
+        <div class="atividade-header">
+            <div class="info-principal">
+                <h1 id="atividade-titulo">Carregando...</h1>
+                <p class="muted" id="atividade-professor">...</p>
+                <p class="muted" id="atividade-codigo">...</p>
+            </div>
+            <div class="info-status">
+                <span class="tag" id="atividade-status">...</span>
+            </div>
+        </div>
+
+        <section class="atividade-grid">
+            <div class="coluna-conteudo">
+                <article class="bloco-anexo card">
+                    <h4>Material de Aula</h4>
+                    <a id="anexo-link" href="#" download class="anexo-item link-anexo">
+                        <i class='bx bxs-file-pdf icon-pdf'></i>
+                        <p id="anexo-nome">Carregando anexo...</p>
+                    </a>
+                    <div class="prazo-info">
+                        <p class="prazo-label" id="atividade-prazo">Prazo: ...</p>
+                    </div>
+                </article>
+
+                <article class="bloco-comentarios card">
+                    <div class="header-comentario">
+                        <h4><i class='bx bxs-user-circle'></i> Comentários Particulares</h4>
+                    </div>
+                    <button class="btn-adicionar-comentario">Adicionar Comentário</button>
+                </article>
+
+                <article class="bloco-comentarios card">
+                    <div class="header-comentario">
+                        <h4><i class='bx bxs-group'></i> Comentários da Turma</h4>
+                    </div>
+                    <button class="btn-adicionar-comentario">Adicionar Comentário</button>
+                </article>
+            </div>
+
+            <div class="coluna-tarefas">
+                <article class="bloco-tarefas card">
+                    <h4>Tarefas</h4>
+                    <p class="tarefa-nota-info" id="atividade-pontos">... Pontos</p>
+                    <p class="tarefa-aviso">Não é possível entregar após o prazo final</p>
+
+                    <div id="bloco-tarefa-pendente" class="botoes-acao-tarefa" style="display: none;">
+                        <button class="botao-acao btn-adicionar-arquivo">Adicionar</button>
+                    </div>
+
+                    <div id="bloco-tarefa-entregue" class="tarefa-entregue" style="display: none;">
+                        <div class="anexo-item">
+                            <i class='bx bxs-file-pdf icon-pdf'></i>
+                            <p id="arquivo-entregue-nome">...</p>
+                        </div>
+                        <div class="botoes-acao-tarefa">
+                            <button class="botao-acao"
+                                style="background:#1a4a38; color:white; border:none; cursor:not-allowed;" disabled>
+                                Arquivo Entregue
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="bloco-tarefas-inferior card">
+                    <button class="botao-acao btn-todas-atividades">Acessar Todos os Conteúdos</button>
+                </article>
+
+                <article class="bloco-aulas-lateral card">
+                    <div class="header-comentario">
+                        <h4><i class='bx bxs-book-open'></i>Últimas Atividades</h4>
+                    </div>
+                    <div class="lista-aulas" id="lista-ultimas-atividades">
+                        </div>
+                    <button class="btn-ver-mais-fis" style="display: none;">Ver todos</button>
+                </article>
+            </div>
+        </section>
+    </main>
+
+</body>
+
+</html>

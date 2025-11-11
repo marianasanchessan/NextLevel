@@ -8,18 +8,15 @@
 
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="/CSS/gradecur.css">
-    <link rel="stylesheet" href="/CSS/documentos.css">
-    <link rel="stylesheet" href="/CSS/notas.css">
-    <link rel="stylesheet" href="/CSS/faltas.css">
-    <link rel="stylesheet" href="/CSS/comprov.css">
-    <link rel="stylesheet" href="/CSS/dashboard.css">
+    <link rel="stylesheet" href="/CSS/dashboard.css"> 
+    <link rel="stylesheet" href="/CSS/acessarAtividades.css">
 
     <link rel="stylesheet" href="/CSS/contAtivs.css">
-    <link rel="stylesheet" href="/CSS/contAulas.css">
-
-    <script src="/JS/script.js"></script>
-</head>
+    <link rel="stylesheet" href="/CSS/contAulas.css"> 
+    
+    <script src="/JS/script.js" defer></script>
+    <script src="/JS/contAulasModal.js" defer></script> 
+    </head>
 
 <body class="home">
 
@@ -52,7 +49,7 @@
     </aside>
 
     <header class="barra">
-        <h2>DashBoard</h2>
+        <h2>Conteúdos e Atividades</h2>
     </header>
 
     <main class="content">
@@ -61,35 +58,31 @@
         <p class="muted">Acesse materiais didáticos e acompanhe suas atividades</p>
 
         <section class="cards atividades-cards">
-
             <article class="card conteudos">
                 <h4>Conteúdos</h4>
                 <div class="card-content">
-                    <div class="porcentagem">6</div>
+                    <div class="porcentagem">0</div> 
                     <i class="bx bxs-book-open card-icon icon-blue"></i>
                 </div>
             </article>
-
             <article class="card atividades">
                 <h4>Atividades</h4>
                 <div class="card-content">
-                    <div class="porcentagem">4</div>
+                    <div class="porcentagem">0</div>
                     <i class="bx bxs-file card-icon icon-green"></i>
                 </div>
             </article>
-
             <article class="card pendentes">
                 <h4>Pendentes</h4>
                 <div class="card-content">
-                    <div class="porcentagem">2</div>
+                    <div class="porcentagem">0</div>
                     <i class="bx bxs-error-circle card-icon icon-orange"></i>
                 </div>
             </article>
-
             <article class="card completas">
                 <h4>Completas</h4>
                 <div class="card-content">
-                    <div class="porcentagem">2</div>
+                    <div class="porcentagem">0</div>
                     <i class="bx bxs-check-circle card-icon icon-purple"></i>
                 </div>
             </article>
@@ -100,161 +93,24 @@
             <button class="aba" data-target="atividades-tarefas">Atividades</button>
         </div>
 
-        <section class="materias-tarefas-grid aba-content" id="conteudos-aulas">
-
-            <article class="materia-card">
-                <div class="card-header">
-                    <h5 class="titulo-materia">História</h5>
-                    <div class="status-icon"><i class="bx bxs-book-reader"></i></div>
-                </div>
-                <p class="tarefa-detalhe">Última tarefa: <span class="tarefa-nome">Guerra Fria</span></p>
-                <button class="btn-acessar">Acessar</button>
-            </article>
-
-            <article class="materia-card">
-                <div class="card-header">
-                    <h5 class="titulo-materia">Física</h5>
-                    <div class="status-icon"><i class="bx bx-magnet"></i></div>
-                </div>
-                <p class="tarefa-detalhe">Última tarefa: <span class="tarefa-nome">Relatório Pilhas</span></p>
-                <button class="btn-acessar">Acessar</button>
-            </article>
-
-            <article class="materia-card">
-                <div class="card-header">
-                    <h5 class="titulo-materia">Literatura</h5>
-                    <div class="status-icon"><i class="bx bxs-book-open"></i></div>
-                </div>
-                <p class="tarefa-detalhe">Última tarefa: <span class="tarefa-nome">Projeto Vidas Secas</span></p>
-                <button class="btn-acessar">Acessar</button>
-            </article>
-
-            <article class="materia-card">
-                <div class="card-header">
-                    <h5 class="titulo-materia">Química</h5>
-                    <div class="status-icon"><i class="bx bx-dna"></i></div>
-                </div>
-                <p class="tarefa-detalhe">Última tarefa: <span class="tarefa-nome">Ligação Covalente</span></p>
-                <button class="btn-acessar">Acessar</button>
-            </article>
-
-            <article class="materia-card">
-                <div class="card-header">
-                    <h5 class="titulo-materia">Inglês</h5>
-                    <div class="status-icon"><i class="bx bx-globe"></i></div>
-                </div>
-                <p class="tarefa-detalhe">Última tarefa: <span class="tarefa-nome">Verbo To be</span></p>
-                <button class="btn-acessar">Acessar</button>
-            </article>
-
-            <article class="materia-card">
-                <div class="card-header">
-                    <h5 class="titulo-materia">Matemática</h5>
-                    <div class="status-icon"><i class="bx bx-math"></i></div>
-                </div>
-                <p class="tarefa-detalhe">Última tarefa: <span class="tarefa-nome">Lista de Derivadas</span></p>
-                <button class="btn-acessar">Acessar</button>
-            </article>
-
-        </section>
-
+        <section class="materias-tarefas-grid aba-content" id="conteudos-aulas" style="display: grid;">
+            </section>
+    
         <section class="atividades-grid aba-content" id="atividades-tarefas" style="display: none;">
-
-            <article class="atividade-card pendente">
-                <div class="card-header">
-                    <h5 class="titulo-atividade">História</h5>
-                    <span class="tag tag-pendente">Pendente</span>
-                </div>
-                <p class="detalhe-topico">
-                    <span class="topico-status">Última Tarefa:</span>
-                    <span class="descricao">Resumo da Guerra Fria: Medo e Silêncio</span>
-                </p>
-
-                <div class="card-footer">
-                    <div class="info-meta">
-                        <p>Prazo:</p>
-                        <p>Pontuação:</p>
-                    </div>
-                    <div class="info-data">
-                        <p>20/06/2025</p>
-                        <p>3 pontos</p>
-                    </div>
-                </div>
-                <button class="botao-acao btn-realizar">Realizar tarefa</button>
-            </article>
-
-            <article class="atividade-card completa">
-                <div class="card-header">
-                    <h5 class="titulo-atividade">Matemática</h5>
-                    <span class="tag tag-entregue">Entregue</span>
-                </div>
-                <p class="detalhe-topico">
-                    <span class="topico-status">Última Tarefa:</span>
-                    <span class="descricao">Lista de Exercícios - Derivadas</span>
-                </p>
-
-                <div class="card-footer">
-                    <div class="info-meta">
-                        <p>Prazo:</p>
-                        <p>Pontuação:</p>
-                    </div>
-                    <div class="info-data">
-                        <p>15/06/2025</p>
-                        <p>3 pontos</p>
-                    </div>
-                </div>
-                <button class="botao-acao btn-detalhes">Ver detalhes</button>
-            </article>
-
-            <article class="atividade-card pendente">
-                <div class="card-header">
-                    <h5 class="titulo-atividade">Literatura</h5>
-                    <span class="tag tag-pendente">Pendente</span>
-                </div>
-                <p class="detalhe-topico">
-                    <span class="topico-status">Última Tarefa:</span>
-                    <span class="descricao">Projetos de Literatura: Vidas Secas</span>
-                </p>
-
-                <div class="card-footer">
-                    <div class="info-meta">
-                        <p>Prazo:</p>
-                        <p>Pontuação:</p>
-                    </div>
-                    <div class="info-data">
-                        <p>18/06/2025</p>
-                        <p>3 pontos</p>
-                    </div>
-                </div>
-                <button class="botao-acao btn-realizar">Realizar tarefa</button>
-            </article>
-
-            <article class="atividade-card completa">
-                <div class="card-header">
-                    <h5 class="titulo-atividade">Física</h5>
-                    <span class="tag tag-entregue">Entregue</span>
-                </div>
-                <p class="detalhe-topico">
-                    <span class="topico-status">Última Tarefa:</span>
-                    <span class="descricao">Relatório de laboratório: Pilhas</span>
-                </p>
-
-                <div class="card-footer">
-                    <div class="info-meta">
-                        <p>Prazo:</p>
-                        <p>Pontuação:</p>
-                    </div>
-                    <div class="info-data">
-                        <p>03/06/2025</p>
-                        <p>3 pontos</p>
-                    </div>
-                </div>
-                <button class="botao-acao btn-detalhes">Ver detalhes</button>
-            </article>
-
-        </section>
+            </section>
 
     </main>
+    
+    <div id="modalArquivos" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="tituloMateria">Arquivos</h2>
+            <ul id="listaArquivos"></ul>
+            <div id="visualizador" class="viewer">
+                <iframe id="iframeVisualizador" src="" frameborder="0"></iframe>
+            </div>
+        </div>
+    </div>
+    
 </body>
-
 </html>

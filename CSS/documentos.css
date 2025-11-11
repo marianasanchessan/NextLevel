@@ -166,6 +166,16 @@
 /* ==================================== /
 /         Estrutura da Tabela
 /* ==================================== */
+
+.topoTabela {
+    background: var(--verde-escuro); /* Variável definida neste CSS */
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--panel-bg); /* Usa a variável de cor do painel (branco) */
+    border-bottom: 1px solid var(--line-color);
+    border-radius: 8px 8px 0 0; /* Arredonda só os cantos de cima */
+}
+
 .tabela {
     border: 1px solid var(--line-color);
     border-radius: 8px;
@@ -182,20 +192,12 @@
     align-items: center;
 }
 
-.topoTabela {
-    background: var(--verde-escuro);
-    font-weight: 600;
-    font-size: 14px;
-    color: var(--panel-bg);
-    border-bottom: 1px solid var(--line-color);
-    border-radius: 8px;
-}
-
+.topoTabela,
 .tabLinha {
-    font-size: 14px;
-    color: var(--text-secondary);
-    border-top: 1px solid var(--line-color);
-    transition: background-color 0.1s ease;
+    display: grid;
+    grid-template-columns: 2.5fr 1.5fr 1.5fr 1fr 1fr; /* MUDADO AQUI */
+    padding: 15px 20px;
+    align-items: center;
 }
 
 .tabLinha:hover {
@@ -214,4 +216,23 @@
 .topoTabela>div:last-child,
 .tabLinha>div:last-child {
     text-align: left;
-} 
+}
+
+.status {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    text-align: center;
+    display: inline-block;
+}
+
+.status-aprovado {
+    background: #a7f3d0;
+    color: #065f46;
+}
+
+.status-correcao {
+    background: #fef08a; 
+    color: #a16207;
+}

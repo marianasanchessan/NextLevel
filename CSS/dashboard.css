@@ -298,6 +298,10 @@ body.doc {
     height: 100%;
     background-color: var(--primary);
     border-radius: 5px;
+
+    /* --- ADICIONE/MODIFIQUE ESTAS LINHAS --- */
+    width: 0%; /* 1. Define o estado inicial da barra como 0% */
+    transition: width 1s ease-in-out; /* 2. Diz ao CSS para animar a mudança de 'width' por 1 segundo */
 }
 
 /* Atividades Recentes */

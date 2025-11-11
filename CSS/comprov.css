@@ -223,6 +223,11 @@
     font-weight: 600;
 }
 
+.status-vencido {
+    color: var(--color-danger, #ef4444); /* Vermelho */
+    font-weight: 600;
+}
+
 /* Estilos de Botão (Ação) */
 .btn-detalhe, .btn-pagar {
     padding: 5px 10px;

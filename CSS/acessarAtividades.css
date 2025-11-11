@@ -1,0 +1,599 @@
+/* ======================================================= */
+/*                    ACESSAR ATIVIDADE                    */
+/* ======================================================= */
+
+/* --- VARIÁVEIS --- */
+:root {
+    --color-pdf: #ef4444;
+    --color-download: #6b7280;
+
+    --card-shadow-soft: 0 2px 4px rgba(0, 0, 0, 0.04), 0 6px 10px rgba(0, 0, 0, 0.02);
+    --card-border-color: #f1f1f1;
+
+    --text-primary: #1f2937;
+    --text-secondary: #6b7280;
+    --line: #e3e6f0;
+    --primary: #217d36;
+    --btn-primary-text: #fff;
+    --btn-secondary-bg: #f9fafb;
+
+    /* VARIÁVEIS DE TAGS (ATUALIZADAS CONFORME A IMAGEM) */
+    --tag-pendente-bg: #ffea6243;
+    /* Amarelo mais claro da imagem */
+    --tag-pendente-text: #985f10;
+    /* Amarelo/laranja mais escuro da imagem */
+
+    --tag-entregue-bg: #dcfce7;
+    /* Verde bem claro da imagem */
+    --tag-entregue-text: #22c55e;
+    /* Verde escuro da imagem */
+
+    --color-alerta: #dc2626;
+
+    --card-bg: #fff;
+}
+
+/* Ícone específico do título "Guerra Fria: Medo e Silêncios" */
+h2:has(i.bxs-book-reader) i {
+    color: #B85C3C;
+
+}
+
+/* Ícone específico do título "Exercícios: Derivadas" */
+h2:has(i.bx-math) i {
+    color: #4A4A4A;
+
+}
+
+h2:has(i.bx-magnet) i {
+    color: #004AAD;
+
+}
+
+/* --- LAYOUT DE DUAS COLUNAS --- */
+.atividade-view {
+    padding-top: 20px;
+}
+
+.atividade-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 30px;
+}
+
+.atividade-header h1 {
+    font-size: 26px;
+    margin-bottom: 5px;
+}
+
+.atividade-header p.muted {
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+
+/* ESTILO BASE DAS TAGS */
+.atividade-header .tag {
+    padding: 6px 15px;
+    border-radius: 6px;
+    font-weight: 600;
+    flex-shrink: 0;
+}
+
+/* ESTILO PENDENTE */
+.tag-pendente {
+    background-color: var(--tag-pendente-bg);
+    /* Amarelo claro */
+    color: var(--tag-pendente-text);
+}
+
+/* ESTILO ENTREGUE */
+.tag-entregue {
+    background-color: var(--tag-entregue-bg);
+    color: var(--tag-entregue-text);
+}
+
+
+/* Estrutura principal: Grid (largura da coluna) */
+.atividade-grid {
+    display: grid;
+    grid-template-columns: 2.5fr 1.5fr;
+    gap: 30px;
+}
+
+/* Estilo Base dos Cards (blocos brancos) */
+.atividade-grid .card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: var(--card-shadow-soft);
+    border: 1px solid var(--card-border-color);
+    margin-bottom: 20px;
+}
+
+/* Títulos dos cards internos */
+.atividade-grid .card h4 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+
+/* --- COLUNA ESQUERDA (Conteúdo) --- */
+
+/* 1. BLOCO DE ANEXOS/MATERIAL (LINK DE ÁREA TOTAL) */
+.bloco-anexo h4 {
+    margin-bottom: 20px;
+}
+
+
+/* Estilo do link que simula o item/bloco */
+.anexo-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 12px 15px;
+    background-color: var(--btn-secondary-bg);
+    border-left: 4px solid var(--color-pdf);
+    border-radius: 8px;
+    margin-bottom: 20px;
+    transition: background-color 0.2s;
+    text-decoration: none;
+    color: var(--text-primary);
+}
+
+
+.anexo-item:hover {
+    background-color: var(--line);
+}
+
+.anexo-item p {
+    flex-grow: 1;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.anexo-item .icon-pdf {
+    font-size: 30px;
+    color: var(--color-pdf);
+}
+
+.anexo-item .btn-download {
+    color: var(--color-download);
+    font-size: 20px;
+    padding: 8px;
+    border-radius: 50%;
+    transition: background-color 0.2s, transform 0.2s;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.prazo-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    padding-top: 10px;
+    border-top: 1px solid var(--line);
+    margin-top: 10px;
+}
+
+
+/* 2 & 3. BLOCOS DE COMENTÁRIOS */
+.bloco-comentarios {
+    padding: 20px 25px;
+}
+
+.bloco-comentarios.card {
+    border-left: 4px solid #147638;
+}
+
+.bloco-comentarios .header-comentario {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--card-border-color);
+}
+
+.bloco-comentarios h4 {
+    font-weight: 600;
+}
+
+.bloco-comentarios i {
+    font-size: 24px;
+    color: var(--text-secondary);
+
+}
+
+.btn-adicionar-comentario {
+    background: transparent;
+    color: var(--text-secondary);
+    border: 2px dashed var(--line);
+    padding: 12px 15px;
+    border-radius: 8px;
+    width: 100%;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+.btn-adicionar-comentario:hover {
+    background: var(--btn-secondary-bg);
+    border-color: var(--text-secondary);
+}
+
+/* --- ESTILOS DO CAMPO DE COMENTÁRIO EXPANDIDO --- */
+.comentario-input-container {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.comentario-textarea {
+    width: 100%;
+    min-height: 100px;
+    padding: 10px;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    resize: vertical;
+    /* Permite redimensionar verticalmente */
+    font-size: 14px;
+    color: var(--text-primary);
+}
+
+.comentario-textarea::placeholder {
+    color: var(--text-secondary);
+}
+
+.comentario-botoes-grupo {
+    display: flex;
+    justify-content: flex-end;
+    /* Alinha botões à direita */
+    gap: 10px;
+}
+
+.btn-salvar-comentario {
+    background-color: var(--primary);
+    color: var(--btn-primary-text);
+    padding: 8px 15px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.2s;
+}
+
+.btn-salvar-comentario:hover {
+    background-color: #1e7033;
+}
+
+/* --- ÍCONES DE COMENTÁRIOS (usuário e grupo) --- */
+h4 i.bxs-user-circle,
+h4 i.bxs-group {
+    font-size: 18px;
+    /* tamanho controlado */
+    vertical-align: middle;
+    /* alinha com o texto */
+    margin-right: 6px;
+    /* espaçamento entre ícone e texto */
+    color: #1e7033;
+    /* verde igual à borda dos comentários */
+}
+
+
+.btn-cancelar-comentario {
+    background-color: var(--btn-secondary-bg);
+    color: var(--text-secondary);
+    padding: 8px 15px;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.2s;
+}
+
+.btn-cancelar-comentario:hover {
+    background-color: var(--line);
+}
+
+/* --- FIM DOS ESTILOS DO CAMPO DE COMENTÁRIO EXPANDIDO --- */
+
+
+/* --- BLOCO: CONTEÚDO DAS AULAS LATERAL (.bloco-aulas-lateral) --- */
+.bloco-aulas-lateral {
+    margin-top: 20px;
+    padding: 20px 25px;
+}
+
+/* Estilização da Lista de Aulas (Altura Diminuída) */
+
+/*HISTORIA*/
+
+.lista-aulas {
+    padding-top: 10px;
+}
+
+.lista-aulas .topico-aula {
+    transition: all 0.3s ease;
+}
+
+.lista-aulas .topico-aula {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    color: var(--text-secondary);
+
+    /* ALTURA REDUZIDA AQUI */
+    margin-bottom: 4px;
+    padding: 2px 0;
+}
+
+.lista-aulas .topico-aula i {
+    font-size: 16px;
+    color: var(--primary);
+    flex-shrink: 0;
+}
+
+.lista-aulas .btn-ver-mais {
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    font-size: 13px;
+    font-weight: 600;
+    margin-top: 15px;
+    cursor: pointer;
+    text-decoration: underline;
+    transition: color 0.2s;
+}
+
+.lista-aulas .btn-ver-mais:hover {
+    color: var(--primary);
+}
+
+/*LITERATURA*/
+
+.lista-aulas-lit {
+    padding-top: 10px;
+}
+
+.lista-aulas-lit .topico-aula-lit {
+    transition: all 0.3s ease;
+}
+
+.lista-aulas-lit .topico-aula-lit {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    color: var(--text-secondary);
+
+    /* ALTURA REDUZIDA AQUI */
+    margin-bottom: 4px;
+    padding: 2px 0;
+}
+
+.lista-aulas-lit .topico-aula-lit i {
+    font-size: 16px;
+    color: var(--primary);
+    flex-shrink: 0;
+}
+
+.lista-aulas-lit .btn-ver-mais-lit {
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    font-size: 13px;
+    font-weight: 600;
+    margin-top: 15px;
+    cursor: pointer;
+    text-decoration: underline;
+    transition: color 0.2s;
+}
+
+.lista-aulas-lit .btn-ver-mais-lit:hover {
+    color: var(--primary);
+}
+
+/*MATEMATICA*/
+
+
+.lista-aulas-mat {
+    padding-top: 10px;
+}
+
+.lista-aulas-mat .topico-aula-mat {
+    transition: all 0.3s ease;
+}
+
+.lista-aulas-mat .topico-aula-mat {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    color: var(--text-secondary);
+
+    /* ALTURA REDUZIDA AQUI */
+    margin-bottom: 4px;
+    padding: 2px 0;
+}
+
+.lista-aulas-mat .topico-aula-mat i {
+    font-size: 16px;
+    color: var(--primary);
+    flex-shrink: 0;
+}
+
+
+.lista-aulas-mat .btn-ver-mais-mat {
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    font-size: 13px;
+    font-weight: 600;
+    margin-top: 15px;
+    cursor: pointer;
+    text-decoration: underline;
+    transition: color 0.2s;
+}
+
+.lista-aulas-mat .btn-ver-mais-mat:hover {
+    color: var(--primary);
+}
+
+/*FISICA*/
+
+.lista-aulas-fis {
+    padding-top: 10px;
+}
+
+.lista-aulas-fis .topico-aula-fis {
+    transition: all 0.3s ease;
+}
+
+.lista-aulas-fis .topico-aula-fis {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    color: var(--text-secondary);
+
+    /* ALTURA REDUZIDA AQUI */
+    margin-bottom: 4px;
+    padding: 2px 0;
+}
+
+.lista-aulas-fis .topico-aula-fis i {
+    font-size: 16px;
+    color: var(--primary);
+    flex-shrink: 0;
+}
+
+
+.lista-aulas-fis .btn-ver-mais-fis {
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    font-size: 13px;
+    font-weight: 600;
+    margin-top: 15px;
+    cursor: pointer;
+    text-decoration: underline;
+    transition: color 0.2s;
+}
+
+.lista-aulas-fis .btn-ver-mais-fis:hover {
+    color: var(--primary);
+}
+
+
+h4 i.bxs-book-open {
+    font-size: 18px;
+    /* tamanho controlado */
+    vertical-align: middle;
+    /* alinha com o texto */
+    margin-right: 6px;
+    /* espaçamento entre ícone e texto */
+    color: var(--text-primary)
+        /* verde igual à borda dos comentários */
+}
+
+
+/* --- COLUNA DIREITA (Tarefas) --- */
+
+.coluna-tarefas h4 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.bloco-tarefas {
+    padding: 25px;
+}
+
+.tarefa-nota-info {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-bottom: 15px;
+}
+
+.tarefa-aviso {
+    font-size: 13px;
+    color: var(--color-alerta);
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+
+.botoes-acao-tarefa {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    /* MAIOR SEPARAÇÃO ENTRE OS BOTÕES */
+}
+
+/* Estilo Base dos Botões de Ação na Coluna Direita */
+.bloco-tarefas .botao-acao {
+    width: 100%;
+    padding: 12px 0;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+
+    text-align: center;
+    display: block;
+}
+
+/* ESTILO: BOTÕES DESABILITADOS */
+.bloco-tarefas .botao-acao:disabled {
+    cursor: not-allowed;
+    opacity: 1;
+    /* Mantém a opacidade total */
+}
+
+/* Botão Principal (Adicionar) - Destaque em Verde */
+.btn-adicionar-arquivo {
+    background: var(--primary);
+    color: var(--btn-primary-text);
+    border: none;
+}
+
+.btn-adicionar-arquivo:hover {
+    background: #1e7033;
+}
+
+/* ESTILO DO BOTÃO DE ANEXO QUANDO DESABILITADO (SUCESSO) */
+.btn-adicionar-arquivo:disabled {
+    background: #1a4a38;
+    /* Um verde de sucesso */
+    color: var(--btn-primary-text);
+}
+
+
+/* 2. BOTÃO INFERIOR (Acessar Todas as Atividades) */
+.bloco-tarefas-inferior {
+    padding: 15px;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.btn-todas-atividades {
+    background: transparent;
+    color: var(--text-secondary);
+    border: none;
+    width: 100%;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px 0;
+}
+
+.btn-todas-atividades:hover {
+    color: var(--primary);
+    text-decoration: underline;
+}
