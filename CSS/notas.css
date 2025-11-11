@@ -206,3 +206,27 @@
 .aba-content {
     display: none;
 }
+
+/* ======================================================= */
+/* ESTILOS DE STATUS (Aprovado/Reprovado)
+/* ======================================================= */
+
+.status {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    text-align: center;
+    display: inline-block;
+}
+
+.status-aprovado {
+    background: var(--status-aprovado-bg, #a7f3d0); /* */
+    color: var(--status-aprovado-text, #065f46); /* */
+}
+
+/* --- ADICIONE ESTA NOVA CLASSE --- */
+.status-reprovado {
+    background: #fee2e2; /* Um fundo vermelho claro */
+    color: #b91c1c;    /* Um texto vermelho escuro */
+}
