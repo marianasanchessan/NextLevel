@@ -1,8 +1,13 @@
 /* ======================================================= */
-/*                  PORTAL ACADÊMICO - ATIVIDADES + MODAL  */
+/* PORTAL ACADÊMICO - ATIVIDADES + MODAL  */
 /* ======================================================= */
 
-/* ====== VARIÁVEIS DE CORES ====== */
+/* CONFLITO 1 REMOVIDO: 
+  O bloco .foot foi apagado daqui. 
+  Ele deve ficar num ficheiro global (ex: dashboard.css).
+*/
+
+/* 1. VARIÁVEIS DE CORES */
 :root {
     --card-conteudos-color: #3b82f6;
     --card-atividades-color: #16a34a;
@@ -30,13 +35,11 @@
     --line: #e3e6f0;
 
     --panel: #fff; 
-    --cor-hover: #1e7033;
     --primary: #217d36; 
     --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
-
 /* ======================================================= */
-/*                       MODAL POP-UP                      */
+/* MODAL POP-UP                      */
 /* ======================================================= */
 
 .modal {
@@ -114,42 +117,14 @@
   border: 1px solid var(--line);
 }
 
-/* ======================================================= */
-/*                       RODAPÉ                            */
-/* ======================================================= */
-.foot {
-    padding-top: 230px;
-    border-top: 1px solid var(--line);
-    font-size: 14px;
-    color: var(--text-secondary);
-    display: flex;
-    gap: 10px;
-    flex-direction: column;
-}
 
-.foot a {
-    text-decoration: none;
-    color: var(--primary-line-color);
-    font-weight: 500;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.foot a:hover,
-.foot a:active {
-    background-color: var(--primary);
-    color: var(--card-bg);
-}
-
-.foot a:hover i,
-.foot a:active i {
-    color: var(--card-bg);
-}
 
 /* ======================================================= */
-/*                  CARDS DE CONTEÚDOS E ATIVIDADES        */
+/* CARDS DE CONTEÚDOS E ATIVIDADES        */
 /* ======================================================= */
+
+/* 2. LAYOUT DOS CARDS SUPERIORES */
+
 .atividades-cards {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -212,7 +187,7 @@
 }
 
 /* ======================================================= */
-/*                     ABAS DE NAVEGAÇÃO                   */
+/* ABAS DE NAVEGAÇÃO                   */
 /* ======================================================= */
 .abas-container {
     display: flex;
@@ -238,6 +213,7 @@
     border-color: var(--text-secondary);
 }
 
+/* Mantive esta cor roxa, pois parece ser a mudança intencional da branch 'atividades' */
 .abas-container .aba.aba-active {
     background: var(--card-border-color);
     color: var(--card-completas-color);
@@ -246,7 +222,7 @@
 }
 
 /* ======================================================= */
-/*                    GRID DE ATIVIDADES                   */
+/* GRID DE ATIVIDADES                   */
 /* ======================================================= */
 .atividades-grid {
     display: grid;
@@ -323,7 +299,12 @@
     margin-bottom: 5px;
 }
 
-/* Botões */
+/* CONFLITO 2 REMOVIDO: 
+  Removi todas as classes de botão duplicadas (-lit, -fis, etc.)
+  Deixei apenas as duas classes genéricas que você precisa.
+*/
+
+/* Estilo GENÉRICO dos botões de ação */
 .atividade-card .botao-acao {
     width: 100%;
     padding: 12px 0;
@@ -334,15 +315,18 @@
     cursor: pointer;
     transition: background-color 0.2s ease;
 }
+
+/* Botão Primário (Verde) */
 .atividade-card .btn-realizar {
     background: var(--btn-primary-bg);
     color: var(--btn-primary-text);
     border: none;
 }
 .atividade-card .btn-realizar:hover {
-    background: var(--cor-hover); 
+    background: #1e7033; 
 }
 
+/* Botão Secundário (Cinza) */
 .atividade-card .btn-detalhes {
     background: var(--panel); 
     color: var(--text-secondary);
@@ -352,7 +336,10 @@
     background: var(--line);
 }
 
-/* Estado ativo/foco */
+/* ======================================================= */
+/* Aumenta a Especificidade para anular a borda verde no Foco/Clique */
+/* ======================================================= */
+
 .atividades-grid .atividade-card .btn-detalhes:focus,
 .atividades-grid .atividade-card .btn-detalhes:active {
     outline: none; 
@@ -368,7 +355,7 @@
 }
 
 /* ======================================================= */
-/*      Ajuste para Cards de Comprovantes / Grade Curricular */
+/* Ajuste para Cards de Comprovantes / Grade Curricular */
 /* ======================================================= */
 .cards.grade-cards {
     display: flex;
