@@ -1,5 +1,5 @@
 /* ======================================================= */
-/*                         NOTAS 
+/* NOTAS 
 /* ======================================================= */
 
 /* 1. VARIÁVEIS DE CORES ESPECÍFICAS */
@@ -20,37 +20,9 @@
 
 }
 
-.foot {
-    margin-top: auto;
-    padding-top: 20px;
-    border-top: 1px solid var(--line);
-    font-size: 14px;
-    color: var(--cinza-basico);
-    display: flex;
-    gap: 10px;
-    flex-direction: column;
-}
-
-.foot a {
-    text-decoration: none;
-    color: var(--primary-line-color);
-    font-weight: 500;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.foot a:hover,
-.foot a:active {
-    background-color: var(--primary);
-    color: var(--branco);
-}
-
-.foot a:hover i,
-.foot a:active i {
-    color: var(--branco);
-}
-
+/* BLOCO .foot REMOVIDO DAQUI.
+  Ele deve ficar apenas no ficheiro CSS global (dashboard.css).
+*/
 
 
 /* 2. ARRANJO DOS CARDS (Borda/Ícones) */
@@ -158,6 +130,13 @@
     color: var(--text-secondary);
 }
 
+/* --- CÓDIGO DO HOVER (ADICIONADO) --- */
+.abas .aba:not(.aba-active):hover {
+    background: var(--background); 
+    border-color: var(--text-secondary);
+    color: var(--text-primary);
+}
+
 /* 4. LAYOUT DA TABELA DE NOTAS */
 
 /* Cabeçalho da Tabela */
@@ -187,21 +166,6 @@
     border-top: none;
 }
 
-/* Estilo do Status 'Aprovado' */
-.status {
-    padding: 4px 8px;
-    border-radius: 4px;
-    font-size: 12px;
-    font-weight: 600;
-    text-align: center;
-    display: inline-block;
-}
-
-.status-aprovado {
-    background: var(--status-aprovado-bg);
-    color: var(--status-aprovado-text);
-}
-
 /* Garante que todos os conteúdos de aba comecem escondidos */
 .aba-content {
     display: none;
@@ -209,6 +173,7 @@
 
 /* ======================================================= */
 /* ESTILOS DE STATUS (Aprovado/Reprovado)
+/* (Bloco duplicado removido)
 /* ======================================================= */
 
 .status {
@@ -221,11 +186,10 @@
 }
 
 .status-aprovado {
-    background: var(--status-aprovado-bg, #a7f3d0); /* */
-    color: var(--status-aprovado-text, #065f46); /* */
+    background: var(--status-aprovado-bg, #a7f3d0);
+    color: var(--status-aprovado-text, #065f46);
 }
 
-/* --- ADICIONE ESTA NOVA CLASSE --- */
 .status-reprovado {
     background: #fee2e2; /* Um fundo vermelho claro */
     color: #b91c1c;    /* Um texto vermelho escuro */

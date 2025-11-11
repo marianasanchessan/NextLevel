@@ -2,7 +2,58 @@
 document.addEventListener("DOMContentLoaded", () => {
     // Chama a função principal para carregar os dados
     carregarDadosNotas();
+
+    // (NOVO) Chama a função para ligar os botões das abas
+    configurarAbasNotas();
 });
+
+/**
+ * (NOVA FUNÇÃO) Configura a troca de abas (Notas/Frequência)
+ */
+function configurarAbasNotas() {
+    const painelNotasSection = document.querySelector('.painel-notas');
+    if (!painelNotasSection) return; // Sai se não estiver na página certa
+
+    const abas = painelNotasSection.querySelectorAll('.abas .aba');
+    const conteudos = painelNotasSection.querySelectorAll('.aba-content');
+
+    if (abas.length > 0 && conteudos.length > 0) {
+
+        function trocarAba(event) {
+            const botaoClicado = event.currentTarget;
+            const targetId = botaoClicado.getAttribute('data-target');
+
+            abas.forEach(aba => aba.classList.remove('aba-active'));
+            conteudos.forEach(conteudo => conteudo.style.display = 'none');
+
+            botaoClicado.classList.add('aba-active');
+
+            const conteudoAlvo = document.getElementById(targetId);
+            if (conteudoAlvo) {
+                conteudoAlvo.style.display = 'block'; 
+            }
+        }
+
+        abas.forEach(aba => {
+            aba.addEventListener('click', trocarAba);
+        });
+
+        // --- INICIALIZAÇÃO ---
+        // Garante que apenas o painel ativo esteja visível
+        const abaAtivaInicial = painelNotasSection.querySelector('.abas .aba-active');
+        if (abaAtivaInicial) {
+            const idAtivo = abaAtivaInicial.getAttribute('data-target');
+            conteudos.forEach(conteudo => {
+                if (conteudo.id !== idAtivo) {
+                    conteudo.style.display = 'none';
+                } else {
+                    conteudo.style.display = 'block'; // Força a exibição do ativo
+                }
+            });
+        }
+    }
+}
+
 
 /**
  * Função principal para buscar os dados do aluno e distribuí-los
@@ -15,11 +66,9 @@ async function carregarDadosNotas() {
         }
         const db = await response.json();
 
-        // Verifica se os dados de 'notasEFaltas' existem
         if (db.notasEFaltas && db.notasEFaltas.desempenho) {
             const desempenhoData = db.notasEFaltas.desempenho;
             
-            // Chama as funções para renderizar as seções de NOTAS
             renderizarCardsResumoNotas(desempenhoData);
             renderizarTabelaDesempenho(desempenhoData);
             
