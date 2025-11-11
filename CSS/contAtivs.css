@@ -216,7 +216,7 @@
 /* Mantive esta cor roxa, pois parece ser a mudança intencional da branch 'atividades' */
 .abas-container .aba.aba-active {
     background: var(--card-border-color);
-    color: var(--card-completas-color);
+    color: var(--text-primary);
     border-color: var(--background);
     box-shadow: var(--card-shadow-soft);
 }

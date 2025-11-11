@@ -6,7 +6,7 @@
   },
   "dashboard": {
     "progressoSemestre": [
-      { "materia": "Matemática", "progresso": 80 },
+      { "materia": "Matemática", "progresso": 60 },
       { "materia": "História", "progresso": 91 },
       { "materia": "Física", "progresso": 80 },
       { "materia": "Química", "progresso": 67 },
