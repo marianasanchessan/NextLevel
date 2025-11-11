@@ -1,0 +1,159 @@
+{
+  "aluno": {
+    "nome": "Luis Alves",
+    "email": "aluno1@escola.com",
+    "semestre": "2025.2"
+  },
+  "dashboard": {
+    "progressoSemestre": [
+      { "materia": "Matemática", "progresso": 80 },
+      { "materia": "História", "progresso": 91 },
+      { "materia": "Física", "progresso": 80 },
+      { "materia": "Química", "progresso": 67 },
+      {"materia": "Portugues", "progresso": 60}
+    ],
+    "proximosPrazos": [
+      { "descricao": "Entrega do Trabalho", "data": "15 Set" },
+      { "descricao": "Apresentação", "data": "16 Set" },
+      { "descricao": "Lista de questões", "data": "27 Set" }
+    ]
+  },
+  "notasEFaltas": {
+    "desempenho": [
+      { "materia": "História", "tri1": 5.0, "tri2": 5.0, "tri3": 10.0 },
+      { "materia": "Física", "tri1": 8.0, "tri2": 9.0, "tri3": 8.2 },
+      { "materia": "Matemática", "tri1": 7.5, "tri2": 9.0, "tri3": 8.7 },
+      { "materia": "Química", "tri1": 8.0, "tri2": 8.5, "tri3": 8.9 },
+      { "materia": "Literatura", "tri1": 8.0, "tri2": 8.0, "tri3": 8.0 },
+      { "materia": "Inglês", "tri1": 9.0, "tri2": 9.5, "tri3": 9.2 }
+    ],
+    "frequenciaLog": [
+      { "data": "2025-10-01", "materia": "Matemática", "status": "Presente" },
+      { "data": "2025-10-02", "materia": "História", "status": "Presente" },
+      { "data": "2025-10-02", "materia": "Física", "status": "Presente" },
+      { "data": "2025-10-03", "materia": "Matemática", "status": "Presente" },
+      { "data": "2025-10-03", "materia": "Literatura", "status": "Ausente" },
+      { "data": "2025-10-04", "materia": "Química", "status": "Presente" },
+      { "data": "2025-10-04", "materia": "Inglês", "status": "Presente" },
+      { "data": "2025-10-06", "materia": "Matemática", "status": "Presente" },
+      { "data": "2025-10-06", "materia": "Física", "status": "Presente" },
+      { "data": "2025-10-07", "materia": "História", "status": "Presente" },
+      { "data": "2025-10-07", "materia": "Literatura", "status": "Presente" },
+      { "data": "2025-10-08", "materia": "Matemática", "status": "Ausente" },
+      { "data": "2025-10-08", "materia": "Química", "status": "Presente" }
+    ]
+  },
+  "gradeCurricular": {
+    "horarios": [
+      { "dia": "Segunda", "hora": "07:30 - 09:20", "materia": "Matemática", "sala": "Sala 201" },
+      { "dia": "Segunda", "hora": "09:30 - 11:10", "materia": "Matemática", "sala": "Sala 201" },
+      { "dia": "Segunda", "hora": "11:20 - 12:30", "materia": "Física", "sala": "Sala 201" },
+      { "dia": "Terça", "hora": "07:30 - 09:20", "materia": "Química", "sala": "Lab Quim." },
+      { "dia": "Terça", "hora": "09:30 - 11:10", "materia": "Matemática", "sala": "Sala 103" },
+      { "dia": "Terça", "hora": "11:20 - 12:30", "materia": "Literatura", "sala": "Sala 204" },
+      { "dia": "Quarta", "hora": "07:30 - 09:20", "materia": "História", "sala": "Sala 206" },
+      { "dia": "Quarta", "hora": "09:30 - 11:10", "materia": "Física", "sala": "Lab. Fís." },
+      { "dia": "Quinta", "hora": "07:30 - 09:20", "materia": "Literatura", "sala": "Sala 204" },
+      { "dia": "Quinta", "hora": "09:30 - 11:10", "materia": "Literatura", "sala": "Sala 204" },
+      { "dia": "Quinta", "hora": "11:20 - 12:30", "materia": "Química", "sala": "Sala 203" },
+      { "dia": "Sexta", "hora": "07:30 - 09:20", "materia": "Inglês", "sala": "Sala 204" },
+      { "dia": "Sexta", "hora": "09:30 - 11:10", "materia": "Matemática", "sala": "Sala 201" }
+    ]
+  },
+  "conteudosEAtividades": {
+    "materias": {
+      "História": [
+        { "nome": "Resumo da Guerra Fria.pdf", "caminho": "/ARQUIVOS/historia/guerra_fria.pdf" },
+        { "nome": "Linha do Tempo.docx", "caminho": "/NextLevel-main/ARQUIVOS/historia/linha_tempo.docx" }
+      ],
+      "Física": [
+        { "nome": "Relatório Pilhas.pdf", "caminho": "/NextLevel-main/ARQUIVOS/fisica/pilhas.pdf" },
+        { "nome": "Força e Movimento.pdf", "caminho": "/NextLevel-main/ARQUIVOS/fisica/forca_mov.pdf" }
+      ],
+      "Literatura": [
+        { "nome": "Vidas Secas - Análise.pdf", "caminho": "/NextLevel-main/ARQUIVOS/literatura/vidas_secas.pdf" },
+        { "nome": "Resumo Romantismo.docx", "caminho": "/NextLevel-main/ARQUIVOS/literatura/romantismo.docx" }
+      ],
+      "Matemática": [
+        { "nome": "Lista Derivadas.pdf", "caminho": "/NextLevel-main/ARQUIVOS/matematica/derivadas.pdf" },
+        { "nome": "Funções e Gráficos.pdf", "caminho": "/NextLevel-main/ARQUIVOS/matematica/funcoes.pdf" }
+      ],
+      "Química": [
+        { "nome": "Ligações Químicas.pdf", "caminho": "/NextLevel-main/ARQUIVOS/quimica/ligacoes.pdf" },
+        { "nome": "Tabela Periódica.pdf", "caminho": "/NextLevel-1/ARQUIVOS/quimica/tabela.pdf" }
+      ]
+    },
+    "atividades": [
+      {
+        "materia": "História",
+        "status": "Pendente",
+        "descricao": "Guerra Fria: Medo e Silêncios",
+        "prazo": "20/06/2025",
+        "pontos": 3,
+        "professor": "Andreia da Silva Santos",
+        "turmaCodigo": "HIS-KFK-LSO-3S-T4 - 46125",
+        "icone": "bxs-book-reader",
+        "anexoNome": "Guerra Fria: Medo e Silêncio.PDF",
+        "anexoPath": "/NextLevel/PDF/GuerraFria_MedoeSilencio.pdf",
+        "arquivoEntregue": null
+      },
+      {
+        "materia": "Matemática",
+        "status": "Entregue",
+        "descricao": "Exercícios: Derivadas",
+        "prazo": "15/06/2025",
+        "pontos": 3,
+        "professor": "João Paulo Mendes",
+        "turmaCodigo": "MAT-ABC-123-2S-T4 - 49382",
+        "icone": "bx-math",
+        "anexoNome": "Lista de Exercícios - Derivadas.PDF",
+        "anexoPath": "/PDF/Ecercícioa_Derivadas.pdf",
+        "arquivoEntregue": "Resolução_Lista.pdf"
+      },
+      {
+        "materia": "Literatura",
+        "status": "Pendente",
+        "descricao": "Projetos de Literatura: Vidas Secas",
+        "prazo": "18/06/2025",
+        "pontos": 3,
+        "professor": "Marcus Andrade Lemos",
+        "turmaCodigo": "LIT-MAC-PRJ-3S-T4 - 46125",
+        "icone": "bxs-book-reader",
+        "anexoNome": "Vidas Secas - Orientações do Projeto.PDF",
+        "anexoPath": "/PDF/exercicio_vidas_secas.pdf",
+        "arquivoEntregue": null
+      },
+      {
+        "materia": "Física",
+        "status": "Entregue",
+        "descricao": "Laboratório: Pilhas",
+        "prazo": "03/06/2025",
+        "pontos": 3,
+        "professor": "Henrique Medeiros",
+        "turmaCodigo": "FIS-RKC-405-6S-T4 - 20345",
+        "icone": "bx-magnet",
+        "anexoNome": "Relatorio de laboratório - Pilhas.PDF",
+        "anexoPath": "/PDF/Relatorio_Laboratorio_Pilhas.pdf",
+        "arquivoEntregue": "Relatorio_Pilhas.pdf"
+      }
+    ]
+  },
+  "documentos": {
+    "lista": [
+      { "nome": "Trabalho de História", "tipo": "Trabalho", "materia": "História", "data": "02/09/25", "status": "Aprovado" },
+      { "nome": "Relatório de Física", "tipo": "Relatório", "materia": "Física", "data": "27/08/25", "status": "Em correção" },
+      { "nome": "Prova de Matemática", "tipo": "Prova", "materia": "Matemática", "data": "19/08/25", "status": "Aprovado" },
+      { "nome": "Apresentação", "tipo": "Apresentação", "materia": "Química", "data": "09/08/25", "status": "Aprovado" },
+      { "nome": "Rascunho ", "tipo": "Trabalho", "materia": "Literatura", "data": "05/09/25", "status": "Em correção" }
+    ]
+  },
+  "comprovantes": {
+    "boletos": [
+      { "mes": "Agosto", "status": "Pago", "valor": "R$1200,00", "vencimento": "05/08/25" },
+      { "mes": "Setembro", "status": "Pago", "valor": "R$1200,00", "vencimento": "05/09/25" },
+      { "mes": "Outubro", "status": "Pendente", "valor": "R$1200,00", "vencimento": "05/10/25" },
+      { "mes": "Novembro", "status": "Pendente", "valor": "R$1200,00", "vencimento": "05/11/25" },
+      { "mes": "Dezembro", "status": "Pendente", "valor": "R$1200,00", "vencimento": "05/12/25" }
+    ]
+  }
+}
